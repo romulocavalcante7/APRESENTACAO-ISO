@@ -1,0 +1,808 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ISO/IEC 27000 - Gestão de Segurança da Informação</title>
+<link rel="stylesheet" href="css/styles.css">
+<script src="js/notas.js" defer></script>
+<script src="js/app.js" defer></script>
+</head>
+<body>
+
+<!-- ============ SHARED SVG DEFINITIONS ============ -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2.5 L19.5 5.5 V11 C19.5 15.8 16.4 19.9 12 21.5 C7.6 19.9 4.5 15.8 4.5 11 V5.5 Z"/><path d="M9 11.8 L11.2 14 L15.2 9.8"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2.5"/><path d="M8 11 V7.8 a4 4 0 0 1 8 0 V11"/><circle cx="12" cy="16" r="1.2"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="M11 12 L20 3 M16.5 6.5 L19 9 M14.5 8.5 L16.5 10.5"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12 C5 6.5 19 6.5 22 12 C19 17.5 5 17.5 2 12 Z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.2 L11 15 L16.2 9.5"/></symbol>
+    <symbol id="i-warn" viewBox="0 0 24 24"><path d="M12 3.5 L21.5 20 H2.5 Z"/><path d="M12 10 V14.2"/><circle cx="12" cy="17.2" r=".6"/></symbol>
+    <symbol id="i-bug" viewBox="0 0 24 24"><rect x="8" y="8" width="8" height="11" rx="4"/><path d="M9 8 L7 5 M15 8 L17 5 M4 13 H8 M16 13 H20 M4 18 L8 16 M20 18 L16 16 M12 8 V19"/></symbol>
+    <symbol id="i-server" viewBox="0 0 24 24"><rect x="3" y="3.5" width="18" height="7" rx="2"/><rect x="3" y="13.5" width="18" height="7" rx="2"/><path d="M7 7h.01M7 17h.01M11 7h5M11 17h5"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18.5 H17.5 a4.2 4.2 0 0 0 0-8.4 a6.2 6.2 0 0 0-12 1.6 A3.6 3.6 0 0 0 7 18.5 Z"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21 C4 16 20 16 20 21"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20 C2.5 15 15.5 15 15.5 20"/><path d="M16 4.6 a3.5 3.5 0 0 1 0 6.8"/><path d="M18.5 15.2 C20.6 16 21.5 18 21.5 20"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 2.8 H14 L19 7.8 V21 H6 Z"/><path d="M14 2.8 V7.8 H19"/><path d="M9 12.5 H16 M9 16.5 H16"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 3.5 V20.5 H20.5"/><path d="M8 16.5 V11.5 M12.5 16.5 V7.5 M17 16.5 V9.5"/></symbol>
+    <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2.8 V5.2 M12 18.8 V21.2 M2.8 12 H5.2 M18.8 12 H21.2 M5.4 5.4 L7.1 7.1 M16.9 16.9 L18.6 18.6 M5.4 18.6 L7.1 16.9 M16.9 7.1 L18.6 5.4"/><circle cx="12" cy="12" r="7"/></symbol>
+    <symbol id="i-cycle" viewBox="0 0 24 24"><path d="M20 12 A8 8 0 1 1 17.6 6.3"/><path d="M20.5 3.8 V8.8 H15.5"/></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 L7 21.5 L12 18.8 L17 21.5 L15.5 14"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="1.5"/><path d="M9 7h1M14 7h1M9 11h1M14 11h1M9 15h1M14 15h1M11 21v-3h2v3"/></symbol>
+    <symbol id="i-disk" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6 V18 C4 19.7 7.6 21 12 21 S20 19.7 20 18 V6"/><path d="M4 12 C4 13.7 7.6 15 12 15 S20 13.7 20 12"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7 V12 L15.2 14"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></symbol>
+    <symbol id="i-trend" viewBox="0 0 24 24"><path d="M3 17 L9 11 L13 15 L21 7"/><path d="M15 7 H21 V13"/></symbol>
+    <symbol id="i-ban" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M6 6 L18 18"/></symbol>
+    <symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20 L8.5 19 L19 8.5 L15.5 5 L5 15.5 Z"/><path d="M13.5 7 L17 10.5"/></symbol>
+    <symbol id="i-id" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="9" cy="11" r="2.4"/><path d="M6 16.5 C6.5 14.8 11.5 14.8 12 16.5 M15 10 H19 M15 14 H19"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5 L21 21"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3 V21 M6 21 H18 M5 6.5 H19"/><path d="M5 6.5 L2.5 13 H7.5 Z M19 6.5 L16.5 13 H21.5 Z"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21 V3.5 M5 4 H18 L15.5 8.5 L18 13 H5"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11 a6.5 6.5 0 0 0 13 0 M12 17.5 V21"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 4.5 C7 3.5 10 3.8 12 5.5 C14 3.8 17 3.5 20 4.5 V19.5 C17 18.5 14 18.8 12 20.5 C10 18.8 7 18.5 4 19.5 Z"/><path d="M12 5.5 V20.5"/></symbol>
+    <symbol id="i-hand" viewBox="0 0 24 24"><path d="M7 11 V5.5 a1.5 1.5 0 0 1 3 0 V10 M10 10 V4 a1.5 1.5 0 0 1 3 0 V10 M13 10 V5.5 a1.5 1.5 0 0 1 3 0 V13 C16 17 14 20 11 20 C8.5 20 7.2 18.5 6 16.5 L3.5 12.5 a1.5 1.5 0 0 1 2.4-1.8 L7 12.5"/></symbol>
+
+    <linearGradient id="gShield" x1="0" y1="0" x2="0.6" y2="1"><stop offset="0" stop-color="#7cb7ff"/><stop offset=".45" stop-color="#2563eb"/><stop offset="1" stop-color="#1e1b4b"/></linearGradient>
+    <linearGradient id="gEdge" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c7e0ff"/><stop offset="1" stop-color="#4c1d95"/></linearGradient>
+    <linearGradient id="gLock" x1="0" y1="0" x2="0.4" y2="1"><stop offset="0" stop-color="#f8fafc"/><stop offset=".5" stop-color="#94a3b8"/><stop offset="1" stop-color="#334155"/></linearGradient>
+    <linearGradient id="gHi" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".7"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
+    <radialGradient id="gGlow"><stop offset="0" stop-color="#3b82f6" stop-opacity=".75"/><stop offset="1" stop-color="#3b82f6" stop-opacity="0"/></radialGradient>
+    <linearGradient id="gBlue" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#60a5fa"/><stop offset="1" stop-color="#2563eb"/></linearGradient>
+    <linearGradient id="gViolet" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c4b5fd"/><stop offset="1" stop-color="#7c3aed"/></linearGradient>
+    <linearGradient id="gCyan" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a5f3fc"/><stop offset="1" stop-color="#0891b2"/></linearGradient>
+    <linearGradient id="gAmber" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fde68a"/><stop offset="1" stop-color="#d97706"/></linearGradient>
+    <linearGradient id="gGreen" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#bbf7d0"/><stop offset="1" stop-color="#16a34a"/></linearGradient>
+    <linearGradient id="gRed" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fecdd3"/><stop offset="1" stop-color="#e11d48"/></linearGradient>
+  </defs>
+</svg>
+
+<header id="topbar">
+  <span class="tb-title">ISO/IEC 27000</span>
+  <span id="blk" class="tb-blk">Abertura</span>
+  <span id="timer" class="tb-timer" title="S inicia, P pausa, R zera">00:00</span>
+  <span class="tb-keys">setas navegam · F tela cheia · N notas · S/P/R cronômetro</span>
+</header>
+<main id="stage">
+  <div id="view">
+    <div id="deck">
+
+<!-- ============ 1. CAPA ============ -->
+<section class="slide cover">
+  <div class="bgimg" style="background-image:url(assets/bg/p01.jpg)"></div>
+  <div class="haze"></div>
+  <div class="z" style="position:absolute;left:80px;top:48px;right:80px;font-size:15px;color:var(--muted);line-height:1.5">
+    <b style="color:#c8d6ee">Alunos:</b> Guilherme Nunes da Cruz · Kaua Gabriel Ricardo · Vinicius Porto Augusto · Kaique Cirqueira · Gabriel Feitosa · Kawan Kelvin · Marcelo Pina · Emilly Gabrielly · Eduardo Santana · Rômulo Gomes Cavalcante
+  </div>
+  <div class="z" style="position:absolute;left:80px;top:230px;width:720px">
+    <div class="tag">Sistemas de Informação · 2026</div>
+    <h1 style="margin-top:22px">ISO/IEC 27000:<br><span class="a">Gestão de</span><br><span class="a">Segurança da</span><br>Informação</h1>
+    <p class="sub" style="font-size:24px;margin-top:26px">Uma análise prática dos controles e do monitoramento contínuo</p>
+    <div style="margin-top:30px;display:flex;gap:12px">
+      <span class="chip" style="--c:#22d3ee">ISO/IEC 27001</span>
+      <span class="chip" style="--c:#8b5cf6">27002</span>
+      <span class="chip" style="--c:#3b82f6">27003</span>
+      <span class="chip" style="--c:#f59e0b">27004</span>
+    </div>
+  </div>
+  <!-- 3D shield hero -->
+  <svg class="z" style="position:absolute;right:110px;top:130px;width:520px;height:560px;filter:drop-shadow(0 40px 50px rgba(0,0,0,.6))" viewBox="0 0 300 340">
+    <ellipse cx="150" cy="322" rx="140" ry="22" fill="url(#gGlow)"/>
+    <path d="M150 18 L272 60 V170 C272 246 216 302 150 326 C84 302 28 246 28 170 V60 Z" fill="url(#gEdge)"/>
+    <path d="M150 26 L266 66 V170 C266 240 212 292 150 316 C88 292 34 240 34 170 V66 Z" fill="url(#gShield)"/>
+    <path d="M150 38 L252 74 V168 C252 230 206 278 150 298 Z" fill="url(#gHi)" opacity=".35"/>
+    <path d="M124 150 V126 a26 26 0 0 1 52 0 V150" stroke="url(#gLock)" stroke-width="15" fill="none" stroke-linecap="round"/>
+    <rect x="108" y="146" width="84" height="74" rx="14" fill="url(#gLock)"/>
+    <rect x="114" y="150" width="72" height="8" rx="4" fill="#ffffff" opacity=".35"/>
+    <circle cx="150" cy="180" r="9" fill="#0a1430"/>
+    <rect x="146.5" y="186" width="7" height="20" rx="3" fill="#0a1430"/>
+    <circle cx="66" cy="110" r="4" fill="#22d3ee"/><circle cx="240" cy="210" r="5" fill="#8b5cf6"/><circle cx="232" cy="88" r="3" fill="#22d3ee"/>
+  </svg>
+  <div class="foot"><span>Apresentação do grupo</span><span>01</span></div>
+</section>
+
+<!-- ============ 2. ROTEIRO ============ -->
+<section class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">Abertura · Roteiro</div>
+  <h2>Roteiro da <span class="a">aula</span> (3h)</h2>
+  <p class="sub">Abertura, nove blocos e fechamento, cada um com seu apresentador.</p></div>
+  <table class="z tight" style="margin-top:22px">
+    <tr><th style="width:150px">Bloco</th><th style="width:330px">Apresentador</th><th>Tema</th></tr>
+    <tr><td>Abertura</td><td>Rômulo</td><td>Contexto e requisitos do trabalho</td></tr>
+    <tr><td>1</td><td>Guilherme Nunes da Cruz</td><td>Fundamentos: CIA e vocabulário</td></tr>
+    <tr><td>2</td><td>Kaua Gabriel Ricardo</td><td>Família ISO/IEC 27000 e integração</td></tr>
+    <tr><td>3</td><td>Vinicius Porto Augusto</td><td>ISO/IEC 27001: SGSI, PDCA e Anexo A</td></tr>
+    <tr><td>4</td><td>Kaique Cirqueira</td><td>Certificação e pergunta 1 (PMEs)</td></tr>
+    <tr><td>5</td><td>Gabriel Feitosa</td><td>ISO/IEC 27002: visão geral e acessos</td></tr>
+    <tr><td>6</td><td>Kawan Kelvin</td><td>Criptografia, continuidade e análise</td></tr>
+    <tr><td>7</td><td>Marcelo Pina</td><td>ISO/IEC 27003 e pergunta 2 (no papel)</td></tr>
+    <tr><td>8</td><td>Gabriel Feitosa e Kaique Cirqueira</td><td>ISO/IEC 27004 e pergunta 3 (métricas)</td></tr>
+    <tr><td>9</td><td>Eduardo Santana</td><td>Estudo de caso e análise consolidada</td></tr>
+    <tr><td>Fechamento</td><td>Todos</td><td>Conclusão, respostas-guia e perguntas</td></tr>
+  </table>
+  <div class="foot"><span>Apresentador: <b>Rômulo</b></span><span>02</span></div>
+</section>
+
+<!-- ============ 3. REQUISITOS ============ -->
+<section class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">Abertura · Requisitos</div>
+  <h2>Mapa dos <span class="a">requisitos</span> do trabalho</h2>
+  <p class="sub">Cada item exigido pela atividade aparece em pelo menos um bloco.</p></div>
+  <div class="z req" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:26px">
+    <div class="card" style="--c:#3b82f6;display:flex;gap:20px;align-items:center"><div class="badge b1"><svg><use href="#i-book"/></svg></div><div><h3>Teoria das cinco normas</h3><p>27000, 27001, 27002, 27003 e 27004 · blocos 1 a 8</p></div></div>
+    <div class="card" style="--c:#f59e0b;display:flex;gap:20px;align-items:center"><div class="badge b5"><svg><use href="#i-building"/></svg></div><div><h3>Estudo de caso certificado</h3><p>Empresa com ISO/IEC 27001 · bloco 9 (Eduardo)</p></div></div>
+    <div class="card" style="--c:#8b5cf6;display:flex;gap:20px;align-items:center"><div class="badge b2"><svg><use href="#i-lock"/></svg></div><div><h3>Controles 27002 em casos reais</h3><p>Acessos, criptografia e continuidade · Gabriel e Kawan</p></div></div>
+    <div class="card" style="--c:#22c55e;display:flex;gap:20px;align-items:center"><div class="badge b4"><svg><use href="#i-scale"/></svg></div><div><h3>Análise: eficazes, falhas e melhorias</h3><p>Análise em operação e consolidada · Kawan e Eduardo</p></div></div>
+    <div class="card" style="--c:#22d3ee;display:flex;gap:20px;align-items:center"><div class="badge b3"><svg><use href="#i-award"/></svg></div><div><h3>Pergunta 1: certificar PMEs?</h3><p>Kaique Cirqueira</p></div></div>
+    <div class="card" style="--c:#3b82f6;display:flex;gap:20px;align-items:center"><div class="badge b1"><svg><use href="#i-hand"/></svg></div><div><h3>Pergunta 2: controles no papel?</h3><p>Marcelo Pina</p></div></div>
+    <div class="card" style="--c:#f43f5e;display:flex;gap:20px;align-items:center;grid-column:span 2"><div class="badge b6"><svg><use href="#i-chart"/></svg></div><div><h3>Pergunta 3: métricas da 27004 · Kaique Cirqueira</h3><p>Importância da certificação e do monitoramento contínuo</p></div></div>
+  </div>
+  <div class="foot"><span>Apresentador: <b>Rômulo</b></span><span>03</span></div>
+</section>
+
+<!-- ============ 4. CONTEXTO ============ -->
+<section class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">Abertura · Contexto</div>
+  <h2>Por que <span class="a">segurança</span> importa agora?</h2>
+  <p class="sub">As ameaças afetam dados, operação, finanças e reputação. Não é um problema só de grandes empresas.</p></div>
+  <div class="z" style="display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:40px">
+    <div class="card" style="--c:#f43f5e;min-height:330px"><div class="badge b6" style="margin-bottom:22px"><svg><use href="#i-user"/></svg></div><h3>Vazamento de dados</h3><p>Dados pessoais de clientes expostos.</p><ul style="margin-top:18px"><li>Multas da LGPD</li><li>Perda de confiança</li></ul></div>
+    <div class="card" style="--c:#f59e0b;min-height:330px"><div class="badge b5" style="margin-bottom:22px"><svg><use href="#i-bug"/></svg></div><h3>Ransomware</h3><p>Sistemas criptografados e bloqueados.</p><ul style="margin-top:18px"><li>Operação parada</li><li>Pedido de resgate</li></ul></div>
+    <div class="card" style="--c:#8b5cf6;min-height:330px"><div class="badge b2" style="margin-bottom:22px"><svg><use href="#i-key"/></svg></div><h3>Acesso indevido</h3><p>Contas comprometidas ou permissões excessivas.</p><ul style="margin-top:18px"><li>Fraude</li><li>Alteração de dados</li></ul></div>
+    <div class="card" style="--c:#22d3ee;min-height:330px"><div class="badge b3" style="margin-bottom:22px"><svg><use href="#i-doc"/></svg></div><h3>Roubo de propriedade intelectual</h3><p>Projetos, código e segredos copiados.</p><ul style="margin-top:18px"><li>Perda de vantagem competitiva</li></ul></div>
+  </div>
+  <div class="z qbox" style="position:absolute;left:100px;right:80px;bottom:80px">Pergunta para a turma: alguém já teve uma conta invadida ou um arquivo bloqueado? O que aconteceu?</div>
+  <div class="foot"><span>Apresentador: <b>Rômulo</b></span><span>04</span></div>
+</section>
+
+<!-- ============ 5. DIVISOR 1 ============ -->
+<section class="slide divider">
+  <div class="bgimg" style="background-image:url(assets/bg/p03.jpg)"></div><div class="haze"></div>
+  <div class="z" style="position:absolute;left:80px;top:170px">
+    <div class="num">01</div>
+    <div class="tag" style="margin-top:20px">Parte 1</div>
+    <h1 style="margin-top:14px">Fundamentos <span class="a">da segurança</span></h1>
+    <p class="sub" style="font-size:24px">Confidencialidade, integridade, disponibilidade e vocabulário comum.</p>
+  </div>
+  <div class="foot"><span>Bloco 1 · <b>Guilherme Nunes da Cruz</b></span><span>05</span></div>
+</section>
+
+<!-- ============ 6. CIA ============ -->
+<section class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">Fundamentos</div>
+  <h2>Os três pilares: <span class="a">CIA</span></h2>
+  <p class="sub">Confidencialidade, integridade e disponibilidade sustentam toda a segurança da informação.</p></div>
+  <div class="z" style="display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:40px">
+    <div class="card" style="--c:#3b82f6;min-height:400px"><div class="badge b1" style="width:98px;height:98px;margin-bottom:24px"><svg style="width:48px;height:48px"><use href="#i-lock"/></svg></div><h3 style="font-size:28px">CONFIDENCIALIDADE</h3><div class="lbl">Quem pode ver?</div><p>Só pessoas autorizadas acessam a informação.</p><ul><li>MFA</li><li>Controle de acesso</li><li>Criptografia</li></ul></div>
+    <div class="card" style="--c:#8b5cf6;min-height:400px"><div class="badge b2" style="width:98px;height:98px;margin-bottom:24px"><svg style="width:48px;height:48px"><use href="#i-check"/></svg></div><h3 style="font-size:28px">INTEGRIDADE</h3><div class="lbl">Pode ser alterado?</div><p>A informação permanece exata e completa.</p><ul><li>Hash SHA-256</li><li>Assinatura digital</li><li>Trilha de auditoria</li></ul></div>
+    <div class="card" style="--c:#22d3ee;min-height:400px"><div class="badge b3" style="width:98px;height:98px;margin-bottom:24px"><svg style="width:48px;height:48px"><use href="#i-cloud"/></svg></div><h3 style="font-size:28px">DISPONIBILIDADE</h3><div class="lbl">Está acessível quando preciso?</div><p>Sistemas e dados disponíveis na hora certa.</p><ul><li>Backup testado</li><li>Redundância</li><li>Plano de continuidade</li></ul></div>
+  </div>
+  <div class="foot"><span>Apresentador: <b>Guilherme Nunes da Cruz</b></span><span>06</span></div>
+</section>
+
+<!-- ============ 7. VOCABULÁRIO ============ -->
+<section class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">Fundamentos</div>
+  <h2>Vocabulário <span class="a">essencial</span></h2>
+  <p class="sub">Termos que aparecem em todo o trabalho. Use-os com precisão.</p></div>
+  <div class="z" style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:34px">
+    <div class="card mini" style="--c:#3b82f6;min-height:200px"><div class="badge sm b1" style="margin-bottom:14px"><svg><use href="#i-target"/></svg></div><h3>Ativo</h3><p>Algo com valor para a organização: dados, sistemas, pessoas.</p></div>
+    <div class="card mini" style="--c:#8b5cf6;min-height:200px"><div class="badge sm b2" style="margin-bottom:14px"><svg><use href="#i-bug"/></svg></div><h3>Ameaça</h3><p>Causa potencial de incidente: atacante, falha ou desastre.</p></div>
+    <div class="card mini" style="--c:#22d3ee;min-height:200px"><div class="badge sm b3" style="margin-bottom:14px"><svg><use href="#i-search"/></svg></div><h3>Vulnerabilidade</h3><p>Fraqueza que a ameaça pode explorar, como senha fraca.</p></div>
+    <div class="card mini" style="--c:#f59e0b;min-height:200px"><div class="badge sm b5" style="margin-bottom:14px"><svg><use href="#i-warn"/></svg></div><h3>Risco</h3><p>Probabilidade × impacto de um evento.</p></div>
+    <div class="card mini" style="--c:#22c55e;min-height:200px"><div class="badge sm b4" style="margin-bottom:14px"><svg><use href="#i-gear"/></svg></div><h3>Controle</h3><p>Medida que modifica o risco: política, processo ou solução técnica.</p></div>
+    <div class="card mini" style="--c:#3b82f6;min-height:200px"><div class="badge sm b1" style="margin-bottom:14px"><svg><use href="#i-cycle"/></svg></div><h3>SGSI</h3><p>Sistema de Gestão de Segurança da Informação, contínuo.</p></div>
+    <div class="card mini" style="--c:#8b5cf6;min-height:200px"><div class="badge sm b2" style="margin-bottom:14px"><svg><use href="#i-doc"/></svg></div><h3>Evidência</h3><p>Registro que prova que o controle foi executado.</p></div>
+    <div class="card mini" style="--c:#f43f5e;min-height:200px"><div class="badge sm b6" style="margin-bottom:14px"><svg><use href="#i-ban"/></svg></div><h3>Não conformidade</h3><p>Descumprimento de requisito, que exige correção.</p></div>
+  </div>
+  <div class="foot"><span>Apresentador: <b>Guilherme Nunes da Cruz</b></span><span>07</span></div>
+</section>
+
+<!-- ============ 8. FAMÍLIA ============ -->
+<section class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">Família de normas</div>
+  <h2>Família <span class="a">ISO/IEC 27000</span></h2>
+  <p class="sub">Cinco normas complementares. Só a ISO/IEC 27001 é certificável; as demais orientam.</p></div>
+  <div class="z" style="display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:36px">
+    <div class="card mini" style="--c:#22d3ee;min-height:430px;text-align:left"><div class="badge b3" style="margin-bottom:18px"><svg><use href="#i-book"/></svg></div><h3>27000</h3><div class="lbl">Vocabulário e visão geral</div><p>Define termos e conceitos da família.</p><div style="margin-top:22px"><span class="chip" style="--c:#94a3b8">Não certificável</span></div></div>
+    <div class="card mini" style="--c:#22c55e;min-height:430px;text-align:left;box-shadow:0 26px 50px rgba(0,0,0,.6),0 0 40px -10px #22c55e"><div class="badge b4" style="margin-bottom:18px"><svg><use href="#i-shield"/></svg></div><h3>27001</h3><div class="lbl">Requisitos do SGSI</div><p>O que o sistema de gestão precisa ter para ser certificado.</p><div style="margin-top:22px"><span class="pill" style="--c:#22c55e">Certificável</span></div></div>
+    <div class="card mini" style="--c:#8b5cf6;min-height:430px;text-align:left"><div class="badge b2" style="margin-bottom:18px"><svg><use href="#i-lock"/></svg></div><h3>27002</h3><div class="lbl">Código de prática: controles</div><p>Diretrizes para escolher e implementar controles.</p><div style="margin-top:22px"><span class="chip" style="--c:#8b5cf6">Orientativa</span></div></div>
+    <div class="card mini" style="--c:#3b82f6;min-height:430px;text-align:left"><div class="badge b1" style="margin-bottom:18px"><svg><use href="#i-flag"/></svg></div><h3>27003</h3><div class="lbl">Orientações de implementação</div><p>Como planejar e conduzir a implantação do SGSI.</p><div style="margin-top:22px"><span class="chip" style="--c:#3b82f6">Orientativa</span></div></div>
+    <div class="card mini" style="--c:#f59e0b;min-height:430px;text-align:left"><div class="badge b5" style="margin-bottom:18px"><svg><use href="#i-chart"/></svg></div><h3>27004</h3><div class="lbl">Medição e monitoramento</div><p>Como medir se o SGSI e os controles funcionam.</p><div style="margin-top:22px"><span class="chip" style="--c:#f59e0b">Orientativa</span></div></div>
+  </div>
+  <div class="foot"><span>Apresentador: <b>Kaua Gabriel Ricardo</b></span><span>08</span></div>
+</section>
+
+<!-- ============ 9. INTEGRAÇÃO ============ -->
+<section class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">Família de normas</div>
+  <h2>Como as normas <span class="a">trabalham juntas</span></h2>
+  <p class="sub">Cada norma responde a uma pergunta diferente, da linguagem comum até a medição.</p></div>
+  <div class="z flow" style="margin-top:50px">
+    <div class="step" style="--c:#22d3ee;--bgc:#0b2a36"><div class="num">0</div><h4>27000</h4><p>O que significam os termos?</p></div>
+    <div class="arrow">›</div>
+    <div class="step" style="--c:#22c55e;--bgc:#0b2a1c"><div class="num">1</div><h4>27001</h4><p>O que o SGSI precisa ter?</p></div>
+    <div class="arrow">›</div>
+    <div class="step" style="--c:#8b5cf6;--bgc:#1c1138"><div class="num">2</div><h4>27002</h4><p>Quais controles aplicar?</p></div>
+    <div class="arrow">›</div>
+    <div class="step" style="--c:#3b82f6;--bgc:#0b1b3d"><div class="num">3</div><h4>27003</h4><p>Como implementar na prática?</p></div>
+    <div class="arrow">›</div>
+    <div class="step" style="--c:#f59e0b;--bgc:#2a1a06"><div class="num">4</div><h4>27004</h4><p>Como medir se funciona?</p></div>
+  </div>
+  <div class="z" style="display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:56px">
+    <div class="card" style="--c:#22c55e"><h3>A 27001 exige escolha justificada</h3><p>A organização escolhe os controles e justifica a escolha. A 27002 ajuda nessa escolha.</p></div>
+    <div class="card" style="--c:#f59e0b"><h3>A 27004 comprova</h3><p>Com indicadores, mostra que os controles realmente funcionam e sustentam a melhoria.</p></div>
+  </div>
+  <div class="foot"><span>Apresentador: <b>Kaua Gabriel Ricardo</b></span><span>09</span></div>
+</section>
+
+<!-- ============ 10. DIVISOR 2 ============ -->
+<section class="slide divider">
+  <div class="bgimg" style="background-image:url(assets/bg/p05.jpg)"></div><div class="haze"></div>
+  <div class="z" style="position:absolute;left:80px;top:170px">
+    <div class="num">02</div>
+    <div class="tag" style="margin-top:20px">Parte 2</div>
+    <h1 style="margin-top:14px">ISO/IEC <span class="a">27001</span></h1>
+    <p class="sub" style="font-size:24px">O SGSI, o ciclo de melhoria, o Anexo A e o caminho para a certificação.</p>
+  </div>
+  <div class="foot"><span>Blocos 3 e 4 · <b>Vinicius Porto Augusto · Kaique Cirqueira</b></span><span>10</span></div>
+</section>
+
+<!-- ============ 11. PDCA ============ -->
+<section class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">ISO/IEC 27001 · SGSI</div>
+  <h2>O SGSI em <span class="a">ciclo</span></h2>
+  <p class="sub">A norma usa o ciclo PDCA: planejar, executar, verificar e agir. O ciclo não termina.</p></div>
+  <div class="z" style="display:flex;align-items:center;gap:60px;margin-top:30px">
+    <svg width="400" height="400" viewBox="0 0 300 300" style="filter:drop-shadow(0 30px 40px rgba(0,0,0,.6));flex:none">
+      <defs>
+        <linearGradient id="pB" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#93c5fd"/><stop offset="1" stop-color="#1d4ed8"/></linearGradient>
+        <linearGradient id="pV" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ddd6fe"/><stop offset="1" stop-color="#6d28d9"/></linearGradient>
+        <linearGradient id="pC" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a5f3fc"/><stop offset="1" stop-color="#0e7490"/></linearGradient>
+        <linearGradient id="pG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#bbf7d0"/><stop offset="1" stop-color="#15803d"/></linearGradient>
+      </defs>
+      <circle cx="150" cy="150" r="118" fill="none" stroke="#14213f" stroke-width="58"/>
+      <circle cx="150" cy="150" r="118" fill="none" stroke="url(#pB)" stroke-width="50" stroke-dasharray="176 742" transform="rotate(-90 150 150)"/>
+      <circle cx="150" cy="150" r="118" fill="none" stroke="url(#pV)" stroke-width="50" stroke-dasharray="176 742" transform="rotate(0 150 150)" style="transform-origin:150px 150px;transform:rotate(0deg)"/>
+      <circle cx="150" cy="150" r="118" fill="none" stroke="url(#pC)" stroke-width="50" stroke-dasharray="176 742" transform="rotate(90 150 150)"/>
+      <circle cx="150" cy="150" r="118" fill="none" stroke="url(#pG)" stroke-width="50" stroke-dasharray="176 742" transform="rotate(180 150 150)"/>
+      <circle cx="150" cy="150" r="72" fill="#0b1430" stroke="#22345e" stroke-width="2"/>
+      <text x="150" y="146" text-anchor="middle" font-size="22" font-weight="800" fill="#fff" font-family="Calibri,Carlito,Arial">PDCA</text>
+      <text x="150" y="168" text-anchor="middle" font-size="13" fill="#9fb0cc" font-family="Calibri,Carlito,Arial">melhoria contínua</text>
+      <text x="233" y="75" text-anchor="middle" font-size="28" font-weight="900" fill="#ffffff" font-family="Calibri,Carlito,Arial">P</text>
+      <text x="233" y="235" text-anchor="middle" font-size="28" font-weight="900" fill="#ffffff" font-family="Calibri,Carlito,Arial">D</text>
+      <text x="67" y="235" text-anchor="middle" font-size="28" font-weight="900" fill="#ffffff" font-family="Calibri,Carlito,Arial">C</text>
+      <text x="67" y="75" text-anchor="middle" font-size="28" font-weight="900" fill="#ffffff" font-family="Calibri,Carlito,Arial">A</text>
+    </svg>
+    <div style="display:grid;gap:18px;flex:1">
+      <div class="card" style="--c:#3b82f6;display:flex;gap:20px;align-items:center;padding:20px 26px"><div class="badge sm b1"><svg><use href="#i-target"/></svg></div><div><h3>Planejar (Plan)</h3><p>Contexto, escopo, política, análise de riscos e objetivos.</p></div></div>
+      <div class="card" style="--c:#8b5cf6;display:flex;gap:20px;align-items:center;padding:20px 26px"><div class="badge sm b2"><svg><use href="#i-gear"/></svg></div><div><h3>Executar (Do)</h3><p>Implementar controles, treinar pessoas e operar o sistema.</p></div></div>
+      <div class="card" style="--c:#22d3ee;display:flex;gap:20px;align-items:center;padding:20px 26px"><div class="badge sm b3"><svg><use href="#i-search"/></svg></div><div><h3>Verificar (Check)</h3><p>Monitorar, medir, auditar internamente e revisar pela direção.</p></div></div>
+      <div class="card" style="--c:#22c55e;display:flex;gap:20px;align-items:center;padding:20px 26px"><div class="badge sm b4"><svg><use href="#i-cycle"/></svg></div><div><h3>Agir (Act)</h3><p>Corrigir falhas, tratar não conformidades e melhorar.</p></div></div>
+    </div>
+  </div>
+  <div class="foot"><span>Apresentador: <b>Vinicius Porto Augusto</b></span><span>11</span></div>
+</section>
+
+<!-- ============ 12. COMPONENTES (pirâmide 3D) ============ -->
+<section class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">ISO/IEC 27001 · Componentes</div>
+  <h2>Componentes do <span class="a">SGSI</span></h2>
+  <p class="sub">Três camadas que sustentam o sistema, da base até o topo.</p></div>
+  <div class="z" style="margin-top:36px;display:grid;gap:18px">
+    <div class="layer" style="--c:#8b5cf6;margin:0 120px;"><div class="badge b2"><svg><use href="#i-scale"/></svg></div><div><div style="font-size:14px;letter-spacing:.14em;color:#c4b5fd;font-weight:700">TOPO</div><h3 style="font-size:24px;color:#fff">Verificação e melhoria</h3><p style="font-size:18px;color:#d8e2f2">Auditoria interna, monitoramento, análise crítica pela direção e ações corretivas.</p></div></div>
+    <div class="layer" style="--c:#22d3ee;margin:0 60px"><div class="badge b3"><svg><use href="#i-shield"/></svg></div><div><div style="font-size:14px;letter-spacing:.14em;color:#67e8f9;font-weight:700">ESTRUTURA</div><h3 style="font-size:24px;color:#fff">Riscos e controles</h3><p style="font-size:18px;color:#d8e2f2">Avaliação de riscos, tratamento e escolha de controles, documentados na SoA.</p></div></div>
+    <div class="layer" style="--c:#3b82f6"><div class="badge b1"><svg><use href="#i-pen"/></svg></div><div><div style="font-size:14px;letter-spacing:.14em;color:#93c5fd;font-weight:700">BASE</div><h3 style="font-size:24px;color:#fff">Política e objetivos</h3><p style="font-size:18px;color:#d8e2f2">Política de segurança, objetivos estratégicos e responsabilidades definidas pela direção.</p></div></div>
+  </div>
+  <div class="foot"><span>Apresentador: <b>Vinicius Porto Augusto</b></span><span>12</span></div>
+</section>
+
+<!-- ============ 13. ANEXO A ============ -->
+<section class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">ISO/IEC 27001 · Anexo A</div>
+  <h2><span class="a">93 controles</span> em 4 temas</h2>
+  <p class="sub">A versão 2022 organiza os controles em quatro temas. A ISO/IEC 27002 detalha cada um.</p></div>
+  <div class="z" style="display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:36px">
+    <div class="card" style="--c:#3b82f6;min-height:340px"><div class="stat" style="--c:#60a5fa">37</div><h3 style="margin-top:20px">Organizacionais</h3><p class="lbl" style="font-size:16px">Políticas, ativos, fornecedores, continuidade, acessos</p></div>
+    <div class="card" style="--c:#8b5cf6;min-height:340px"><div class="stat" style="--c:#a78bfa">8</div><h3 style="margin-top:20px">Pessoas</h3><p class="lbl" style="font-size:16px">Triagem, conscientização, confidencialidade, trabalho remoto</p></div>
+    <div class="card" style="--c:#f59e0b;min-height:340px"><div class="stat" style="--c:#fbbf24">14</div><h3 style="margin-top:20px">Físicos</h3><p class="lbl" style="font-size:16px">Perímetros, entrada, equipamentos, mesas e telas limpas</p></div>
+    <div class="card" style="--c:#22d3ee;min-height:340px"><div class="stat" style="--c:#67e8f9">34</div><h3 style="margin-top:20px">Tecnológicos</h3><p class="lbl" style="font-size:16px">Autenticação, criptografia, backup, configuração, logs</p></div>
+  </div>
+  <div class="z note blue" style="position:absolute;left:80px;right:80px;bottom:70px">Não é preciso aplicar os 93. A organização escolhe os que se aplicam e documenta a decisão na Declaração de Aplicabilidade (SoA).</div>
+  <div class="foot"><span>Apresentador: <b>Vinicius Porto Augusto</b></span><span>13</span></div>
+</section>
+
+<!-- ============ 14. CERTIFICAÇÃO ============ -->
+<section class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">ISO/IEC 27001 · Certificação</div>
+  <h2>Como funciona a <span class="a">certificação</span></h2>
+  <p class="sub">Quem certifica é um organismo independente e acreditado. No Brasil, a acreditação é feita pelo Inmetro.</p></div>
+  <div class="z flow" style="margin-top:52px">
+    <div class="step" style="--c:#3b82f6;--bgc:#0b1b3d"><div class="num">1</div><h4>Preparação</h4><p>SGSI implantado: escopo, política, riscos e SoA</p></div>
+    <div class="arrow">›</div>
+    <div class="step" style="--c:#8b5cf6;--bgc:#1c1138"><div class="num">2</div><h4>Auditoria Estágio 1</h4><p>Análise documental e prontidão</p></div>
+    <div class="arrow">›</div>
+    <div class="step" style="--c:#8b5cf6;--bgc:#1c1138"><div class="num">3</div><h4>Auditoria Estágio 2</h4><p>Verificação da implementação e da eficácia</p></div>
+    <div class="arrow">›</div>
+    <div class="step" style="--c:#22c55e;--bgc:#0b2a1c"><div class="num">4</div><h4>Certificado</h4><p>Válido por 3 anos</p></div>
+    <div class="arrow">›</div>
+    <div class="step" style="--c:#22d3ee;--bgc:#0b2a36"><div class="num">5</div><h4>Vigilância</h4><p>Auditorias anuais de acompanhamento</p></div>
+  </div>
+  <div class="z note amber" style="position:absolute;left:80px;right:80px;bottom:70px">Ponto de atenção: a certificação não é o fim do trabalho. Exige manutenção contínua e recertificação a cada ciclo de 3 anos.</div>
+  <div class="foot"><span>Apresentador: <b>Kaique Cirqueira</b></span><span>14</span></div>
+</section>
+
+<!-- ============ 15. PERGUNTA 1 ============ -->
+<section class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">Pergunta-guia 1</div>
+  <h2>Vale a pena certificar uma <span class="a">pequena empresa</span>?</h2>
+  <div class="qbox" style="margin-top:22px;font-size:20px;display:inline-block">“Vale a pena buscar certificação ISO/IEC 27001 mesmo para pequenas empresas?”</div></div>
+  <div class="z" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;margin-top:40px">
+    <div class="card" style="--c:#22c55e;min-height:300px"><div class="badge b4" style="margin-bottom:18px"><svg><use href="#i-award"/></svg></div><h3>A) Certificar agora</h3><ul><li>+ Credibilidade e acesso a contratos</li><li>+ Confiança de clientes</li><li>− Custo alto e esforço documental</li><li>− Auditorias externas recorrentes</li></ul></div>
+    <div class="card" style="--c:#f59e0b;min-height:300px"><div class="badge b5" style="margin-bottom:18px"><svg><use href="#i-gear"/></svg></div><h3>B) Só implementar</h3><ul><li>+ Menor custo inicial</li><li>+ Redução real de riscos</li><li>− Sem reconhecimento formal</li><li>− Sem vantagem em licitações</li></ul></div>
+    <div class="card" style="--c:#3b82f6;min-height:300px;box-shadow:0 26px 50px rgba(0,0,0,.6),0 0 40px -10px #3b82f6"><div class="badge b1" style="margin-bottom:18px"><svg><use href="#i-check"/></svg></div><h3>C) Abordagem híbrida</h3><div class="lbl">Recomendada</div><ul><li>+ Controles essenciais agora</li><li>+ Certificação quando o mercado exigir</li><li>+ Crescimento sem gasto antecipado</li></ul></div>
+  </div>
+  <div class="z note" style="position:absolute;left:80px;right:80px;bottom:70px">Resposta curta: sim, se houver exigência de mercado. Para a maioria das PMEs, comece pelos controles essenciais e certifique quando houver retorno comercial.</div>
+  <div class="foot"><span>Apresentador: <b>Kaique Cirqueira</b></span><span>15</span></div>
+</section>
+
+<!-- ============ 16. DIVISOR 3 ============ -->
+<section class="slide divider">
+  <div class="bgimg" style="background-image:url(assets/bg/p07.jpg)"></div><div class="haze"></div>
+  <div class="z" style="position:absolute;left:80px;top:170px">
+    <div class="num">03</div>
+    <div class="tag" style="margin-top:20px">Parte 3</div>
+    <h1 style="margin-top:14px">ISO/IEC <span class="a">27002</span></h1>
+    <p class="sub" style="font-size:24px">Controles práticos com exemplos de acessos, criptografia e continuidade.</p>
+  </div>
+  <div class="foot"><span>Blocos 5 e 6 · <b>Gabriel Feitosa · Kawan Kelvin</b></span><span>16</span></div>
+</section>
+
+<!-- ============ 17. CONTROLES ============ -->
+<section class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">ISO/IEC 27002 · Controles</div>
+  <h2>Controles de segurança <span class="a">práticos</span></h2>
+  <p class="sub">A 27002 não é certificável. Descreve como cada controle deve ser feito e quais riscos reduz.</p></div>
+  <table class="z" style="margin-top:36px;font-size:19px">
+    <tr><th>Categoria</th><th>Exemplos de controle</th><th>Risco reduzido</th></tr>
+    <tr><td><span style="display:inline-flex;align-items:center;gap:14px"><span class="badge sm b2"><svg><use href="#i-key"/></svg></span>Gestão de acessos</span></td><td>MFA, RBAC, menor privilégio, revisão periódica</td><td>Acesso indevido</td></tr>
+    <tr><td><span style="display:inline-flex;align-items:center;gap:14px"><span class="badge sm b1"><svg><use href="#i-lock"/></svg></span>Criptografia</span></td><td>HTTPS/TLS, AES-256, gestão de chaves</td><td>Exposição de dados</td></tr>
+    <tr><td><span style="display:inline-flex;align-items:center;gap:14px"><span class="badge sm b3"><svg><use href="#i-disk"/></svg></span>Continuidade</span></td><td>Backup, plano de recuperação de desastres (DR), redundância</td><td>Indisponibilidade</td></tr>
+  </table>
+  <div class="z note blue" style="position:absolute;left:80px;right:80px;bottom:70px">Regra de ouro: todo controle precisa de um responsável, de uma forma de execução e de uma evidência.</div>
+  <div class="foot"><span>Apresentador: <b>Gabriel Feitosa</b></span><span>17</span></div>
+</section>
+
+<!-- ============ 18. GESTÃO DE ACESSOS ============ -->
+<section class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">ISO/IEC 27002 · Controle 1</div>
+  <h2>Gestão de acessos: <span class="a">ciclo de vida</span></h2>
+  <p class="sub">Garantir que o acesso certo esteja com as pessoas certas, no momento certo.</p></div>
+  <div class="z flow" style="margin-top:44px">
+    <div class="step" style="--c:#22c55e;--bgc:#0b2a1c"><div class="num">1</div><h4>Entrada</h4><p>Criação do usuário, permissão mínima e aprovação do gestor</p></div>
+    <div class="arrow">›</div>
+    <div class="step" style="--c:#f59e0b;--bgc:#2a1a06"><div class="num">2</div><h4>Mudança</h4><p>Revisão periódica, ajuste ao mudar de função, registro</p></div>
+    <div class="arrow">›</div>
+    <div class="step" style="--c:#f43f5e;--bgc:#2a0a12"><div class="num">3</div><h4>Saída</h4><p>Revogação imediata e desativação no desligamento</p></div>
+  </div>
+  <div class="z" style="display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:44px">
+    <div class="card" style="--c:#3b82f6"><h3>Controles de apoio</h3><ul><li>MFA em sistemas críticos</li><li>RBAC: permissões por papel</li><li>PAM para contas privilegiadas</li><li>Logs de acesso centralizados</li></ul></div>
+    <div class="card" style="--c:#f59e0b"><h3>Indicador (27004)</h3><div class="lbl">% de usuários revisados no prazo · meta 95%</div><ul><li>Atraso na revogação de desligados é falha crítica</li><li>Alertas automáticos reduzem o esquecimento</li></ul></div>
+  </div>
+  <div class="foot"><span>Apresentador: <b>Gabriel Feitosa</b></span><span>18</span></div>
+</section>
+
+<!-- ============ 19. CRIPTOGRAFIA ============ -->
+<section class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">ISO/IEC 27002 · Controle 2</div>
+  <h2>Criptografia: <span class="a">proteção de dados</span></h2>
+  <p class="sub">Transforma dados legíveis em dados ilegíveis sem a chave correta.</p></div>
+  <div class="z" style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:20px;margin-top:40px">
+    <div class="card mini" style="--c:#3b82f6;min-height:270px"><div class="badge b1" style="margin-bottom:16px"><svg><use href="#i-eye"/></svg></div><h3>Em trânsito</h3><p>HTTPS/TLS 1.2 ou superior para navegação e APIs.</p></div>
+    <div class="card mini" style="--c:#8b5cf6;min-height:270px"><div class="badge b2" style="margin-bottom:16px"><svg><use href="#i-lock"/></svg></div><h3>Em repouso</h3><p>AES-256 para bancos de dados e arquivos.</p></div>
+    <div class="card mini" style="--c:#22d3ee;min-height:270px"><div class="badge b3" style="margin-bottom:16px"><svg><use href="#i-disk"/></svg></div><h3>Backups</h3><p>Cópias criptografadas, inclusive fora do local.</p></div>
+    <div class="card mini" style="--c:#f59e0b;min-height:270px"><div class="badge b5" style="margin-bottom:16px"><svg><use href="#i-key"/></svg></div><h3>Chaves</h3><p>Rotação periódica, armazenamento seguro e acesso restrito.</p></div>
+  </div>
+  <div class="z" style="display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:30px">
+    <div class="note" style="font-size:19px">Impacto: dados interceptados permanecem ilegíveis e a exposição cai.</div>
+    <div class="note blue" style="font-size:19px">Apoio à LGPD (art. 46): medidas técnicas e administrativas de segurança.</div>
+  </div>
+  <div class="foot"><span>Apresentador: <b>Kawan Kelvin</b></span><span>19</span></div>
+</section>
+
+<!-- ============ 20. CONTINUIDADE ============ -->
+<section class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">ISO/IEC 27002 · Controle 3</div>
+  <h2>Continuidade e <span class="a">recuperação de desastres</span></h2>
+  <p class="sub">Garantir que sistemas e dados críticos sejam restaurados com rapidez e segurança.</p></div>
+  <div class="z" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;margin-top:36px">
+    <div class="card" style="--c:#f43f5e"><div class="badge b6" style="margin-bottom:16px"><svg><use href="#i-bug"/></svg></div><h3>Ransomware</h3><p>Sistemas bloqueados por ataque malicioso.</p><ul><li>Backups offline e regulares</li><li>Plano de resposta testado</li></ul></div>
+    <div class="card" style="--c:#f59e0b"><div class="badge b5" style="margin-bottom:16px"><svg><use href="#i-server"/></svg></div><h3>Falha de servidor</h3><p>Indisponibilidade por hardware ou software.</p><ul><li>Redundância e failover</li><li>Monitoramento 24/7</li></ul></div>
+    <div class="card" style="--c:#8b5cf6"><div class="badge b2" style="margin-bottom:16px"><svg><use href="#i-cloud"/></svg></div><h3>Desastre físico</h3><p>Incêndio, inundação ou falha do datacenter.</p><ul><li>Backup em nuvem</li><li>Múltiplos datacenters e testes de DR</li></ul></div>
+  </div>
+  <div class="z" style="display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:30px">
+    <div class="card" style="--c:#22d3ee;display:flex;gap:20px;align-items:center"><div class="badge sm b3"><svg><use href="#i-clock"/></svg></div><div><h3>RTO</h3><p>Quanto tempo posso ficar fora do ar? Ex.: 4 horas.</p></div></div>
+    <div class="card" style="--c:#22c55e;display:flex;gap:20px;align-items:center"><div class="badge sm b4"><svg><use href="#i-disk"/></svg></div><div><h3>RPO</h3><p>Quantos dados posso perder? Ex.: 1 hora.</p></div></div>
+  </div>
+  <div class="foot"><span>Apresentador: <b>Kawan Kelvin</b></span><span>20</span></div>
+</section>
+
+<!-- ============ 21. ANÁLISE EM OPERAÇÃO ============ -->
+<section class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">Análise dos controles</div>
+  <h2>Controles <span class="a">em operação</span></h2>
+  <p class="sub">Exemplo ilustrativo do método: status, eficácia, falha e melhoria.</p></div>
+  <table class="z" style="margin-top:34px;font-size:17px">
+    <tr><th>Controle</th><th>Status</th><th>Eficácia</th><th>Falha identificada</th><th>Melhoria proposta</th></tr>
+    <tr><td>Gestão de acessos</td><td><span class="pill" style="--c:#22c55e">Implementado</span></td><td><span class="chip" style="--c:#22c55e">Alta</span></td><td>Revisões manuais atrasadas e inconsistentes</td><td>Automatizar revisões com alertas e relatórios</td></tr>
+    <tr><td>Backup e continuidade</td><td><span class="pill" style="--c:#f59e0b">Parcial</span></td><td><span class="chip" style="--c:#f59e0b">Média</span></td><td>Testes de restauração pouco frequentes, sem registro</td><td>Testes mensais e evidência de cada ciclo</td></tr>
+    <tr><td>Criptografia</td><td><span class="pill" style="--c:#22c55e">Implementado</span></td><td><span class="chip" style="--c:#22c55e">Alta</span></td><td>Chaves sem rotação definida em sistemas legados</td><td>Política de rotação e ampliação do AES-256</td></tr>
+  </table>
+  <div class="z note amber" style="position:absolute;left:80px;right:80px;bottom:70px">Dados ilustrativos, para demonstrar o método. Substitua por dados reais, se houver.</div>
+  <div class="foot"><span>Apresentador: <b>Kawan Kelvin</b></span><span>21</span></div>
+</section>
+
+<!-- ============ 22. DIVISOR 4 ============ -->
+<section class="slide divider">
+  <div class="bgimg" style="background-image:url(assets/bg/p09.jpg)"></div><div class="haze"></div>
+  <div class="z" style="position:absolute;left:80px;top:170px">
+    <div class="num">04</div>
+    <div class="tag" style="margin-top:20px">Parte 4</div>
+    <h1 style="margin-top:14px">ISO/IEC <span class="a">27003 e 27004</span></h1>
+    <p class="sub" style="font-size:24px">Implementar, accountability e medir se o SGSI funciona.</p>
+  </div>
+  <div class="foot"><span>Blocos 7 e 8 · <b>Marcelo Pina · Gabriel Feitosa · Kaique Cirqueira</b></span><span>22</span></div>
+</section>
+
+<!-- ============ 23. 27003 ============ -->
+<section class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">ISO/IEC 27003</div>
+  <h2>Do conceito à <span class="a">realidade</span></h2>
+  <p class="sub">A 27003 orienta a implantação do SGSI em três etapas, ligadas aos objetivos da organização.</p></div>
+  <div class="z flow" style="margin-top:44px">
+    <div class="step" style="--c:#3b82f6;--bgc:#0b1b3d;min-height:300px"><div class="num">1</div><h4>Preparação</h4><p>Identificar ativos críticos, mapear partes interessadas e definir o escopo do SGSI.</p></div>
+    <div class="arrow">›</div>
+    <div class="step" style="--c:#8b5cf6;--bgc:#1c1138;min-height:300px"><div class="num">2</div><h4>Avaliação de riscos</h4><p>Levantar ameaças e vulnerabilidades por ativo. Classificar por probabilidade e impacto.</p></div>
+    <div class="arrow">›</div>
+    <div class="step" style="--c:#22d3ee;--bgc:#0b2a36;min-height:300px"><div class="num">3</div><h4>Tratamento</h4><p>Definir controle, responsável, evidência e indicador para cada risco.</p></div>
+  </div>
+  <div class="z note blue" style="position:absolute;left:80px;right:80px;bottom:70px">Na prática, uma tabela simples de risco (probabilidade × impacto) já basta para começar.</div>
+  <div class="foot"><span>Apresentador: <b>Marcelo Pina</b></span><span>23</span></div>
+</section>
+
+<!-- ============ 24. ACCOUNTABILITY ============ -->
+<section class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">ISO/IEC 27003 · Accountability</div>
+  <h2>Ciclo de <span class="a">accountability</span></h2>
+  <p class="sub">Um controle só é real quando cada etapa deixa uma evidência que pode ser verificada.</p></div>
+  <div class="z" style="display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:44px">
+    <div class="card mini" style="--c:#3b82f6;text-align:center;min-height:250px;padding:22px 14px"><div class="badge sm b1" style="margin:0 auto 14px"><svg><use href="#i-pen"/></svg></div><h3>Política</h3><p>O controle existe no documento</p></div>
+    <div class="card mini" style="--c:#8b5cf6;text-align:center;min-height:250px;padding:22px 14px"><div class="badge sm b2" style="margin:0 auto 14px"><svg><use href="#i-user"/></svg></div><h3>Responsável</h3><p>Um dono é designado</p></div>
+    <div class="card mini" style="--c:#22d3ee;text-align:center;min-height:250px;padding:22px 14px"><div class="badge sm b3" style="margin:0 auto 14px"><svg><use href="#i-gear"/></svg></div><h3>Execução</h3><p>A ação é feita de fato</p></div>
+    <div class="card mini" style="--c:#22c55e;text-align:center;min-height:250px;padding:22px 14px"><div class="badge sm b4" style="margin:0 auto 14px"><svg><use href="#i-doc"/></svg></div><h3>Evidência</h3><p>Logs, registros e tickets</p></div>
+    <div class="card mini" style="--c:#f59e0b;text-align:center;min-height:250px;padding:22px 14px"><div class="badge sm b5" style="margin:0 auto 14px"><svg><use href="#i-chart"/></svg></div><h3>Indicador</h3><p>Mede o desempenho</p></div>
+    <div class="card mini" style="--c:#f43f5e;text-align:center;min-height:250px;padding:22px 14px"><div class="badge sm b6" style="margin:0 auto 14px"><svg><use href="#i-search"/></svg></div><h3>Auditoria</h3><p>Verifica a conformidade</p></div>
+  </div>
+  <div class="z note" style="position:absolute;left:80px;right:80px;bottom:70px">Os resultados da auditoria alimentam a melhoria, que volta para a política. Sem evidência e medição, o controle existe apenas no papel.</div>
+  <div class="foot"><span>Apresentador: <b>Marcelo Pina</b></span><span>24</span></div>
+</section>
+
+<!-- ============ 25. PERGUNTA 2 ============ -->
+<section class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">Pergunta-guia 2</div>
+  <h2>Como evitar que os controles fiquem <span class="a">só no papel</span>?</h2>
+  <div class="qbox" style="margin-top:22px;font-size:20px;display:inline-block">“Como garantir que os controles da 27002 não fiquem apenas no papel?”</div></div>
+  <div class="z" style="display:grid;grid-template-columns:1.5fr 1fr;gap:28px;margin-top:38px">
+    <div style="display:grid;gap:10px">
+      <div class="card mini" style="--c:#3b82f6;padding:10px 22px;display:flex;align-items:center;gap:18px"><div class="badge sm b1"><svg><use href="#i-user"/></svg></div><div><h3>1. Dono nomeado</h3><p>Responsável com prazo e autoridade para cumprir.</p></div></div>
+      <div class="card mini" style="--c:#8b5cf6;padding:10px 22px;display:flex;align-items:center;gap:18px"><div class="badge sm b2"><svg><use href="#i-doc"/></svg></div><div><h3>2. Evidência automática</h3><p>Logs, tickets e relatórios gerados pelo sistema.</p></div></div>
+      <div class="card mini" style="--c:#22d3ee;padding:10px 22px;display:flex;align-items:center;gap:18px"><div class="badge sm b3"><svg><use href="#i-disk"/></svg></div><div><h3>3. Teste periódico</h3><p>Restauração de backup em ambiente isolado, registrada.</p></div></div>
+      <div class="card mini" style="--c:#f59e0b;padding:10px 22px;display:flex;align-items:center;gap:18px"><div class="badge sm b5"><svg><use href="#i-target"/></svg></div><div><h3>4. Indicador com meta</h3><p>Um número que mostra se o controle funciona.</p></div></div>
+      <div class="card mini" style="--c:#22c55e;padding:10px 22px;display:flex;align-items:center;gap:18px"><div class="badge sm b4"><svg><use href="#i-search"/></svg></div><div><h3>5. Auditoria e análise crítica</h3><p>Verificam a execução real, periodicamente.</p></div></div>
+    </div>
+    <div class="card" style="--c:#f43f5e;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:18px">
+      <div class="badge b6"><svg><use href="#i-warn"/></svg></div>
+      <h3 style="font-size:30px">Regra prática</h3>
+      <p style="font-size:21px">Se o controle não tem evidência recente e datada, ele é só documento.</p>
+      <p style="font-size:19px;color:var(--muted)">Pergunte sempre: quem fez, quando e onde está o registro?</p>
+    </div>
+  </div>
+  <div class="foot"><span>Apresentador: <b>Marcelo Pina</b></span><span>25</span></div>
+</section>
+
+<!-- ============ 26. COMO SABER SE FUNCIONA (donut) ============ -->
+<section class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">ISO/IEC 27004 · Medição</div>
+  <h2>Como saber se o controle <span class="a">funciona</span>?</h2>
+  <p class="sub">Um indicador transforma uma opinião em um número comparável com uma meta.</p></div>
+  <div class="z" style="display:grid;grid-template-columns:1fr 1.1fr;gap:40px;margin-top:34px;align-items:center">
+    <div class="card" style="--c:#3b82f6">
+      <h3>Exemplo</h3>
+      <ul style="margin-top:12px">
+        <li><b>Controle:</b> revisão de acessos</li>
+        <li><b>Indicador:</b> % de usuários revisados no prazo</li>
+        <li><b>Meta:</b> 95%</li>
+        <li><b>Resultado:</b> 87%</li>
+        <li><b>Ação:</b> automatizar e criar alertas</li>
+      </ul>
+    </div>
+    <div class="card" style="--c:#f59e0b;display:flex;align-items:center;gap:40px">
+      <svg width="260" height="260" viewBox="0 0 220 220" style="flex:none;filter:drop-shadow(0 20px 26px rgba(0,0,0,.55))">
+        <defs><linearGradient id="dn" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#93c5fd"/><stop offset="1" stop-color="#1d4ed8"/></linearGradient></defs>
+        <circle cx="110" cy="110" r="88" fill="none" stroke="#14213f" stroke-width="30"/>
+        <circle cx="110" cy="110" r="88" fill="none" stroke="url(#dn)" stroke-width="30" stroke-dasharray="492 553" transform="rotate(-90 110 110)" stroke-linecap="round"/>
+        <circle cx="110" cy="110" r="88" fill="none" stroke="#fbbf24" stroke-width="4" stroke-dasharray="3 6" transform="rotate(-90 110 110)" opacity="0"/>
+        <circle cx="110" cy="110" r="58" fill="#0b1430"/>
+        <text x="110" y="122" text-anchor="middle" font-size="44" font-weight="900" fill="#fff" font-family="Calibri,Carlito,Arial">87%</text>
+      </svg>
+      <div>
+        <div class="chip" style="--c:#f59e0b;margin-bottom:14px">Meta 95%</div>
+        <h3 style="font-size:28px">Gap de 8 pontos</h3>
+        <p style="font-size:19px;margin-top:10px">O controle existe e funciona, mas não atinge a meta. Sem medição, esse gap seria invisível.</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>Apresentador: <b>Gabriel Feitosa</b></span><span>26</span></div>
+</section>
+
+<!-- ============ 27. TIPOS DE INDICADORES ============ -->
+<section class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">ISO/IEC 27004 · Indicadores</div>
+  <h2>Indicadores <span class="a">essenciais</span> por tipo</h2>
+  <p class="sub">Resultado, processo e conformidade. Usamos os três para ter uma visão completa.</p></div>
+  <div class="z" style="display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:36px">
+    <div class="card" style="--c:#3b82f6;min-height:380px"><div class="badge b1" style="margin-bottom:18px"><svg><use href="#i-trend"/></svg></div><h3>A) Resultado</h3><div class="lbl">O que aconteceu</div><ul><li>Incidentes resolvidos no prazo</li><li>Vazamentos de dados: zero</li><li>Tempo médio de resposta a incidentes</li><li>Redução de vulnerabilidades críticas</li></ul></div>
+    <div class="card" style="--c:#8b5cf6;min-height:380px"><div class="badge b2" style="margin-bottom:18px"><svg><use href="#i-gear"/></svg></div><h3>B) Processo</h3><div class="lbl">Como foi feito</div><ul><li>Revisões de acesso no prazo</li><li>Testes de backup mensais</li><li>Auditorias internas concluídas</li><li>Controles conforme o plano</li></ul></div>
+    <div class="card" style="--c:#22c55e;min-height:380px"><div class="badge b4" style="margin-bottom:18px"><svg><use href="#i-check"/></svg></div><h3>C) Conformidade</h3><div class="lbl">Se cumpre o requisito</div><ul><li>Funcionários treinados em segurança</li><li>Não conformidades tratadas no prazo</li><li>Políticas revisadas anualmente</li><li>Evidências auditáveis</li></ul></div>
+  </div>
+  <div class="foot"><span>Apresentador: <b>Gabriel Feitosa</b></span><span>27</span></div>
+</section>
+
+<!-- ============ 28. PERGUNTA 3 ============ -->
+<section class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">Pergunta-guia 3</div>
+  <h2>Quais métricas são mais <span class="a">úteis</span>?</h2>
+  <div class="qbox" style="margin-top:22px;font-size:20px;display:inline-block">“Quais métricas são mais úteis para avaliar a eficácia do SGSI (27004)?”</div></div>
+  <div class="z" style="display:grid;grid-template-columns:1.6fr 1fr;gap:28px;margin-top:34px">
+    <table style="font-size:17px">
+      <tr><th>Métrica</th><th>Por que é útil</th></tr>
+      <tr><td>% de revisões de acesso no prazo</td><td>Mostra se a gestão de acessos funciona</td></tr>
+      <tr><td>% de testes de restauração bem-sucedidos</td><td>Prova que o backup realmente serve</td></tr>
+      <tr><td>Tempo médio de detecção e de resposta</td><td>Mede a capacidade de reagir</td></tr>
+      <tr><td>Incidentes por trimestre e impacto</td><td>Mostra a tendência do risco</td></tr>
+      <tr><td>% de controles com evidência válida</td><td>Separa o controle real do papel</td></tr>
+      <tr><td>Não conformidades e prazo de tratamento</td><td>Mostra se a melhoria acontece</td></tr>
+    </table>
+    <div class="card" style="--c:#f59e0b"><div class="badge b5" style="margin-bottom:18px"><svg><use href="#i-check"/></svg></div><h3>Critério de escolha</h3><ul><li>Definição clara</li><li>Fórmula</li><li>Meta</li><li>Responsável</li><li>Frequência de medição</li></ul><p style="margin-top:16px;font-size:18px">Poucas métricas, bem escolhidas, valem mais que muitas.</p></div>
+  </div>
+  <div class="foot"><span>Apresentador: <b>Kaique Cirqueira</b></span><span>28</span></div>
+</section>
+
+<!-- ============ 29. DIVISOR 5 ============ -->
+<section class="slide divider">
+  <div class="bgimg" style="background-image:url(assets/bg/p11.jpg)"></div><div class="haze"></div>
+  <div class="z" style="position:absolute;left:80px;top:170px">
+    <div class="num">05</div>
+    <div class="tag" style="margin-top:20px">Parte 5</div>
+    <h1 style="margin-top:14px">Estudo de caso <span class="a">e análise</span></h1>
+    <p class="sub" style="font-size:24px">Uma empresa certificada, o que funcionou, o que falhou e o que melhorar.</p>
+  </div>
+  <div class="foot"><span>Bloco 9 · <b>Eduardo Santana</b></span><span>29</span></div>
+</section>
+
+<!-- ============ 30. CASO BB ============ -->
+<section class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">Estudo de caso · ISO/IEC 27001</div>
+  <h2>Estudo de caso: <span class="a">Banco do Brasil</span></h2>
+  <p class="sub">Instituição financeira regulada, com dados pessoais de milhões de clientes e operação crítica 24/7.</p></div>
+  <div class="z" style="display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:36px">
+    <div class="card" style="--c:#3b82f6;min-height:340px"><div class="badge b1" style="margin-bottom:18px"><svg><use href="#i-building"/></svg></div><h3>Perfil</h3><ul><li>Setor financeiro regulado</li><li>Presença nacional e internacional</li><li>Grande volume de transações</li><li>Dados de milhões de clientes</li></ul></div>
+    <div class="card" style="--c:#f43f5e;min-height:340px"><div class="badge b6" style="margin-bottom:18px"><svg><use href="#i-warn"/></svg></div><h3>Ativos e riscos</h3><ul><li>Dados pessoais e financeiros</li><li>Multas da LGPD</li><li>Fraudes e ransomware</li><li>Indisponibilidade com perdas</li></ul></div>
+    <div class="card" style="--c:#22c55e;min-height:340px"><div class="badge b4" style="margin-bottom:18px"><svg><use href="#i-award"/></svg></div><h3>Caminho até a certificação</h3><ul><li>Mapeamento de ativos</li><li>Avaliação de riscos</li><li>Definição de controles</li><li>Auditorias internas</li><li>Certificação ISO/IEC 27001</li></ul></div>
+  </div>
+  <div class="z note amber" style="position:absolute;left:80px;right:80px;bottom:70px">Fonte a confirmar: certificação e números devem ser checados em relatórios públicos do Banco do Brasil antes da apresentação.</div>
+  <div class="foot"><span>Apresentador: <b>Eduardo Santana</b></span><span>30</span></div>
+</section>
+
+<!-- ============ 31. CONTROLES EFICAZES ============ -->
+<section class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">Estudo de caso · Eficácia</div>
+  <h2>Controles <span class="a">eficazes</span> e por quê</h2>
+  <p class="sub">Controles que reduzem o risco de forma verificável quando bem operados.</p></div>
+  <div class="z" style="display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:36px">
+    <div class="card" style="--c:#3b82f6;min-height:330px"><div class="badge b1" style="width:96px;height:96px;margin-bottom:20px"><svg style="width:46px;height:46px"><use href="#i-shield"/></svg></div><h3>Autenticação multifator</h3><p>Aplicada aos acessos críticos. Uma senha roubada, sozinha, deixa de bastar para entrar.</p></div>
+    <div class="card" style="--c:#8b5cf6;min-height:330px"><div class="badge b2" style="width:96px;height:96px;margin-bottom:20px"><svg style="width:46px;height:46px"><use href="#i-lock"/></svg></div><h3>Criptografia</h3><p>Aplicada a bancos de dados e backups. Dado copiado indevidamente permanece ilegível sem a chave.</p></div>
+    <div class="card" style="--c:#22d3ee;min-height:330px"><div class="badge b3" style="width:96px;height:96px;margin-bottom:20px"><svg style="width:46px;height:46px"><use href="#i-cloud"/></svg></div><h3>Plano de continuidade</h3><p>Operação em múltiplos datacenters, com testes de recuperação. Reduz o impacto de falhas.</p></div>
+  </div>
+  <div class="z note" style="position:absolute;left:80px;right:80px;bottom:70px">Critério de eficácia: o controle reduz o risco que deveria reduzir, e isso pode ser verificado por evidência.</div>
+  <div class="foot"><span>Apresentador: <b>Eduardo Santana</b></span><span>31</span></div>
+</section>
+
+<!-- ============ 32. FALHAS ============ -->
+<section class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">Estudo de caso · Falhas</div>
+  <h2>Falhas e <span class="a">oportunidades</span></h2>
+  <p class="sub">Mesmo organizações maduras têm falhas. O ponto é identificá-las e tratá-las com evidência.</p></div>
+  <div class="z" style="display:grid;gap:20px;margin-top:34px">
+    <div class="card" style="--c:#f43f5e;display:grid;grid-template-columns:90px 1fr 1fr;gap:26px;align-items:center;padding:24px 30px"><div class="badge b6"><svg><use href="#i-clock"/></svg></div><div><h3>Revisão manual de acessos atrasada</h3><p>Falha: revisões fora do prazo e inconsistentes.</p></div><div><p style="color:#86efac"><b>Melhoria:</b> automatizar com PAM e alertas de revisão.</p></div></div>
+    <div class="card" style="--c:#f59e0b;display:grid;grid-template-columns:90px 1fr 1fr;gap:26px;align-items:center;padding:24px 30px"><div class="badge b5"><svg><use href="#i-user"/></svg></div><div><h3>Baixa conscientização</h3><p>Falha: colaboradores pouco preparados para ameaças.</p></div><div><p style="color:#86efac"><b>Melhoria:</b> treinamento intensivo e campanhas com medição.</p></div></div>
+    <div class="card" style="--c:#8b5cf6;display:grid;grid-template-columns:90px 1fr 1fr;gap:26px;align-items:center;padding:24px 30px"><div class="badge b2"><svg><use href="#i-disk"/></svg></div><div><h3>Testes de backup insuficientes</h3><p>Falha: testes esporádicos e sem registro.</p></div><div><p style="color:#86efac"><b>Melhoria:</b> testes mensais automatizados em ambiente isolado.</p></div></div>
+  </div>
+  <div class="foot"><span>Apresentador: <b>Eduardo Santana</b></span><span>32</span></div>
+</section>
+
+<!-- ============ 33. ANÁLISE CONSOLIDADA ============ -->
+<section class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">Estudo de caso · Análise consolidada</div>
+  <h2>Análise <span class="a">consolidada</span></h2>
+  <p class="sub">Resposta ao requisito: eficazes, falhas e melhorias para os controles da 27002.</p></div>
+  <table class="z" style="margin-top:34px;font-size:18px">
+    <tr><th>Controle (27002)</th><th>Eficaz</th><th>Falha ou limitação</th><th>Pode melhorar</th></tr>
+    <tr><td>Gestão de acessos</td><td>MFA e menor privilégio</td><td>Revisões manuais atrasadas</td><td>Automatizar revisões e alertas</td></tr>
+    <tr><td>Criptografia</td><td>TLS e AES-256</td><td>Chaves sem rotação em legados</td><td>Política de rotação e cobertura total</td></tr>
+    <tr><td>Continuidade e DR</td><td>Redundância e múltiplos datacenters</td><td>Testes pouco frequentes</td><td>Testes mensais com evidência</td></tr>
+    <tr><td>Conscientização</td><td>Treinamento básico existente</td><td>Baixa adesão</td><td>Campanhas contínuas e medição</td></tr>
+  </table>
+  <div class="z note" style="position:absolute;left:80px;right:80px;bottom:70px">Conclusão: um controle eficaz hoje precisa de medição e revisão para continuar eficaz amanhã.</div>
+  <div class="foot"><span>Apresentador: <b>Eduardo Santana</b></span><span>33</span></div>
+</section>
+
+<!-- ============ 34. PROCESSO, NÃO DESTINO ============ -->
+<section class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">Fechamento</div>
+  <h2>Segurança é <span class="a">processo</span>, não destino</h2>
+  <p class="sub">A segurança não é um produto que se compra. É um processo que se constrói controle por controle.</p></div>
+  <div class="z" style="display:grid;grid-template-columns:1fr 1.3fr 1fr;gap:26px;margin-top:40px;align-items:center">
+    <div class="card" style="--c:#f43f5e;min-height:290px"><div class="badge b6" style="margin-bottom:16px"><svg><use href="#i-ban"/></svg></div><h3>Mindset estático</h3><p>“Instalamos o antivírus, estamos seguros.”</p></div>
+    <div class="card" style="--c:#3b82f6;min-height:340px;text-align:center"><svg width="250" height="250" viewBox="0 0 200 200" style="margin:0 auto;display:block;filter:drop-shadow(0 20px 26px rgba(0,0,0,.55))">
+      <defs><linearGradient id="cy" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#93c5fd"/><stop offset="1" stop-color="#6d28d9"/></linearGradient></defs>
+      <circle cx="100" cy="100" r="78" fill="none" stroke="url(#cy)" stroke-width="18" stroke-dasharray="450 540" transform="rotate(-90 100 100)"/>
+      <circle cx="100" cy="100" r="78" fill="none" stroke="#14213f" stroke-width="18" stroke-dasharray="0 0"/>
+      <circle cx="100" cy="100" r="50" fill="#0b1430"/>
+      <text x="100" y="98" text-anchor="middle" font-size="18" font-weight="800" fill="#fff" font-family="Calibri,Carlito,Arial">CICLO</text>
+      <text x="100" y="118" text-anchor="middle" font-size="13" fill="#9fb0cc" font-family="Calibri,Carlito,Arial">contínuo</text>
+    </svg>
+      <p style="margin-top:16px;font-size:19px;color:#e4ecf8">Avaliar · Implementar · Monitorar · Auditar · Melhorar · Repetir</p></div>
+    <div class="card" style="--c:#22c55e;min-height:290px"><div class="badge b4" style="margin-bottom:16px"><svg><use href="#i-cycle"/></svg></div><h3>Mindset dinâmico</h3><p>Segurança é revisada, medida e aprimorada continuamente.</p></div>
+  </div>
+  <div class="foot"><span>Apresentador: <b>Rômulo Gomes Cavalcante</b></span><span>34</span></div>
+</section>
+
+<!-- ============ 35. O QUE LEVAR ============ -->
+<section class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">Fechamento</div>
+  <h2>O que <span class="a">levar</span> desta aula</h2></div>
+  <div class="z" style="display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:40px">
+    <div class="card" style="--c:#3b82f6;min-height:390px"><div class="badge b1" style="margin-bottom:20px"><svg><use href="#i-book"/></svg></div><h3 style="font-size:28px">Conceitos</h3><ul><li>Segurança = confidencialidade, integridade e disponibilidade</li><li>ISO 27001 é o sistema de gestão, certificável</li><li>ISO 27002 traz os controles práticos</li></ul></div>
+    <div class="card" style="--c:#8b5cf6;min-height:390px"><div class="badge b2" style="margin-bottom:20px"><svg><use href="#i-users"/></svg></div><h3 style="font-size:28px">Gestão</h3><ul><li>SGSI exige responsáveis, execução, evidência e auditoria</li><li>Indicadores medem se os controles funcionam</li><li>Controle sem evidência é só documento</li></ul></div>
+    <div class="card" style="--c:#22d3ee;min-height:390px"><div class="badge b3" style="margin-bottom:20px"><svg><use href="#i-hand"/></svg></div><h3 style="font-size:28px">Prática</h3><ul><li>Certificação importa, mas a prática diária é essencial</li><li>Para PMEs, a abordagem híbrida costuma ser a mais segura</li><li>Melhoria contínua é o coração da segurança</li></ul></div>
+  </div>
+  <div class="foot"><span>Apresentador: <b>Rômulo Gomes Cavalcante</b></span><span>35</span></div>
+</section>
+
+<!-- ============ 36. RESPOSTAS-GUIA ============ -->
+<section class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">Fechamento</div>
+  <h2>Respostas às <span class="a">três perguntas-guia</span></h2></div>
+  <div class="z" style="display:grid;gap:22px;margin-top:40px">
+    <div class="card" style="--c:#3b82f6;display:flex;gap:26px;align-items:center;padding:26px 32px"><div class="badge b1"><svg><use href="#i-award"/></svg></div><div><h3>Vale a pena certificar uma PME?</h3><p>Depende do mercado. Se há exigência contratual, sim. Caso contrário, implemente os controles essenciais e certifique depois.</p></div></div>
+    <div class="card" style="--c:#8b5cf6;display:flex;gap:26px;align-items:center;padding:26px 32px"><div class="badge b2"><svg><use href="#i-hand"/></svg></div><div><h3>Como evitar controles só no papel?</h3><p>Dono nomeado, evidência automática, testes periódicos, indicador com meta e auditoria.</p></div></div>
+    <div class="card" style="--c:#22d3ee;display:flex;gap:26px;align-items:center;padding:26px 32px"><div class="badge b3"><svg><use href="#i-chart"/></svg></div><div><h3>Quais métricas da 27004 são mais úteis?</h3><p>Poucas e bem definidas: acessos no prazo, testes de restauração, tempo de resposta, controles com evidência e não conformidades.</p></div></div>
+  </div>
+  <div class="foot"><span>Apresentador: <b>Rômulo Gomes Cavalcante</b></span><span>36</span></div>
+</section>
+
+<!-- ============ 37. REFERÊNCIAS ============ -->
+<section class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">Referências</div><h2><span class="a">Referências</span></h2></div>
+  <div class="z" style="display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:36px">
+    <div class="card" style="--c:#3b82f6"><h3>Normas ISO/IEC</h3><ul style="margin-top:14px">
+      <li>ISO/IEC 27000:2018 – Vocabulário e visão geral</li>
+      <li>ISO/IEC 27001:2022 – Requisitos do SGSI</li>
+      <li>ISO/IEC 27002:2022 – Controles de segurança</li>
+      <li>ISO/IEC 27003:2017 – Orientações de implementação</li>
+      <li>ISO/IEC 27004:2016 – Monitoramento e medição</li>
+      <li>ABNT NBR ISO/IEC 27001 e 27002 – edições nacionais (conferir a vigente)</li></ul></div>
+    <div class="card" style="--c:#22d3ee"><h3>Órgãos e legislação</h3><ul style="margin-top:14px">
+      <li>ABNT: www.abnt.org.br</li>
+      <li>Inmetro (acreditação de certificadoras): www.inmetro.gov.br</li>
+      <li>ANPD: www.gov.br/anpd</li>
+      <li>Lei nº 13.709/2018 (LGPD)</li>
+      <li>Banco do Brasil: relatórios públicos (validar antes da aula)</li></ul></div>
+  </div>
+  <div class="foot"><span>Apresentador: <b>Rômulo Gomes Cavalcante</b></span><span>37</span></div>
+</section>
+
+<!-- ============ 38. PERGUNTAS ============ -->
+<section class="slide cover">
+  <div class="bgimg" style="background-image:url(assets/bg/p13.jpg)"></div><div class="haze"></div>
+  <div class="z" style="position:absolute;left:80px;top:250px;width:760px">
+    <div class="tag">Encerramento</div>
+    <h1 style="font-size:130px;margin-top:20px">Perguntas?</h1>
+    <p class="sub" style="font-size:24px;margin-top:24px">Obrigado. Dúvidas sobre um bloco podem ser respondidas pelo apresentador indicado no rodapé de cada slide.</p>
+  </div>
+  <svg class="z" style="position:absolute;right:90px;top:170px;width:440px;height:440px" viewBox="0 0 200 200">
+    <circle cx="100" cy="100" r="92" fill="none" stroke="#8b5cf6" stroke-width="2" opacity=".5"/>
+    <circle cx="100" cy="100" r="74" fill="none" stroke="#3b82f6" stroke-width="2" opacity=".6"/>
+    <circle cx="100" cy="100" r="56" fill="none" stroke="#22d3ee" stroke-width="2" opacity=".7"/>
+    <circle cx="100" cy="100" r="40" fill="url(#gBlue)" opacity=".9" style="filter:drop-shadow(0 16px 24px rgba(0,0,0,.6))"/>
+    <text x="100" y="128" text-anchor="middle" font-size="84" font-weight="900" fill="#fff" font-family="Calibri,Carlito,Arial">?</text>
+  </svg>
+  <div class="foot"><span>ISO/IEC 27000 · 2026</span><span>38</span></div>
+</section>
+
+<!-- ============ 39. GLOSSÁRIO ============ -->
+<section class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">Apêndice A · consulta</div><h2>Glossário <span class="a">rápido</span></h2></div>
+  <table class="z" style="margin-top:30px;font-size:17px">
+    <tr><th>Sigla</th><th>Significado</th><th>Sigla</th><th>Significado</th></tr>
+    <tr><td>SGSI</td><td>Sistema de Gestão de Segurança da Informação</td><td>MFA</td><td>Autenticação multifator</td></tr>
+    <tr><td>SoA</td><td>Declaração de Aplicabilidade (Statement of Applicability)</td><td>RBAC</td><td>Controle de acesso baseado em papéis</td></tr>
+    <tr><td>PDCA</td><td>Planejar, Executar (Do), Verificar (Check), Agir (Act)</td><td>PAM</td><td>Gestão de acessos privilegiados</td></tr>
+    <tr><td>RTO</td><td>Tempo máximo aceitável fora do ar</td><td>TLS</td><td>Protocolo de comunicação segura</td></tr>
+    <tr><td>RPO</td><td>Perda máxima de dados aceitável</td><td>AES</td><td>Criptografia simétrica</td></tr>
+    <tr><td>DR</td><td>Recuperação de desastres (Disaster Recovery)</td><td>MTTD / MTTR</td><td>Tempo médio de detecção / de resposta</td></tr>
+    <tr><td>LGPD</td><td>Lei Geral de Proteção de Dados</td><td>ANPD</td><td>Autoridade Nacional de Proteção de Dados</td></tr>
+  </table>
+  <div class="foot"><span>Apresentação do grupo</span><span>39</span></div>
+</section>
+
+<!-- ============ 40. NÚMEROS ============ -->
+<section class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">Apêndice B · consulta</div><h2>Números para <span class="a">memorizar</span></h2></div>
+  <div class="z" style="display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:40px">
+    <div class="card mini" style="--c:#3b82f6;text-align:center;min-height:200px"><div class="stat" style="font-size:84px;--c:#60a5fa">3</div><p style="margin-top:10px">pilares: CIA</p></div>
+    <div class="card mini" style="--c:#8b5cf6;text-align:center;min-height:200px"><div class="stat" style="font-size:84px;--c:#a78bfa">5</div><p style="margin-top:10px">normas da família</p></div>
+    <div class="card mini" style="--c:#22d3ee;text-align:center;min-height:200px"><div class="stat" style="font-size:84px;--c:#67e8f9">93</div><p style="margin-top:10px">controles no Anexo A (2022)</p></div>
+    <div class="card mini" style="--c:#f59e0b;text-align:center;min-height:200px"><div class="stat" style="font-size:84px;--c:#fbbf24">4</div><p style="margin-top:10px">temas do Anexo A</p></div>
+    <div class="card mini" style="--c:#22c55e;text-align:center;min-height:200px"><div class="stat" style="font-size:84px;--c:#86efac">2</div><p style="margin-top:10px">estágios de auditoria de certificação</p></div>
+    <div class="card mini" style="--c:#f43f5e;text-align:center;min-height:200px"><div class="stat" style="font-size:84px;--c:#fda4af">3</div><p style="margin-top:10px">anos de validade do certificado</p></div>
+    <div class="card mini" style="--c:#3b82f6;text-align:center;min-height:200px"><div class="stat" style="font-size:64px;--c:#93c5fd">95 / 87</div><p style="margin-top:10px">meta x resultado do exemplo</p></div>
+    <div class="card mini" style="--c:#22d3ee;text-align:center;min-height:200px"><div class="stat" style="font-size:84px;--c:#67e8f9">3-2-1</div><p style="margin-top:10px">backup: 3 cópias, 2 mídias, 1 fora</p></div>
+  </div>
+  <div class="foot"><span>Apresentação do grupo</span><span>40</span></div>
+</section>
+
+    </div>
+  </div>
+  <button id="prev" class="navbtn" aria-label="Slide anterior">&#8249;</button>
+  <button id="next" class="navbtn" aria-label="Próximo slide">&#8250;</button>
+</main>
+<div id="counter">01 / 40</div>
+<aside id="notes" hidden><div id="notes-h"></div><div id="notes-t"></div></aside>
+</body>
+</html>
