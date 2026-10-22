@@ -1,3 +1,5 @@
+ATENÇÃO: este guia é da versão antiga (33 slides). A versão atual, com 63 slides, está na pasta estudo/ (um arquivo por apresentador).
+
 GUIA DOS APRESENTADORES - ISO/IEC 27000
 Apresentação de 3h | 9 apresentadores + abertura e fechamento
 
