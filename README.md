@@ -1,9 +1,9 @@
 # ISO/IEC 27000 - Apresentação
 
-Apresentação em 62 slides (16:9, 1440x810), pensada para 3 horas e 9 apresentadores em HTML/CSS/JS puro, com ícones SVG, ilustrações e gráficos. Sem dependências e sem CDN.
+Apresentação em 59 slides (16:9, 1440x810), pensada para 3 horas e 9 apresentadores em HTML/CSS/JS puro, com ícones SVG, ilustrações e gráficos. Sem dependências e sem CDN.
 
 ## Estrutura
-- index.html: marcação dos 62 slides (cada section tem data-id e data-bloco) e o sprite SVG (ícones e gradientes) no topo.
+- index.html: marcação dos 59 slides (cada section tem data-id e data-bloco) e o sprite SVG (ícones e gradientes) no topo.
 - css/styles.css: todo o CSS (variáveis em :root, .slide, .card, .badge, .flow, .layer etc.), o modo apresentação e o @media print.
 - js/app.js: navegação, efeitos de entrada, contadores animados, tela cheia, notas e cronômetro.
 - js/notas.js: notas do apresentador por slide, indexadas pelo data-id ({ cia: "...", ... }). O app.js copia cada nota para o atributo data-notas da sua section ao carregar e acrescenta a pergunta de interação e o aviso de fim de bloco.

@@ -3,10 +3,9 @@
    Itens marcados com [REVISAR] não constam no guia original e foram escritos de forma curta. */
 window.NOTAS = {
   capa: "ABERTURA (Rômulo). Cumprimente, apresente o grupo e o tema.\nDiga o plano: nove apresentadores, cinco partes, três perguntas-guia para responder ao final.\nLEMBRE: não leia a lista de alunos; cada um se apresenta no seu bloco.",
-  roteiro: "Mostre a ordem dos blocos e quem fala em cada um. Não cite horários.\nLEMBRE: se o tempo apertar, corte o exemplo, nunca a definição.",
-  requisitos: "Mostre que todo item exigido no trabalho tem um responsável.\nCite as três perguntas-guia: certificação para PMEs (Kaique), controles só no papel (Marcelo), métricas da 27004 (Gabriel).",
+  roteiro: "Cite os oito tópicos em uma frase cada, sem ler cartão por cartão e sem falar de horários ou de quem apresenta.\nLEMBRE: se o tempo apertar, corte o exemplo, nunca a definição.",
+  requisitos: "Mostre o que a atividade pede: teoria das cinco normas, estudo de caso de empresa certificada, controles da 27002 em casos reais e a análise (eficazes, falhas e melhorias).\nCite as três perguntas-guia (certificar PME, controles só no papel, métricas da 27004) e diga que serão respondidas ao longo da aula e resumidas no final.\nTransição: \"Vamos começar pelos fundamentos, com o Kaua.\"",
   contexto: "Contexto das ameaças. Faça a pergunta à turma e deixe uma ou duas respostas.\nOs quatro riscos: vazamento de dados, ransomware, acesso indevido e roubo de propriedade intelectual.\nP: \"Isso é só para empresas grandes?\" R: Não. Pequenas empresas são alvo frequente, porque costumam ter controles mais fracos.",
-  trilha: "Explique a trilha: do conceito (fundamentos e família) até a evidência (27003 e 27004) e o caso real.\nMostre as três perguntas que serão respondidas e em que bloco cada uma aparece.\nTransição: \"Vamos começar pelos fundamentos, com o Kaua.\"",
 
   "div-fund": "Divisória do bloco 1. Transição: \"Agora o Kaua vai mostrar a base de tudo: os três pilares e o vocabulário.\"",
   cia: "Confidencialidade: quem pode ver (MFA, criptografia). Integridade: pode ser alterado? (hash, assinatura digital, trilha de auditoria). Disponibilidade: está acessível quando preciso? (backup, redundância).\nLEMBRE: CIA = Confidentiality, Integrity, Availability.\nP: A criptografia garante integridade? R: Não diretamente. Ela protege a confidencialidade. Integridade vem de hash, assinatura e controle de alterações.",
@@ -19,7 +18,7 @@ window.NOTAS = {
   integracao: "Sequência lógica: termos, requisitos, controles, implantação, medição.\nP: A 27001 substitui a 27002? R: Não. A 27001 diz o que o sistema deve ter. A 27002 ajuda a escolher e implementar os controles.",
   comparativo: "Passe pela tabela de cima para baixo. Destaque o \"Sim\" da 27001.\nP: Por que a 27002 não é certificável? R: É código de prática com diretrizes. A certificação é feita sobre requisitos (27001).\nCuriosidade: \"deve\" é requisito, \"convém\" é recomendação.",
 
-  "div-27001": "Divisória da ISO/IEC 27001. Transição: \"Agora o Vinicius explica como funciona o SGSI na 27001.\"",
+  "div-27001": "Divisória da ISO/IEC 27001. Transição: \"Agora o Kawan explica como funciona o SGSI na 27001.\"",
   pdca: "PDCA: Planejar, Executar, Verificar, Agir. O ciclo não termina: cada volta melhora a anterior.\nLEMBRE: Plan, Do, Check, Act.\nP: O PDCA é obrigatório? R: A norma o usa como modelo. O que é exigido são as atividades de planejar, operar, avaliar e melhorar.",
   clausulas: "Cláusulas 4 a 10 seguem o PDCA: 4 a 7 planejar, 8 executar, 9 verificar, 10 agir.\nLEMBRE: 4 Contexto, 5 Liderança, 6 Planejamento, 7 Apoio, 8 Operação, 9 Desempenho, 10 Melhoria. Cláusulas 1 a 3 são introdutórias.",
   componentes: "Base: política e objetivos. Estrutura: riscos e controles, com SoA. Topo: auditoria, monitoramento e melhoria.\nLEMBRE: SoA = Declaração de Aplicabilidade.",
@@ -33,7 +32,7 @@ window.NOTAS = {
   pg1: "Pergunta-guia 1. Opção A (certificar agora), B (implementar sem certificar), C (híbrida, recomendada).\nResposta curta: sim, se houver exigência de mercado. Para a maioria das PMEs, comece pelos controles essenciais e certifique quando houver retorno comercial.\nLEMBRE: critérios são perfil de clientes, orçamento e exigências contratuais.",
   pme: "Roteiro enxuto em cinco passos. Diga que é recomendação do grupo, não regra da norma.\nP: Uma pequena empresa consegue manter a certificação? R: Consegue, com escopo enxuto e controles simples e bem documentados.",
 
-  "div-27002": "Divisória da ISO/IEC 27002. Transição: \"Agora o Kaique mostra os controles na prática.\"",
+  "div-27002": "Divisória da ISO/IEC 27002. Transição: \"Agora vamos aos controles na prática.\"",
   controles: "A 27002 organiza controles. Cada categoria (acessos, criptografia, continuidade) reduz um risco.\nLEMBRE: acessos reduz acesso indevido; criptografia reduz exposição; continuidade reduz indisponibilidade.\nP: 27001 x 27002? R: A 27001 exige gerenciar riscos e escolher controles. A 27002 orienta como implementar cada um.",
   "tipos-controle": "Preventivo evita, detectivo percebe, corretivo resolve. Dê um exemplo de acesso para cada.\nLEMBRE: um bom conjunto mistura os três. Os 4 temas somam 93 controles.",
   acessos: "Ciclo de vida do acesso: entrada (permissão mínima, aprovação), mudança (revisão ao mudar de função), saída (revogação imediata).\nIndicador: % de revisões de acesso no prazo, meta 95%.\nP: Por que a saída é crítica? R: Conta de ex-funcionário ativa é um acesso que ninguém vigia.",
@@ -72,6 +71,4 @@ window.NOTAS = {
   respostas: "Uma frase para cada pergunta-guia. PME: depende do mercado, comece pelos controles essenciais. Papel: dono, evidência, teste, indicador e auditoria. Métricas: poucas, com meta, responsável e frequência. Liste as seis do slide (acessos no prazo, restauração de backup, tempo de detecção e resposta, incidentes, controles com evidência, não conformidades).",
   refs: "[REVISAR] Referências: normas ISO/IEC, ABNT, Inmetro, ANPD e LGPD. Confirme as edições antes de apontar uma versão específica.",
   perguntas: "Abra para perguntas. Se não souber: \"Não tenho essa informação com segurança, mas posso verificar e enviar depois.\" Passe a palavra ao colega do bloco certo.\nSe perguntarem \"como você sabe?\", a resposta é a evidência.",
-  glossario: "[REVISAR] Apêndice de consulta (siglas). Não apresentar. Use para responder perguntas.",
-  numeros: "[REVISAR] Apêndice de consulta (números). Não apresentar. 95 / 87 é o exemplo ilustrativo de meta x resultado."
 };

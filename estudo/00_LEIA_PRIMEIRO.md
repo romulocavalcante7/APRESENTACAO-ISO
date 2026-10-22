@@ -1,6 +1,6 @@
 # Guia do grupo: ISO/IEC 27000 (leia antes de estudar o seu bloco)
 
-Aula de 3 horas, 9 apresentadores, 62 slides. Cada pessoa fala **uma vez só**, em uma sequência de slides, sem voltar depois. Cada pessoa tem um arquivo nesta pasta com o que estudar, o que falar, como interagir e as perguntas que o professor pode fazer.
+Aula de 3 horas, 9 apresentadores, 59 slides. Cada pessoa fala **uma vez só**, em uma sequência de slides, sem voltar depois. Os blocos 1, 2 e 3 são apresentados em **dupla** (ou trio): um tema para cada um, com uma ponte falada na troca. Cada pessoa tem um arquivo nesta pasta com o que estudar, o que falar, como interagir e as perguntas que o professor pode fazer.
 
 ## 1. A regra de ouro: não leia o slide
 
@@ -21,6 +21,15 @@ O professor avalia quem **explica melhor**, não quem usa a palavra mais difíci
 3. Depois diga o nome técnico.
 Use o arquivo `10_Dicionario_em_palavras_simples.md` para ensaiar. Cada guia tem a seção "Explique como para um amigo": treine até conseguir dizer em 30 segundos.
 
+## 1c. Qualidade primeiro
+
+Menos slides por pessoa e mais explicação. O professor dá nota alta a quem faz a turma **entender**, não a quem fala rápido. Em cada slide:
+- Diga a ideia em uma frase simples.
+- Dê um exemplo do dia a dia (cada guia tem uma seção de **exemplos prontos**).
+- Se der, faça uma pergunta e espere.
+- Não repita o que o colega anterior acabou de dizer: se já foi explicado, só faça a ponte ("como o Kaua mostrou...").
+- Não use o mesmo exemplo duas vezes na aula.
+
 ## 2. Comunicação com a turma e com o professor (vale para todos)
 
 - Cada bloco tem **pelo menos duas perguntas** para a turma. Faça mesmo que ninguém responda: espere 5 segundos contando mentalmente. O silêncio incomoda, mas a resposta aparece.
@@ -36,16 +45,23 @@ Use o arquivo `10_Dicionario_em_palavras_simples.md` para ensaiar. Cada guia tem
 
 | Arquivo | Para quem | Slides |
 |---|---|---|
-| 01_Romulo_Abertura.md | Rômulo | 1 a 5 |
-| 02_Kaua_Fundamentos_e_Familia.md | Kaua | 6 a 14 |
-| 03_Vinicius_ISO_27001_SGSI.md | Vinicius | 15 a 21 |
-| 04_Kaique_Certificacao_e_Controles_de_Acesso.md | Kaique | 22 a 31 |
-| 05_Kawan_Criptografia_e_Continuidade.md | Kawan | 32 a 37 |
-| 06_Marcelo_ISO_27003_e_Accountability.md | Marcelo | 38 a 43 |
-| 07_Gabriel_ISO_27004_e_Metricas.md | Gabriel | 44 a 48 |
-| 08_Eduardo_Estudo_de_Caso.md | Eduardo | 49 a 55 |
-| 09_Guilherme_Fechamento.md | Guilherme | 56 a 60 |
+| 01_Romulo_Abertura.md | Rômulo | 1 a 4 |
+| 02_Kaua_Fundamentos_e_Familia.md | Kaua (dupla com Kawan) | 5 a 12 |
+| 03_Kawan_ISO_27001_SGSI.md | Kawan (dupla com Kaua) | 13 a 20 |
+| 04_Kaique_Certificacao_e_ISO_27002.md | Kaique (dupla com Vinicius) | 21 a 28 |
+| 05_Vinicius_Acessos_Criptografia_e_Continuidade.md | Vinicius (dupla com Kaique) | 29 a 36 |
+| 06_Marcelo_ISO_27003_e_Accountability.md | Marcelo (trio) | 37 a 42 |
+| 07_Gabriel_ISO_27004_e_Metricas.md | Gabriel (trio) | 43 a 47 |
+| 08_Eduardo_Estudo_de_Caso.md | Eduardo (trio) | 48 a 54 |
+| 09_Guilherme_Fechamento.md | Guilherme | 55 a 59 |
 | 10_Dicionario_em_palavras_simples.md | Todos | |
+
+## Como funciona a troca dentro da dupla
+
+- Cada um fala um tema inteiro e passa a palavra **uma vez**, com uma ponte falada (exemplo: "Agora o Kawan mostra como a norma 27001 organiza isso.").
+- Quem terminou fica ao lado, ouvindo, e pode ajudar se o colega travar ou se o professor perguntar algo do tema.
+- Na tecla N, a nota do último slide de cada pessoa lembra a troca ("TROCA NA DUPLA"). Ao fim do bloco, a nota lembra de perguntar se ficou dúvida.
+- Pergunta do professor sobre o tema do colega: responda o que sabe e passe ao parceiro ("Esse ponto o Kawan explica melhor").
 
 ## 3. Como usar a apresentação
 
@@ -64,22 +80,16 @@ Dica: abra a apresentação no notebook com a tecla N ligada. As notas aparecem 
 
 ## 4. Agenda sugerida (180 minutos)
 
-Os tempos incluem as perguntas do fim de cada bloco. Kaua e Kaique têm blocos longos: façam uma pausa curta para a turma respirar no meio (Kaua depois do slide 10, Kaique depois do slide 26). Não projete horários nos slides.
+Os tempos incluem as perguntas do fim de cada bloco. Os blocos 1 e 2 são longos: façam uma pausa curta para a turma respirar na troca da dupla.
 
 | Ordem | Quem | Slides | Tempo |
 |---|---|---|---|
-| Abertura | Rômulo | 1 a 5 | 8 min |
-| Bloco 1 | Kaua | 6 a 14 | 27 min |
-| Bloco 2 | Vinicius | 15 a 21 | 20 min |
-| Bloco 3 | Kaique | 22 a 31 | 33 min |
-| Bloco 4 | Kawan | 32 a 37 | 18 min |
-| Bloco 5 | Marcelo | 38 a 43 | 17 min |
-| Bloco 6 | Gabriel | 44 a 48 | 13 min |
-| Bloco 7 | Eduardo | 49 a 55 | 18 min |
-| Fechamento | Guilherme | 56 a 60 | 10 min |
-| Reserva | todos | | 16 min (perguntas gerais e pausa) |
-
-Os slides 61 e 62 são apêndices de consulta. Não apresente: use para responder perguntas.
+| Abertura | Rômulo | 1 a 4 | 7 min |
+| Bloco 1 | Kaua (5 a 12) e Kawan (13 a 20) | 5 a 20 | 50 min |
+| Bloco 2 | Kaique (21 a 28) e Vinicius (29 a 36) | 21 a 36 | 50 min |
+| Bloco 3 | Marcelo (37 a 42), Gabriel (43 a 47) e Eduardo (48 a 54) | 37 a 54 | 52 min |
+| Fechamento | Guilherme | 55 a 59 | 8 min |
+| Reserva | todos | | 13 min (perguntas gerais e pausa) |
 
 Se o bloco anterior atrasou, corte exemplos, nunca definições.
 
@@ -87,22 +97,22 @@ Se o bloco anterior atrasou, corte exemplos, nunca definições.
 
 | Requisito do trabalho | Onde aparece | Quem |
 |---|---|---|
-| Teoria das normas 27000 a 27004 | Slides 6 a 48 | Kaua, Vinicius, Kaique, Kawan, Marcelo e Gabriel |
-| Estudo de caso de empresa certificada | Slides 49 a 55 | Eduardo |
-| Exemplos de controles da 27002 em casos reais | Slides 28 a 37 | Kaique e Kawan |
-| Análise: eficazes, falhas e melhorias | Slides 37 e 52 a 54 | Kawan e Eduardo |
-| Pergunta 1: certificar pequena empresa? | Slides 25 e 26 | Kaique |
-| Pergunta 2: controles só no papel? | Slides 42 e 43 | Marcelo |
-| Pergunta 3: métricas da 27004 | Slides 44 a 48 e 58 | Gabriel (e Guilherme no resumo) |
-| Importância da certificação e do monitoramento contínuo | Slides 22 a 26 e 44 a 48 | Kaique e Gabriel |
+| Teoria das normas 27000 a 27004 | Slides 5 a 47 | Kaua, Kawan, Kaique, Vinicius, Marcelo e Gabriel |
+| Estudo de caso de empresa certificada | Slides 48 a 54 | Eduardo |
+| Exemplos de controles da 27002 em casos reais | Slides 27 a 36 | Kaique e Vinicius |
+| Análise: eficazes, falhas e melhorias | Slides 36 e 51 a 53 | Vinicius e Eduardo |
+| Pergunta 1: certificar pequena empresa? | Slides 24 e 25 | Kaique |
+| Pergunta 2: controles só no papel? | Slides 41 e 42 | Marcelo |
+| Pergunta 3: métricas da 27004 | Slides 43 a 47 e 57 | Gabriel (e Guilherme no resumo) |
+| Importância da certificação e do monitoramento contínuo | Slides 21 a 25 e 43 a 47 | Kaique e Gabriel |
 
 ## 6. Avisos importantes (leia todos)
 
-1. **Estudo de caso (Eduardo).** O slide 51 traz "Fonte a confirmar". A busca pública feita durante a preparação não confirmou que o Banco do Brasil possua certificado ISO/IEC 27001, e os números que apareciam no trabalho original não foram verificados. Antes da aula, o grupo precisa: (a) procurar em relatório anual, relatório de sustentabilidade ou site de relações com investidores; (b) se confirmar, anotar o escopo oficial; (c) se não confirmar, trocar por uma empresa com certificado comprovado (o próprio emissor do certificado e o site da empresa costumam listar). Não apresente número que não possa citar. O requisito do trabalho exige "empresa certificada".
-2. **Dados ilustrativos.** Os slides 20, 37, 40 e 47 usam exemplos ilustrativos. Eles estão marcados como tais. Diga isso em voz alta.
+1. **Estudo de caso (Eduardo).** O slide 50 traz "Fonte a confirmar". A busca pública feita durante a preparação não confirmou que o Banco do Brasil possua certificado ISO/IEC 27001, e os números que apareciam no trabalho original não foram verificados. Antes da aula, o grupo precisa: (a) procurar em relatório anual, relatório de sustentabilidade ou site de relações com investidores; (b) se confirmar, anotar o escopo oficial; (c) se não confirmar, trocar por uma empresa com certificado comprovado (o próprio emissor do certificado e o site da empresa costumam listar). Não apresente número que não possa citar. O requisito do trabalho exige "empresa certificada".
+2. **Dados ilustrativos.** Os slides 19, 36, 39 e 46 usam exemplos ilustrativos. Eles estão marcados como tais. Diga isso em voz alta.
 3. **Edições das normas.** Confira nas páginas da ISO e da ABNT a edição vigente antes de citar. Neste material: 27001 e 27002 edição 2022, 27000:2018, 27003:2017, 27004:2016 (como constam no slide de referências). A migração de certificados da edição 2013 para a 2022 é um tema que o professor pode perguntar: confirme o prazo oficial antes da aula.
 4. **Emilly não estará presente.** O bloco de métricas (27004) ficou com o Gabriel.
-5. **Quem fala quando.** Cada apresentador tem uma sequência contínua de slides e não volta depois. Rômulo só abre (1 a 5) e Guilherme só fecha (56 a 60), as duas partes mais leves. Quem fala bem (Kaua, Vinicius, Kawan e Eduardo) pega mais conteúdo.
+5. **Quem fala quando.** Cada apresentador tem uma sequência contínua de slides e não volta depois. Rômulo só abre (1 a 4) e Guilherme só fecha (55 a 59). Os blocos do meio são em dupla (Kaua e Kawan, Kaique e Vinicius) e em trio (Marcelo, Gabriel e Eduardo).
 
 ## 7. Perguntas gerais que o professor pode fazer a qualquer um
 

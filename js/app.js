@@ -131,9 +131,17 @@
     var ask = slides[atual].querySelector('.ask');
     if (ask) texto += '\n\nINTERAJA (' + ask.classList.contains('ask-prof') ? 'professor' : 'turma' + '): ' + ask.querySelector('.ask-t').textContent + ' Espere a resposta antes de continuar.';
     var prox = slides[atual + 1];
-    if (prox && prox.getAttribute('data-bloco') !== slides[atual].getAttribute('data-bloco')) {
+    if (prox) {
       var f = prox.querySelector('.foot b');
-      texto += '\n\nFIM DO BLOCO: olhe para a turma e para o professor e pergunte se ficou alguma dúvida. Depois passe a palavra' + (f ? ' para ' + f.textContent.split(' ')[0] : '') + '.';
+      var nome = f ? f.textContent.split(' ')[0] : '';
+      var f0 = slides[atual].querySelector('.foot b');
+      var mudaBloco = prox.getAttribute('data-bloco') !== slides[atual].getAttribute('data-bloco');
+      var mudaQuem = f && f0 && f.textContent !== f0.textContent;
+      if (mudaBloco) {
+        texto += '\n\nFIM DO BLOCO: olhe para a turma e para o professor e pergunte se ficou alguma dúvida. Depois passe a palavra' + (nome ? ' para ' + nome : '') + '.';
+      } else if (mudaQuem) {
+        texto += '\n\nTROCA NA DUPLA: faça a ponte falada e passe a palavra para ' + nome + '. Quem saiu fica ao lado para ajudar.';
+      }
     }
     notasT.textContent = texto + '\n\nOlhe para a turma e para o professor enquanto fala. Não leia o slide.';
     notasEl.scrollTop = 0;

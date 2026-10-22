@@ -1,6 +1,6 @@
 # Kaua: fundamentos e a família ISO/IEC 27000
 
-**Slides 6 a 14 (27 min)** · Recebe a palavra do Rômulo (slide 5) · Passa a palavra para o Vinicius (slide 15).
+**Slides 5 a 12 (25 min)** · Recebe a palavra do Rômulo (slide 4) · Você faz dupla com o Kawan, que continua a partir do slide 13 (requisito x orientação e ISO/IEC 27001).
 
 Seu bloco tem duas partes: **a base** (os três pilares, o vocabulário e o risco) e **a família de normas** (quem é quem e como trabalham juntas). A primeira parte usa só ideias do dia a dia. A segunda é o mapa das normas.
 
@@ -49,15 +49,12 @@ Probabilidade de 1 a 5 e impacto de 1 a 5. O risco é o produto (1 a 25).
 
 Mnemônico: **0 = vocabulário, 1 = requisitos, 2 = controles, 3 = implantação, 4 = medição.**
 
-### Por que só a 27001 é certificável
-Certificar é comparar a organização com **requisitos** (o que "deve" ser feito). A 27001 está escrita assim. As demais são **diretrizes**: orientam e recomendam ("convém"), mas não são o critério de auditoria. Nas normas ISO, "deve" indica requisito e "convém" indica recomendação.
-
-### Como se encaixam (o fluxo do slide 13)
+### Como se encaixam (o fluxo do slide 12)
 Termos (27000) → requisitos (27001) → controles (27002) → implantação (27003) → medição (27004). Depois a medição realimenta o sistema: é um ciclo.
 
 Analogia da obra: 27000 é o dicionário de obra, 27001 é o projeto aprovado e a exigência da prefeitura, 27002 é o catálogo de materiais e técnicas, 27003 é o manual do mestre de obras, 27004 é a inspeção periódica.
 
-### Linha do tempo (slide 12)
+### Linha do tempo (slide 11)
 - 1995: BS 7799, norma britânica de boas práticas, origem da família.
 - 2000: ISO/IEC 17799, versão internacional do código de prática.
 - 2005: primeira edição da ISO/IEC 27001, com requisitos certificáveis.
@@ -68,38 +65,43 @@ Confira as datas na ISO e na ABNT antes da aula. A ordem e a ideia (uma evoluç�
 
 ## Roteiro slide a slide
 
-**Slide 6 (divisória).** Uma frase: "Antes das normas, precisamos falar a mesma língua. São três pilares e oito palavras."
+**Slide 5 (divisória).** Uma frase: "Antes das normas, precisamos falar a mesma língua. São três pilares e oito palavras."
 
-**Slide 7 (CIA).** Passe pelos três cartões, um exemplo por pilar. Use a analogia da carta.
+**Slide 6 (CIA).** Passe pelos três cartões, um exemplo por pilar. Use a analogia da carta.
 - Interação: "Qual dos três pilares vocês acham mais difícil de proteger?". Não há resposta errada. Conecte: disponibilidade costuma ser a mais sentida (sistema fora do ar), confidencialidade a mais temida (vazamento).
 
-**Slide 8 (CIA no hospital).** Mostre os três casos e peça a identificação antes de revelar o chip.
+**Slide 7 (CIA no hospital).** Mostre os três casos e peça a identificação antes de revelar o chip.
 - Prontuário vazado: confidencialidade.
 - Dose alterada: integridade.
 - Sistema fora do ar por ransomware: disponibilidade.
 - Diga que é um exemplo hipotético.
 
-**Slide 9 (vocabulário).** Não leia os oito cartões. Escolha a analogia da casa e percorra ativo, ameaça, vulnerabilidade, risco, controle. Nos outros três (SGSI, evidência, não conformidade), diga que voltam nos blocos seguintes.
+**Slide 8 (vocabulário).** Não leia os oito cartões. Escolha a analogia da casa e percorra ativo, ameaça, vulnerabilidade, risco, controle. Nos outros três (SGSI, evidência, não conformidade), diga que voltam nos blocos seguintes.
 - Interação (aparece no alto): peça um exemplo de ameaça e de vulnerabilidade do dia a dia.
 
-**Slide 10 (matriz de risco).** Explique a conta no cartão da esquerda e depois aponte o canto superior direito da matriz (25, crítico) e o inferior esquerdo (1, baixo).
+**Slide 9 (matriz de risco).** Explique a conta no cartão da esquerda e depois aponte o canto superior direito da matriz (25, crítico) e o inferior esquerdo (1, baixo).
 - Interação: "Onde colocariam o risco 'senha fraca'?". Resposta defensável: probabilidade alta, impacto médio a alto, então algo entre 10 e 16 (alto). Peça que justifiquem.
 - Faça a ponte: "Agora que falamos a mesma língua, vamos ver a família de normas."
 
-**Slide 11 (família).** Apresente as cinco normas em uma frase cada, usando o mnemônico 0-1-2-3-4. Destaque o selo "certificável" da 27001.
+**Slide 10 (família).** Apresente as cinco normas em uma frase cada, usando o mnemônico 0-1-2-3-4. Destaque o selo "certificável" da 27001.
 - Interação: "Qual dessas normas é a única certificável?". Resposta: 27001.
 
-**Slide 12 (linha do tempo).** Conte como história: começou como boas práticas no Reino Unido, virou padrão internacional, passou a ter requisitos certificáveis e foi revisada. Aponte a barra crescendo.
+**Slide 11 (linha do tempo).** Conte como história: começou como boas práticas no Reino Unido, virou padrão internacional, passou a ter requisitos certificáveis e foi revisada. Aponte a barra crescendo.
 - Interação (no alto): "Alguém já viu uma empresa citar a ISO 27001?". Se alguém citar, pergunte em que contexto.
-- Fale dos números 114 (2013) e 93 (2022) sem se prender: o Vinicius detalha.
+- Fale dos números 114 (2013) e 93 (2022) sem se prender: o Kawan detalha.
 
-**Slide 13 (como trabalham juntas).** Percorra o fluxo. Use a analogia da obra.
+**Slide 12 (como trabalham juntas).** Percorra o fluxo. Use a analogia da obra.
 - Diga que o ciclo fecha: o que a 27004 mede volta para a gestão do SGSI.
 
-**Slide 14 (comparativo).** Tabela de requisito versus orientação. Leia só a coluna "Pergunta que responde".
-- Interação: "Por que a 27002 não gera certificado?". Resposta: é diretriz, não requisito.
-- Curiosidade final: "deve" é requisito e "convém" é recomendação.
-- Passe a palavra: "Agora o Vinicius abre a 27001 e mostra como o SGSI funciona."
+Passe a palavra: "O Kawan continua com a diferença entre requisito e orientação e abre a 27001."
+
+## Exemplos prontos para explicar (use um por tema, não precisa de todos)
+
+- **CIA com o boletim de notas.** Confidencialidade: só você e a coordenação veem a sua nota. Integridade: ninguém troca a nota sem deixar rastro. Disponibilidade: o portal abre no dia do resultado.
+- **Risco com o guarda-chuva.** Probabilidade é a chance de chover. Impacto é o quanto você se molha e estraga o dia. Se a chance é alta e o estrago é grande, você leva o guarda-chuva. O guarda-chuva é o controle.
+- **Palavras com a casa.** A casa e o que tem dentro é o ativo. O ladrão é a ameaça. A janela aberta é a vulnerabilidade. A fechadura e o alarme são os controles.
+- **Família de normas com o trânsito.** A 27000 é o dicionário de trânsito. A 27001 é o que a lei exige para tirar a carteira. A 27002 é o manual de direção defensiva. A 27003 é a autoescola. A 27004 é a revisão do carro.
+- **Para abrir o bloco:** "E se o aplicativo do banco fica fora do ar no dia de pagar as contas? Qual dos três pilares falhou?" (disponibilidade).
 
 ## Cola: se esquecer
 
@@ -139,9 +141,6 @@ R: O não atendimento de um requisito. Gera ação corretiva. Em auditoria, pode
 **P: Todo ativo é igualmente importante?**
 R: Não. Por isso se classificam os ativos e se priorizam os controles nos mais críticos.
 
-
-**P: Por que a 27002 não é certificável?**
-R: Porque é um código de prática com diretrizes. A certificação é feita sobre requisitos, que estão na 27001. A organização escolhe os controles com base nos riscos e justifica a escolha.
 
 **P: A ISO 27001 substitui a 27002?**
 R: Não. A 27001 diz o que o sistema precisa ter. A 27002 ajuda a escolher e implementar os controles do Anexo A.

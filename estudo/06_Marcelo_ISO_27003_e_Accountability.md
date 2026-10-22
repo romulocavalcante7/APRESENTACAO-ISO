@@ -1,6 +1,6 @@
 # Marcelo: ISO/IEC 27003, accountability e pergunta-guia 2
 
-**Slides 38 a 43 (17 min)** · Recebe a palavra do Kawan (slide 37) · Passa a palavra para o Gabriel (slide 44).
+**Slides 37 a 42 (18 min)** · Recebe a palavra do Vinicius (slide 36) · Passa a palavra para o Gabriel (slide 43).
 
 Seu tema em uma frase: **como tirar a segurança do papel e provar que ela funciona.** A pergunta-guia 2 é a sua.
 
@@ -10,26 +10,26 @@ Seu tema em uma frase: **como tirar a segurança do papel e provar que ela funci
 
 ## O que você precisa saber
 
-### ISO/IEC 27003 (slide 39)
+### ISO/IEC 27003 (slide 38)
 É um guia para **implantar** o SGSI. Não dá certificado. Três etapas:
 1. **Preparação:** descobrir quais são os ativos importantes, quem são as partes interessadas (clientes, funcionários, órgãos) e definir o escopo.
 2. **Avaliação de riscos:** listar ameaças e vulnerabilidades por ativo e dar nota de probabilidade e impacto.
 3. **Tratamento:** para cada risco, definir **controle, responsável, evidência e indicador.**
 Na prática, uma tabela simples de risco (probabilidade × impacto) já serve para começar.
 
-### Um risco do começo ao fim (slide 40) - exemplo ilustrativo
+### Um risco do começo ao fim (slide 39) - exemplo ilustrativo
 Ativo: banco de dados de clientes. Ameaça: ransomware. Vulnerabilidade: backup nunca testado. Risco: probabilidade 3 × impacto 5 = 15 (alto). Tratamento: mitigar com cópia offline e teste de restauração. Responsável: gerente de infraestrutura. Evidência: relatório mensal de restauração. Indicador: % de restaurações bem-sucedidas. Diga que é exemplo montado pelo grupo.
 
-### Ciclo de accountability (slide 41)
+### Ciclo de accountability (slide 40)
 "Accountability" é **prestar contas**: ter quem responda pelo controle e prova de que ele foi feito. O ciclo: política (existe no documento), responsável (tem dono), execução (a ação é feita), evidência (logs, registros, tickets), indicador (mede o desempenho), auditoria (confere) e melhoria (volta para a política).
 - Política x procedimento: a política diz **o que** e **por quê**. O procedimento diz **como**, passo a passo.
 
-### O que vale como evidência (slide 42)
+### O que vale como evidência (slide 41)
 - **Vale:** log com data e usuário; relatório de teste de restauração; ticket de revisão de acessos aprovado; ata da análise crítica da direção; lista de presença do treinamento.
 - **Não vale:** política que ninguém aplica; planilha sem data e sem autor; "a gente sempre fez assim"; print antigo de outro período; declaração sem registro.
 Pergunta que vale ouro: **"como você sabe que o controle funciona?" A resposta é sempre a evidência.**
 
-### Pergunta-guia 2 (slide 43): como evitar que os controles fiquem só no papel?
+### Pergunta-guia 2 (slide 42): como evitar que os controles fiquem só no papel?
 Cinco mecanismos:
 1. **Dono nomeado:** responsável com prazo e autoridade.
 2. **Evidência automática:** logs, tickets e relatórios gerados pelo sistema, sem depender de memória.
@@ -40,17 +40,25 @@ Cinco mecanismos:
 
 ## Roteiro slide a slide
 
-**Slide 38 (divisória).** "A teoria acabou. Agora é como fazer isso acontecer de verdade."
-**Slide 39 (27003).** Três etapas, uma frase cada. Diga que uma planilha já ajuda a começar.
+**Slide 37 (divisória).** "A teoria acabou. Agora é como fazer isso acontecer de verdade."
+**Slide 38 (27003).** Três etapas, uma frase cada. Diga que uma planilha já ajuda a começar.
 - Interação (no alto): "Quem é o dono do risco em uma empresa pequena?" (quem responde pelo processo ou ativo; em empresa pequena pode ser o próprio dono do negócio.)
-**Slide 40 (risco do começo ao fim).** Conte como história: tem um dado valioso, uma ameaça, uma fraqueza, um risco com nota, um tratamento, um dono, uma prova e um número.
+**Slide 39 (risco do começo ao fim).** Conte como história: tem um dado valioso, uma ameaça, uma fraqueza, um risco com nota, um tratamento, um dono, uma prova e um número.
 - Interação: "Que indicador vocês escolheriam para esse risco?" (% de restaurações bem-sucedidas.)
-**Slide 41 (accountability).** Percorra o ciclo e depois a frase final do slide: "sem evidência e medição, o controle existe apenas no papel."
+**Slide 40 (accountability).** Percorra o ciclo e depois a frase final do slide: "sem evidência e medição, o controle existe apenas no papel."
 - Interação (no alto): "O que acontece quando todo mundo é responsável por um controle?" (ninguém é.)
-**Slide 42 (evidência).** Compare as duas colunas e escolha dois itens de cada para comentar.
+**Slide 41 (evidência).** Compare as duas colunas e escolha dois itens de cada para comentar.
 - Interação: "Um print de dois anos atrás serve como evidência?" (não, porque não prova o que acontece hoje.)
-**Slide 43 (pergunta-guia 2).** Leia a pergunta, passe pelos cinco mecanismos em uma frase e termine na regra prática.
+**Slide 42 (pergunta-guia 2).** Leia a pergunta, passe pelos cinco mecanismos em uma frase e termine na regra prática.
 Passe a palavra: "Agora o Gabriel mostra como medir se os controles funcionam."
+
+## Exemplos prontos para explicar (use um por tema, não precisa de todos)
+
+- **Accountability com o trabalho em grupo.** Se "todo mundo" vai apresentar, ninguém apresenta. Precisa de nome, prazo e prova de que foi feito.
+- **Evidência com o recibo.** Sem recibo, você não prova que pagou. Sem registro datado, você não prova que o controle funcionou.
+- **Ficha de risco com o seguro do carro.** Você avalia o risco, escolhe a cobertura, guarda a apólice (a prova) e revisa todo ano.
+- **Papel x real com a senha no monitor.** A política diz "nunca compartilhe a senha", mas todos colam a senha no monitor. O controle existe no papel, não na prática.
+- **Planilha de riscos com a lista de tarefas.** Não precisa de ferramenta cara: precisa de dono, prazo e revisão.
 
 ## Cola: se esquecer
 
@@ -88,7 +96,7 @@ R: Quem é afetado pela segurança da organização ou a afeta: clientes, funcio
 **P: Com que frequência se avalia o risco?**
 R: A cada mudança importante e de forma periódica. A frequência é definida pela organização e registrada no método de riscos.
 
-**P: O exemplo do slide 40 é real?**
+**P: O exemplo do slide 39 é real?**
 R: Não. É um exemplo ilustrativo do grupo para mostrar a lógica da ficha.
 
 **P: Como ligar isso à auditoria?**
