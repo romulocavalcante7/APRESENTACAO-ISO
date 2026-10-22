@@ -1,6 +1,6 @@
 # Marcelo: ISO/IEC 27003, accountability e pergunta-guia 2
 
-**Slides 38 a 43 (17 min)** · Recebe a palavra de: Kawan · Passa a palavra para: Gabriel (slide 44).
+**Slides 38 a 43 (17 min)** · Recebe a palavra do Kawan (slide 37) · Passa a palavra para o Gabriel (slide 44).
 
 Seu tema em uma frase: **como tirar a segurança do papel e provar que ela funciona.** A pergunta-guia 2 é a sua.
 

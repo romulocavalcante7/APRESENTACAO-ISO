@@ -1,12 +1,14 @@
-# Kaique: certificação, pergunta-guia 1 e pergunta-guia 3
+# Kaique: certificação e controles de acesso (27002)
 
-**Slides 22 a 26 (17 min) e slide 48 (5 min, dentro do bloco 8)** · Recebe a palavra de: Vinicius · Passa a palavra para: Gabriel. No slide 48 você recebe a palavra do Gabriel e passa para o Eduardo.
+**Slides 22 a 31 (33 min)** · Recebe a palavra do Vinicius (slide 21) · Passa a palavra para o Kawan (slide 32).
 
-Seu tema em uma frase: **como uma empresa prova para o mundo que leva segurança a sério, e se isso vale a pena para uma empresa pequena.**
+Seu bloco tem duas partes: **a certificação** (como a empresa prova que segue a norma e se vale a pena para uma empresa pequena, a pergunta-guia 1) e **os controles de acesso** (a primeira parte prática da 27002). É um bloco grande, então use as perguntas para a turma participar e respire entre as duas partes.
 
 ## Explique como para um amigo (30 segundos)
 
 "Certificação é como a carteira de motorista da empresa. Um examinador de fora, que tem autorização para isso, confere se a empresa segue as regras da ISO 27001. Se passar, recebe um certificado que vale 3 anos. Todo ano o examinador volta para ver se continua tudo certo. Para empresa pequena, a gente recomenda começar pelo básico e só tirar o certificado quando um cliente pedir ou o negócio ganhar com isso."
+
+Depois: "Controle de acesso é decidir quem tem a chave de cada porta, e tirar a chave quando a pessoa não precisa mais. Tem quatro ferramentas básicas: o login com senha mais código (MFA), o acesso pelo cargo (RBAC), o cuidado com as contas de administrador (PAM) e o registro de tudo que acontece (logs). A regra por trás de tudo é dar a cada pessoa só o acesso de que ela precisa."
 
 ## O que você precisa saber
 
@@ -47,15 +49,35 @@ Três opções:
 5. Decidir quando certificar.
 Isso é uma recomendação do grupo, não uma regra da norma. Diga isso.
 
-### Pergunta-guia 3 (slide 48): quais métricas são mais úteis?
-Seis boas métricas:
-1. % de revisões de acesso no prazo (mostra se a gestão de acessos funciona).
-2. % de testes de restauração de backup bem-sucedidos (prova que o backup serve).
-3. Tempo médio para detectar e para responder (mostra a capacidade de reagir).
-4. Incidentes por trimestre e o impacto (mostra a tendência do risco).
-5. % de controles com evidência válida (separa o controle real do controle de papel).
-6. Não conformidades e prazo para tratar (mostra se a melhoria acontece).
-Critérios para escolher: definição clara, fórmula, meta, responsável e frequência. **Poucas métricas bem escolhidas valem mais do que muitas.**
+### A 27002 (slide 28)
+É o guia que explica **como** fazer cada controle. Não dá certificado. Três exemplos que vamos usar:
+| Categoria | Exemplos | Risco que reduz |
+|---|---|---|
+| Acessos | MFA, RBAC, menor privilégio, revisão periódica | Acesso indevido |
+| Criptografia | HTTPS/TLS, AES-256, gestão de chaves | Exposição de dados |
+| Continuidade | Backup, plano de recuperação, redundância | Sistema fora do ar |
+**Regra de ouro:** todo controle precisa de responsável, execução e evidência.
+
+### Tipos de controle (slide 29)
+- **Preventivo:** impede que aconteça (MFA, bloquear contas).
+- **Detectivo:** percebe que aconteceu (logs, alertas de login estranho, revisão).
+- **Corretivo:** resolve e recupera (revogar acesso, restaurar backup).
+Exemplo para a turma: o alarme de incêndio é detectivo. O extintor ou o sprinkler é corretivo. A porta corta-fogo é preventiva.
+Os 93 controles se dividem em 4 temas: 37 organizacionais, 8 de pessoas, 14 físicos, 34 tecnológicos.
+
+### Gestão de acessos (slide 30): ciclo de vida
+1. **Entrada:** cria o usuário com a permissão mínima, com aprovação do gestor.
+2. **Mudança:** revisa o acesso de tempos em tempos e ajusta quando a pessoa muda de função.
+3. **Saída:** tira o acesso na hora em que a pessoa sai da empresa.
+Indicador: % de usuários revisados no prazo, **meta 95%**.
+Destaque: atraso em tirar o acesso de quem saiu é falha crítica, porque ninguém vigia uma conta esquecida.
+
+### Quatro ferramentas (slide 31)
+- **MFA:** além da senha, pede algo a mais (código no celular, biometria). Barra o uso de senha roubada.
+- **RBAC:** o acesso vem do cargo (papel), não da pessoa. Evita acumular permissão.
+- **PAM:** controle das contas de administrador, com aprovação e gravação do uso.
+- **Logs centralizados:** registro de quem fez o quê, guardado em lugar protegido. Vira evidência.
+Princípio: **menor privilégio** (só o acesso necessário para o trabalho).
 
 ## Roteiro slide a slide
 
@@ -66,9 +88,18 @@ Critérios para escolher: definição clara, fórmula, meta, responsável e freq
 **Slide 25 (pergunta-guia 1).** Leia a pergunta, mostre as três opções e vá direto à resposta curta.
 **Slide 26 (caminho para PME).** Percorra os cinco passos e as duas caixas (vale se... / esperar se...).
 - Interação (no alto): "Se fosse a sua empresa, certificaria agora ou esperaria? Levantem a mão." Conte os votos em voz alta e comente.
-Passe a palavra: "Agora o Gabriel mostra os controles da 27002 na prática."
+Faça a ponte: "Agora vamos ver os controles da 27002 na prática."
 
-**Slide 48 (pergunta-guia 3).** Você chega depois do Gabriel. Mostre a tabela, escolha 3 métricas para explicar e termine com os critérios. Faça a pergunta final e passe para o Eduardo: "Agora o Eduardo aplica tudo em um caso real."
+**Slide 27 (divisória).** "Conhecemos a base e a certificação. Agora vamos ver os controles na prática."
+**Slide 28 (controles).** Passe pela tabela: uma linha por categoria. Termine na regra de ouro.
+- Interação (no alto): "Qual desses controles vocês já veem na faculdade ou no trabalho?"
+**Slide 29 (tipos).** Use o alarme de incêndio.
+- Interação: "Um alarme de incêndio é preventivo, detectivo ou corretivo?" (detectivo.)
+**Slide 30 (acessos).** Percorra entrada, mudança, saída. Destaque a saída.
+- Interação: "Quem já ficou com acesso a um sistema que não precisava mais?"
+**Slide 31 (ferramentas).** Uma frase por ferramenta e o que ela barra.
+- Interação: "Quem aqui usa MFA no e-mail? Levantem a mão." Comente o resultado.
+Passe a palavra: "Agora o Kawan mostra criptografia e continuidade."
 
 ## Cola: se esquecer
 
@@ -76,6 +107,12 @@ Passe a palavra: "Agora o Gabriel mostra os controles da 27002 na prática."
 - Quem certifica: organismo certificador acreditado (Inmetro acredita).
 - Decisão da PME: perfil dos clientes, orçamento, exigências de contrato.
 - Métricas: poucas, com meta, responsável e frequência.
+
+- Entrada, mudança, saída.
+- Preventivo evita, detectivo percebe, corretivo resolve.
+- MFA = mais de um fator. RBAC = por papel. PAM = contas de administrador.
+- Menor privilégio = só o acesso necessário.
+- Meta de revisão de acessos: 95%.
 
 ## Perguntas do professor
 
@@ -103,11 +140,39 @@ R: Para ver se a empresa continua cumprindo as regras depois de ganhar o certifi
 **P: Qual a diferença entre auditoria interna e externa?**
 R: A interna é feita pela própria empresa (ou alguém contratado) para se preparar e se corrigir. A externa é do organismo certificador e dá o certificado.
 
-**P: Qual a métrica mais importante?**
-R: Depende do risco. Em geral, uma métrica de processo que mostra uma falha antes de virar incidente, como acessos revisados no prazo.
 
-**P: Por que poucas métricas?**
-R: Porque muita métrica vira ruído e ninguém acompanha. Cada métrica deve ter dono e decisão associada.
+**P: Qual a diferença entre a 27001 e a 27002?**
+R: A 27001 pede que a empresa gerencie riscos e escolha controles. A 27002 explica como implementar cada controle.
+
+**P: O que é menor privilégio?**
+R: Dar a cada pessoa só o acesso necessário para a função dela, nem mais, nem menos.
+
+**P: O que é RBAC?**
+R: Controle de acesso por papéis: as permissões ficam no papel (por exemplo, "financeiro") e as pessoas recebem papéis.
+
+**P: O que é PAM?**
+R: Gestão de acessos privilegiados: contas de administrador com aprovação, registro do que foi feito e troca de senha.
+
+**P: Por que a saída é o ponto mais crítico?**
+R: Porque uma conta de ex-funcionário ativa é um acesso que ninguém vigia. É a porta aberta que ninguém lembra.
+
+**P: MFA resolve tudo?**
+R: Não. Reduz muito o risco de senha roubada, mas ainda existem riscos como roubo de sessão ou engenharia social. Sempre sobra um risco residual.
+
+**P: Por que a meta é 95% e não 100%?**
+R: Metas realistas e graduais são mais úteis. Cem por cento costuma ser impossível e esconde o que realmente importa. A meta pode subir com o tempo.
+
+**P: Como saber se o controle de acesso é eficaz?**
+R: Pela evidência: relatório da revisão, com data e responsável, e pelo indicador de revisões no prazo, além de contas de ex-funcionários encontradas ativas.
+
+**P: O que é log?**
+R: Um registro automático de eventos: quem entrou, quando e o que fez.
+
+**P: Qual a diferença entre controle preventivo e detectivo?**
+R: O preventivo impede o problema. O detectivo percebe que ele aconteceu. Os dois são necessários, porque nenhum controle preventivo é perfeito.
+
+**P: Por que misturar os três tipos?**
+R: Porque se o preventivo falhar, o detectivo avisa e o corretivo resolve. Um só tipo deixa buracos.
 
 ## Erros a evitar
 
@@ -115,3 +180,7 @@ R: Porque muita métrica vira ruído e ninguém acompanha. Cada métrica deve te
 - Dar preço ou prazo sem fonte.
 - Dizer que certificar é obrigatório por lei.
 - Tratar o caminho da PME como regra da norma: é recomendação do grupo.
+
+- Dizer que MFA "garante" segurança.
+- Ler a tabela inteira do slide 28.
+- Esquecer de dar um exemplo de cada tipo de controle.

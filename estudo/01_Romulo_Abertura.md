@@ -1,7 +1,6 @@
-# Rômulo: abertura e fechamento
+# Rômulo: abertura
 
-**Abertura:** slides 1 a 5 (8 min) · **Fechamento:** slides 56 a 58 (6 min). O Guilherme faz os slides 59 a 61 (quiz, referências e perguntas). Apêndices 62 e 63 só para consulta.
-**Abertura passa a palavra para:** Guilherme. **Fechamento passa a palavra para:** Guilherme, no slide 59.
+**Slides 1 a 5 (8 min)** · Você só abre a aula. Passa a palavra para: Kaua.
 
 Seu papel é dar o tom da aula e costurar tudo no final. Você fala pouco de conteúdo técnico, mas precisa dominar o **panorama**: se o professor perguntar "onde isso aparece?", você sabe indicar o bloco.
 
@@ -24,36 +23,19 @@ Seu papel é dar o tom da aula e costurar tudo no final. Você fala pouco de con
 **Slide 2 (roteiro).** Mostre a ordem dos blocos e quem apresenta. Não cite horários.
 > "São nove apresentadores. Cada bloco termina com um espaço para dúvidas."
 
-**Slide 3 (requisitos).** Mostre que cada item do trabalho tem responsável. Cite as três perguntas-guia, uma por vez, apontando o dono: certificar PME (Kaique), controles no papel (Marcelo), métricas (Kaique e Gabriel).
+**Slide 3 (requisitos).** Mostre que cada item do trabalho tem responsável. Cite as três perguntas-guia, uma por vez, apontando o dono: certificar PME (Kaique), controles no papel (Marcelo), métricas da 27004 (Gabriel).
 
 **Slide 4 (por que importa).** Fale dos quatro riscos: vazamento, ransomware, acesso indevido, roubo de propriedade intelectual. Use uma frase por risco.
 - Interação: faça a pergunta do slide e escute duas respostas. Se ninguém responder, conte um caso genérico: "alguém já teve a conta de rede social invadida?".
 - Aponte que isso não é só para grandes empresas.
 
 **Slide 5 (trilha).** Percorra as seis estações com o dedo: fundamentos, família, 27001, 27002, 27003 e 27004, caso real. Mostre que as três perguntas serão respondidas em blocos específicos. Passe a palavra.
-> "Vamos começar pela base, com o Guilherme."
-
-## Roteiro do fechamento
-
-**Slide 56 (processo, não destino).** Contraste os dois mindsets: "instalamos o antivírus, estamos seguros" contra "revisamos, medimos e melhoramos".
-- Interação (pergunta no slide): "alguém acha que dá para terminar a segurança?". Resposta esperada: não, as ameaças mudam.
-- Frase de síntese: **processo, não destino**.
-
-**Slide 57 (o que levar).** Três grupos: conceitos, gestão e prática. Repita a regra de ouro: todo controle precisa de responsável, execução e evidência.
-
-**Slide 58 (respostas às três perguntas).** Uma frase para cada. Peça que o dono de cada pergunta complemente em 20 segundos.
-1. PME: depende do mercado. Se há exigência contratual, sim. Senão, comece pelos controles essenciais e certifique depois.
-2. Controles no papel: dono, evidência, teste, indicador e auditoria.
-3. Métricas: poucas, com meta, responsável e frequência.
-
-Passe a palavra: "Agora o Guilherme faz um quiz rápido e encerra com as perguntas."
+> "Vamos começar pela base, com o Kaua."
 
 ## Cola: se esquecer
 
 - Quatro riscos do slide 4: vazamento, ransomware, acesso indevido, propriedade intelectual.
-- Perguntas-guia: PME (Kaique), papel (Marcelo), métricas (Kaique e Gabriel).
-- Frase de fechamento: **processo, não destino**.
-- Regra de ouro: responsável, execução, evidência.
+- Perguntas-guia: PME (Kaique), papel (Marcelo), métricas da 27004 (Gabriel).
 
 ## Perguntas que o professor pode fazer
 

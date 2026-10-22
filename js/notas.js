@@ -4,11 +4,11 @@
 window.NOTAS = {
   capa: "ABERTURA (Rômulo). Cumprimente, apresente o grupo e o tema.\nDiga o plano: nove apresentadores, cinco partes, três perguntas-guia para responder ao final.\nLEMBRE: não leia a lista de alunos; cada um se apresenta no seu bloco.",
   roteiro: "Mostre a ordem dos blocos e quem fala em cada um. Não cite horários.\nLEMBRE: se o tempo apertar, corte o exemplo, nunca a definição.",
-  requisitos: "Mostre que todo item exigido no trabalho tem um responsável.\nCite as três perguntas-guia: certificação para PMEs (Kaique), controles só no papel (Marcelo), métricas da 27004 (Kaique e Gabriel).",
+  requisitos: "Mostre que todo item exigido no trabalho tem um responsável.\nCite as três perguntas-guia: certificação para PMEs (Kaique), controles só no papel (Marcelo), métricas da 27004 (Gabriel).",
   contexto: "Contexto das ameaças. Faça a pergunta à turma e deixe uma ou duas respostas.\nOs quatro riscos: vazamento de dados, ransomware, acesso indevido e roubo de propriedade intelectual.\nP: \"Isso é só para empresas grandes?\" R: Não. Pequenas empresas são alvo frequente, porque costumam ter controles mais fracos.",
-  trilha: "Explique a trilha: do conceito (fundamentos e família) até a evidência (27003 e 27004) e o caso real.\nMostre as três perguntas que serão respondidas e em que bloco cada uma aparece.\nTransição: \"Vamos começar pelos fundamentos, com o Guilherme.\"",
+  trilha: "Explique a trilha: do conceito (fundamentos e família) até a evidência (27003 e 27004) e o caso real.\nMostre as três perguntas que serão respondidas e em que bloco cada uma aparece.\nTransição: \"Vamos começar pelos fundamentos, com o Kaua.\"",
 
-  "div-fund": "Divisória do bloco 1. Transição: \"Agora o Guilherme vai mostrar a base de tudo: os três pilares e o vocabulário.\"",
+  "div-fund": "Divisória do bloco 1. Transição: \"Agora o Kaua vai mostrar a base de tudo: os três pilares e o vocabulário.\"",
   cia: "Confidencialidade: quem pode ver (MFA, criptografia). Integridade: pode ser alterado? (hash, assinatura digital, trilha de auditoria). Disponibilidade: está acessível quando preciso? (backup, redundância).\nLEMBRE: CIA = Confidentiality, Integrity, Availability.\nP: A criptografia garante integridade? R: Não diretamente. Ela protege a confidencialidade. Integridade vem de hash, assinatura e controle de alterações.",
   "cia-cenarios": "Use o hospital para fixar: prontuário vazado (confidencialidade), dose alterada (integridade), sistema fora do ar (disponibilidade).\nPergunte à turma qual pilar cada caso quebra antes de revelar.\nLEMBRE: é um exemplo hipotético, não um caso real.",
   vocab: "Ativo, ameaça, vulnerabilidade, risco, controle, SGSI, evidência, não conformidade. Use uma frase por termo.\nLEMBRE: o controle reduz o risco, não o elimina.\nP: Ameaça x vulnerabilidade? R: Ameaça é quem ou o que pode causar dano. Vulnerabilidade é a fraqueza que ela explora.\nP: Exemplo de risco residual? R: Após o MFA, ainda resta o risco de roubo de uma sessão já autenticada.",
@@ -33,7 +33,7 @@ window.NOTAS = {
   pg1: "Pergunta-guia 1. Opção A (certificar agora), B (implementar sem certificar), C (híbrida, recomendada).\nResposta curta: sim, se houver exigência de mercado. Para a maioria das PMEs, comece pelos controles essenciais e certifique quando houver retorno comercial.\nLEMBRE: critérios são perfil de clientes, orçamento e exigências contratuais.",
   pme: "Roteiro enxuto em cinco passos. Diga que é recomendação do grupo, não regra da norma.\nP: Uma pequena empresa consegue manter a certificação? R: Consegue, com escopo enxuto e controles simples e bem documentados.",
 
-  "div-27002": "Divisória da ISO/IEC 27002. Transição: \"Agora o Gabriel mostra os controles na prática.\"",
+  "div-27002": "Divisória da ISO/IEC 27002. Transição: \"Agora o Kaique mostra os controles na prática.\"",
   controles: "A 27002 organiza controles. Cada categoria (acessos, criptografia, continuidade) reduz um risco.\nLEMBRE: acessos reduz acesso indevido; criptografia reduz exposição; continuidade reduz indisponibilidade.\nP: 27001 x 27002? R: A 27001 exige gerenciar riscos e escolher controles. A 27002 orienta como implementar cada um.",
   "tipos-controle": "Preventivo evita, detectivo percebe, corretivo resolve. Dê um exemplo de acesso para cada.\nLEMBRE: um bom conjunto mistura os três. Os 4 temas somam 93 controles.",
   acessos: "Ciclo de vida do acesso: entrada (permissão mínima, aprovação), mudança (revisão ao mudar de função), saída (revogação imediata).\nIndicador: % de revisões de acesso no prazo, meta 95%.\nP: Por que a saída é crítica? R: Conta de ex-funcionário ativa é um acesso que ninguém vigia.",
@@ -57,7 +57,7 @@ window.NOTAS = {
   "ciclo-medicao": "Definir, coletar, analisar, comunicar, agir. Cada indicador tem fórmula, meta, responsável e frequência.\nLEMBRE: medir sem agir é só burocracia.",
   indicadores: "Três tipos: resultado (o que aconteceu), processo (como foi feito), conformidade (se cumpre o requisito).\nP: Métrica x indicador? R: Métrica é a medida (um número). Indicador é a métrica com meta, interpretação e responsável.",
   painel: "Painel ILUSTRATIVO. Leia a cor: verde meta atingida, amarelo perto, vermelho longe. Aponte o gap mais urgente (treinamento).\nLEMBRE: avise que os números são de exemplo.",
-  pg3: "Pergunta-guia 3 (Kaique). Seis métricas úteis e cinco critérios de escolha: definição, fórmula, meta, responsável, frequência.\nLEMBRE: MTTD = tempo médio de detecção. MTTR = tempo médio de resposta.\nP: Quantas métricas? R: Poucas e bem escolhidas. Muitas geram ruído.",
+  pg3: "Pergunta-guia 3 (Gabriel). Seis métricas úteis e cinco critérios de escolha: definição, fórmula, meta, responsável, frequência.\nLEMBRE: MTTD = tempo médio de detecção. MTTR = tempo médio de resposta.\nP: Quantas métricas? R: Poucas e bem escolhidas. Muitas geram ruído.",
 
   "div-caso": "Divisória do estudo de caso. Transição: \"Agora o Eduardo aplica tudo em um caso real.\"",
   "metodo-caso": "Mostre o método em cinco passos e termine nos três vereditos: eficaz, falha, melhoria.\nLEMBRE: só afirmamos o que tem fonte pública. O resto é análise típica, e deve ser dito assim.",
@@ -65,14 +65,13 @@ window.NOTAS = {
   eficazes: "Eficazes: MFA em acessos críticos, criptografia em bancos e backups, operação em múltiplos datacenters. Critério: reduz o risco e há evidência.\nP: Como sabe que são eficazes? R: Pela evidência: logs, relatórios, testes de recuperação. Sem evidência é suposição.",
   falhas: "Falhas comuns e melhorias: revisão manual de acessos (automatizar), baixa conscientização (treinar e medir), testes de backup esporádicos (mensais).\nP: Essas falhas aconteceram na empresa? R: A análise parte de falhas típicas. Não afirmo que ocorreram sem fonte pública.",
   consolidada: "Tabela: eficaz, falha e melhoria para acessos, criptografia, continuidade e conscientização.\nP: Por que importa? R: Certificação não é o fim. Mesmo controle eficaz precisa de medição para continuar eficaz.",
-  licoes: "Quatro lições: escopo claro, dono e evidência, medir, melhorar sempre. Ligue cada uma a uma pergunta-guia.\nTransição: \"Fechamos com o Rômulo.\"",
+  licoes: "Quatro lições: escopo claro, dono e evidência, medir, melhorar sempre. Ligue cada uma a uma pergunta-guia.\nTransição: \"Fechamos com o Guilherme.\"",
 
-  processo: "FECHAMENTO (Rômulo e Guilherme). Rômulo faz os slides 56 a 58 e passa para o Guilherme. Segurança é processo, não destino. Ciclo: avaliar, implementar, monitorar, auditar, melhorar, repetir.\nFrase de síntese: \"Processo, não destino.\"",
+  processo: "FECHAMENTO (Guilherme, slides 56 a 60). Segurança é processo, não destino. Ciclo: avaliar, implementar, monitorar, auditar, melhorar, repetir.\nFrase de síntese: \"Processo, não destino.\"",
   levar: "O que levar: conceitos, gestão e prática.\nRegra de ouro: todo controle precisa de um responsável, uma execução e uma evidência.",
-  respostas: "Transição no fim: \"Agora o Guilherme faz o quiz e encerra.\"\nUma frase para cada pergunta-guia. PME: depende do mercado, comece pelos controles essenciais. Papel: dono, evidência, teste, indicador e auditoria. Métricas: poucas, com meta, responsável e frequência. Liste as seis do slide (acessos no prazo, restauração de backup, tempo de detecção e resposta, incidentes, controles com evidência, não conformidades).",
-  quiz: "(Guilherme) Leia uma pergunta por vez e deixe a turma responder.\nRespostas: 1) ISO/IEC 27001. 2) 93. 3) Quanto de dado posso perder (ponto de recuperação). 4) Só documento. 5) Organismo certificador acreditado.",
+  respostas: "Uma frase para cada pergunta-guia. PME: depende do mercado, comece pelos controles essenciais. Papel: dono, evidência, teste, indicador e auditoria. Métricas: poucas, com meta, responsável e frequência. Liste as seis do slide (acessos no prazo, restauração de backup, tempo de detecção e resposta, incidentes, controles com evidência, não conformidades).",
   refs: "[REVISAR] Referências: normas ISO/IEC, ABNT, Inmetro, ANPD e LGPD. Confirme as edições antes de apontar uma versão específica.",
-  perguntas: "(Guilherme) Abra para perguntas. Se não souber: \"Não tenho essa informação com segurança, mas posso verificar e enviar depois.\" Passe a palavra ao colega do bloco certo.\nSe perguntarem \"como você sabe?\", a resposta é a evidência.",
+  perguntas: "Abra para perguntas. Se não souber: \"Não tenho essa informação com segurança, mas posso verificar e enviar depois.\" Passe a palavra ao colega do bloco certo.\nSe perguntarem \"como você sabe?\", a resposta é a evidência.",
   glossario: "[REVISAR] Apêndice de consulta (siglas). Não apresentar. Use para responder perguntas.",
   numeros: "[REVISAR] Apêndice de consulta (números). Não apresentar. 95 / 87 é o exemplo ilustrativo de meta x resultado."
 };

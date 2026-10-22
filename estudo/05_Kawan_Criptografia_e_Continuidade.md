@@ -1,6 +1,6 @@
 # Kawan: criptografia e continuidade
 
-**Slides 32 a 37 (18 min)** · Recebe a palavra de: Gabriel · Passa a palavra para: Marcelo.
+**Slides 32 a 37 (18 min)** · Recebe a palavra do Kaique (slide 31) · Passa a palavra para o Marcelo (slide 38).
 
 Seu bloco tem os termos mais técnicos da aula. Por isso, este guia usa muitas analogias. Se travar, volte à analogia.
 

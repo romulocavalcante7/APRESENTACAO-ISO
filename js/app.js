@@ -47,7 +47,7 @@
         if (el.closest('.badge') || (el.parentElement && el.parentElement.closest(ALVOS))) return;
         if (s.classList.contains('cover') && el.tagName.toLowerCase() === 'svg') return;
         el.classList.add('rv');
-        el.style.setProperty('--i', el.classList.contains('ask') ? 24 : Math.min(i++, 16));
+        el.style.setProperty('--i', el.classList.contains('ask') ? 14 : Math.min(i++, 9));
       });
     });
   }
@@ -69,7 +69,7 @@
       c.el.textContent = '0';
       function passo(t) {
         if (t0 === null) t0 = t;
-        var p = Math.min(1, (t - t0 - 450) / 1100);
+        var p = Math.min(1, (t - t0 - 300) / 800);
         if (p > 0) c.el.textContent = Math.round(c.alvo * (1 - Math.pow(1 - p, 3)));
         if (p < 1) requestAnimationFrame(passo);
       }

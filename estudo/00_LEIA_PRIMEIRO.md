@@ -1,6 +1,6 @@
 # Guia do grupo: ISO/IEC 27000 (leia antes de estudar o seu bloco)
 
-Aula de 3 horas, 9 apresentadores, 63 slides. Cada pessoa tem um arquivo nesta pasta com o que estudar, o que falar, como interagir e as perguntas que o professor pode fazer.
+Aula de 3 horas, 9 apresentadores, 62 slides. Cada pessoa fala **uma vez só**, em uma sequência de slides, sem voltar depois. Cada pessoa tem um arquivo nesta pasta com o que estudar, o que falar, como interagir e as perguntas que o professor pode fazer.
 
 ## 1. A regra de ouro: não leia o slide
 
@@ -34,18 +34,18 @@ Use o arquivo `10_Dicionario_em_palavras_simples.md` para ensaiar. Cada guia tem
 
 ## Arquivos desta pasta
 
-| Arquivo | Para quem |
-|---|---|
-| 01_Romulo_Abertura_e_Fechamento.md | Rômulo |
-| 02_Guilherme_Fundamentos.md | Guilherme |
-| 03_Kaua_Familia_de_Normas.md | Kaua |
-| 04_Vinicius_ISO_27001_SGSI.md | Vinicius |
-| 05_Kaique_Certificacao.md | Kaique |
-| 06_Gabriel_Acessos_e_Medicao.md | Gabriel |
-| 07_Kawan_Criptografia_e_Continuidade.md | Kawan |
-| 08_Marcelo_ISO_27003_e_Accountability.md | Marcelo |
-| 09_Eduardo_Estudo_de_Caso.md | Eduardo |
-| 10_Dicionario_em_palavras_simples.md | Todos |
+| Arquivo | Para quem | Slides |
+|---|---|---|
+| 01_Romulo_Abertura.md | Rômulo | 1 a 5 |
+| 02_Kaua_Fundamentos_e_Familia.md | Kaua | 6 a 14 |
+| 03_Vinicius_ISO_27001_SGSI.md | Vinicius | 15 a 21 |
+| 04_Kaique_Certificacao_e_Controles_de_Acesso.md | Kaique | 22 a 31 |
+| 05_Kawan_Criptografia_e_Continuidade.md | Kawan | 32 a 37 |
+| 06_Marcelo_ISO_27003_e_Accountability.md | Marcelo | 38 a 43 |
+| 07_Gabriel_ISO_27004_e_Metricas.md | Gabriel | 44 a 48 |
+| 08_Eduardo_Estudo_de_Caso.md | Eduardo | 49 a 55 |
+| 09_Guilherme_Fechamento.md | Guilherme | 56 a 60 |
+| 10_Dicionario_em_palavras_simples.md | Todos | |
 
 ## 3. Como usar a apresentação
 
@@ -64,24 +64,22 @@ Dica: abra a apresentação no notebook com a tecla N ligada. As notas aparecem 
 
 ## 4. Agenda sugerida (180 minutos)
 
-Os tempos incluem 2 a 3 minutos de perguntas no fim de cada bloco. Não projete horários nos slides.
+Os tempos incluem as perguntas do fim de cada bloco. Kaua e Kaique têm blocos longos: façam uma pausa curta para a turma respirar no meio (Kaua depois do slide 10, Kaique depois do slide 26). Não projete horários nos slides.
 
 | Ordem | Quem | Slides | Tempo |
 |---|---|---|---|
 | Abertura | Rômulo | 1 a 5 | 8 min |
-| Bloco 1 | Guilherme | 6 a 10 | 12 min |
-| Bloco 2 | Kaua | 11 a 14 | 15 min |
-| Bloco 3 | Vinicius | 15 a 21 | 20 min |
-| Bloco 4 | Kaique | 22 a 26 | 17 min |
-| Bloco 5 | Gabriel | 27 a 31 | 16 min |
-| Bloco 6 | Kawan | 32 a 37 | 18 min |
-| Bloco 7 | Marcelo | 38 a 43 | 17 min |
-| Bloco 8 | Gabriel (44 a 47) e Kaique (48) | 44 a 48 | 13 min |
-| Bloco 9 | Eduardo | 49 a 55 | 18 min |
-| Fechamento | Rômulo (56 a 58) e Guilherme (59 a 61) | 56 a 61 | 12 min |
-| Reserva | todos | | 14 min (perguntas gerais e pausa) |
+| Bloco 1 | Kaua | 6 a 14 | 27 min |
+| Bloco 2 | Vinicius | 15 a 21 | 20 min |
+| Bloco 3 | Kaique | 22 a 31 | 33 min |
+| Bloco 4 | Kawan | 32 a 37 | 18 min |
+| Bloco 5 | Marcelo | 38 a 43 | 17 min |
+| Bloco 6 | Gabriel | 44 a 48 | 13 min |
+| Bloco 7 | Eduardo | 49 a 55 | 18 min |
+| Fechamento | Guilherme | 56 a 60 | 10 min |
+| Reserva | todos | | 16 min (perguntas gerais e pausa) |
 
-Os slides 62 e 63 são apêndices de consulta. Não apresente: use para responder perguntas.
+Os slides 61 e 62 são apêndices de consulta. Não apresente: use para responder perguntas.
 
 Se o bloco anterior atrasou, corte exemplos, nunca definições.
 
@@ -89,22 +87,22 @@ Se o bloco anterior atrasou, corte exemplos, nunca definições.
 
 | Requisito do trabalho | Onde aparece | Quem |
 |---|---|---|
-| Teoria das normas 27000 a 27004 | Slides 6 a 21 (fundamentos, família, 27001) e 27 a 48 (27002, 27003, 27004) | Guilherme, Kaua, Vinicius, Gabriel, Kawan, Marcelo |
+| Teoria das normas 27000 a 27004 | Slides 6 a 48 | Kaua, Vinicius, Kaique, Kawan, Marcelo e Gabriel |
 | Estudo de caso de empresa certificada | Slides 49 a 55 | Eduardo |
-| Exemplos de controles da 27002 em casos reais | Slides 28 a 37 | Gabriel e Kawan |
+| Exemplos de controles da 27002 em casos reais | Slides 28 a 37 | Kaique e Kawan |
 | Análise: eficazes, falhas e melhorias | Slides 37 e 52 a 54 | Kawan e Eduardo |
 | Pergunta 1: certificar pequena empresa? | Slides 25 e 26 | Kaique |
 | Pergunta 2: controles só no papel? | Slides 42 e 43 | Marcelo |
-| Pergunta 3: métricas da 27004 | Slides 44 a 48 | Gabriel e Kaique |
-| Importância da certificação e do monitoramento contínuo | Slides 22 a 26 e 44 a 48 | Kaique, Gabriel |
+| Pergunta 3: métricas da 27004 | Slides 44 a 48 e 58 | Gabriel (e Guilherme no resumo) |
+| Importância da certificação e do monitoramento contínuo | Slides 22 a 26 e 44 a 48 | Kaique e Gabriel |
 
 ## 6. Avisos importantes (leia todos)
 
 1. **Estudo de caso (Eduardo).** O slide 51 traz "Fonte a confirmar". A busca pública feita durante a preparação não confirmou que o Banco do Brasil possua certificado ISO/IEC 27001, e os números que apareciam no trabalho original não foram verificados. Antes da aula, o grupo precisa: (a) procurar em relatório anual, relatório de sustentabilidade ou site de relações com investidores; (b) se confirmar, anotar o escopo oficial; (c) se não confirmar, trocar por uma empresa com certificado comprovado (o próprio emissor do certificado e o site da empresa costumam listar). Não apresente número que não possa citar. O requisito do trabalho exige "empresa certificada".
 2. **Dados ilustrativos.** Os slides 20, 37, 40 e 47 usam exemplos ilustrativos. Eles estão marcados como tais. Diga isso em voz alta.
 3. **Edições das normas.** Confira nas páginas da ISO e da ABNT a edição vigente antes de citar. Neste material: 27001 e 27002 edição 2022, 27000:2018, 27003:2017, 27004:2016 (como constam no slide de referências). A migração de certificados da edição 2013 para a 2022 é um tema que o professor pode perguntar: confirme o prazo oficial antes da aula.
-4. **Emilly não estará presente.** O bloco de métricas (27004) foi dividido entre Gabriel e Kaique.
-5. **Quantidade de apresentadores.** Rômulo e Guilherme ficam com as partes mais curtas. O fechamento é dividido: Rômulo faz os slides 56 a 58 e Guilherme faz o quiz, as referências e as perguntas (59 a 61).
+4. **Emilly não estará presente.** O bloco de métricas (27004) ficou com o Gabriel.
+5. **Quem fala quando.** Cada apresentador tem uma sequência contínua de slides e não volta depois. Rômulo só abre (1 a 5) e Guilherme só fecha (56 a 60), as duas partes mais leves. Quem fala bem (Kaua, Vinicius, Kawan e Eduardo) pega mais conteúdo.
 
 ## 7. Perguntas gerais que o professor pode fazer a qualquer um
 

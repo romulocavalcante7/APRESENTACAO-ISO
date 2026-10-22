@@ -1,6 +1,6 @@
 # Eduardo: estudo de caso e análise
 
-**Slides 49 a 55 (18 min)** · Recebe a palavra de: Kaique (slide 48) · Passa a palavra para: Rômulo (slide 56).
+**Slides 49 a 55 (18 min)** · Recebe a palavra de: Gabriel (slide 48) · Passa a palavra para: Guilherme (slide 56).
 
 Seu bloco amarra a aula: pega o que todos explicaram e aplica em uma empresa. É a parte em que o professor mais vai testar se o grupo entendeu.
 
@@ -72,7 +72,7 @@ Tabela por controle: o que é eficaz, falha ou limitação, e o que pode melhora
 **Slide 54 (consolidada).** Leia uma linha como exemplo e deixe o resto para consulta. Termine na conclusão.
 **Slide 55 (lições).** Os quatro números sobem: fale cada lição em uma frase.
 - Interação: "Qual lição vocês aplicariam hoje no seu trabalho?"
-Passe a palavra: "Fechamos com o Rômulo."
+Passe a palavra: "Agora o Guilherme faz o fechamento."
 
 ## Cola: se esquecer
 

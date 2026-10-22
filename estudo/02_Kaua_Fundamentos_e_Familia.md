@@ -1,12 +1,14 @@
-# Guilherme: fundamentos da segurança
+# Kaua: fundamentos e a família ISO/IEC 27000
 
-**Slides 6 a 10 (12 min) e slides 59 a 61 (6 min, no fechamento)** · No bloco 1: recebe a palavra de Rômulo e passa para Kaua. No fechamento: recebe a palavra de Rômulo (slide 58) e encerra a aula.
+**Slides 6 a 14 (27 min)** · Recebe a palavra do Rômulo (slide 5) · Passa a palavra para o Vinicius (slide 15).
 
-São cinco slides e todos usam ideias intuitivas. É um bloco curto e rápido: foque em exemplos do dia a dia.
+Seu bloco tem duas partes: **a base** (os três pilares, o vocabulário e o risco) e **a família de normas** (quem é quem e como trabalham juntas). A primeira parte usa só ideias do dia a dia. A segunda é o mapa das normas.
 
 ## Explique como para um amigo (30 segundos)
 
 "Proteger informação é cuidar de três coisas: que só quem deve veja (confidencialidade), que ninguém mude por engano ou de má-fé (integridade) e que esteja disponível quando precisarmos (disponibilidade). Para falar de segurança, usamos algumas palavras: o ativo é o que tem valor, a ameaça é quem pode causar dano, a vulnerabilidade é a fraqueza, o risco é a chance vezes o estrago, e o controle é a medida que diminui esse risco. Com a matriz, a gente dá uma nota ao risco para saber o que resolver primeiro."
+
+Depois: "A ISO 27000 é uma família de cinco normas, cada uma com um papel. A 27000 é o dicionário. A 27001 é a que tem as exigências, e é a única que dá certificado. A 27002 é o catálogo de controles, ensina como fazer. A 27003 ensina a implantar. A 27004 ensina a medir. Elas funcionam juntas: primeiro as palavras, depois as exigências, depois os controles, depois a implantação e por fim a medição."
 
 ## O que você precisa saber
 
@@ -36,6 +38,34 @@ Probabilidade de 1 a 5 e impacto de 1 a 5. O risco é o produto (1 a 25).
 - 1 a 4: baixo. 5 a 9: médio. 10 a 16: alto. 17 a 25: crítico.
 - Por que multiplicar? Um evento raro e gravíssimo (1 × 5 = 5) e um evento comum e leve (5 × 1 = 5) têm o mesmo valor, mas pedem decisões diferentes. O número ajuda a priorizar, não a decidir sozinho.
 
+### As cinco normas
+| Norma | Papel | Certificável? | Pergunta que responde |
+|---|---|---|---|
+| 27000 | Visão geral e vocabulário | Não | Que termos usamos? |
+| 27001 | Requisitos do SGSI | **Sim** | O que o sistema de gestão precisa ter? |
+| 27002 | Código de prática (controles) | Não | Como implementar cada controle? |
+| 27003 | Orientação para implantar o SGSI | Não | Como colocar o SGSI de pé? |
+| 27004 | Monitoramento e medição | Não | Como saber se está funcionando? |
+
+Mnemônico: **0 = vocabulário, 1 = requisitos, 2 = controles, 3 = implantação, 4 = medição.**
+
+### Por que só a 27001 é certificável
+Certificar é comparar a organização com **requisitos** (o que "deve" ser feito). A 27001 está escrita assim. As demais são **diretrizes**: orientam e recomendam ("convém"), mas não são o critério de auditoria. Nas normas ISO, "deve" indica requisito e "convém" indica recomendação.
+
+### Como se encaixam (o fluxo do slide 13)
+Termos (27000) → requisitos (27001) → controles (27002) → implantação (27003) → medição (27004). Depois a medição realimenta o sistema: é um ciclo.
+
+Analogia da obra: 27000 é o dicionário de obra, 27001 é o projeto aprovado e a exigência da prefeitura, 27002 é o catálogo de materiais e técnicas, 27003 é o manual do mestre de obras, 27004 é a inspeção periódica.
+
+### Linha do tempo (slide 12)
+- 1995: BS 7799, norma britânica de boas práticas, origem da família.
+- 2000: ISO/IEC 17799, versão internacional do código de prática.
+- 2005: primeira edição da ISO/IEC 27001, com requisitos certificáveis.
+- 2013: revisão da 27001 e da 27002 (Anexo A com 114 controles em 14 seções).
+- 2022: edição atual (Anexo A com 93 controles em 4 temas; 27002 reorganizada).
+
+Confira as datas na ISO e na ABNT antes da aula. A ordem e a ideia (uma evolução de boas práticas até requisitos certificáveis) é o que importa.
+
 ## Roteiro slide a slide
 
 **Slide 6 (divisória).** Uma frase: "Antes das normas, precisamos falar a mesma língua. São três pilares e oito palavras."
@@ -54,24 +84,22 @@ Probabilidade de 1 a 5 e impacto de 1 a 5. O risco é o produto (1 a 25).
 
 **Slide 10 (matriz de risco).** Explique a conta no cartão da esquerda e depois aponte o canto superior direito da matriz (25, crítico) e o inferior esquerdo (1, baixo).
 - Interação: "Onde colocariam o risco 'senha fraca'?". Resposta defensável: probabilidade alta, impacto médio a alto, então algo entre 10 e 16 (alto). Peça que justifiquem.
-- Passe a palavra: "Agora o Kaua apresenta a família de normas."
+- Faça a ponte: "Agora que falamos a mesma língua, vamos ver a família de normas."
 
-## Fechamento: quiz, referências e perguntas (slides 59 a 61)
+**Slide 11 (família).** Apresente as cinco normas em uma frase cada, usando o mnemônico 0-1-2-3-4. Destaque o selo "certificável" da 27001.
+- Interação: "Qual dessas normas é a única certificável?". Resposta: 27001.
 
-Depois do Rômulo apresentar as respostas às três perguntas, você encerra. São três slides leves.
+**Slide 12 (linha do tempo).** Conte como história: começou como boas práticas no Reino Unido, virou padrão internacional, passou a ter requisitos certificáveis e foi revisada. Aponte a barra crescendo.
+- Interação (no alto): "Alguém já viu uma empresa citar a ISO 27001?". Se alguém citar, pergunte em que contexto.
+- Fale dos números 114 (2013) e 93 (2022) sem se prender: o Vinicius detalha.
 
-**Slide 59 (quiz relâmpago).** Leia uma pergunta por vez e espere a turma responder em voz alta. Se ninguém arriscar, escolha alguém e peça um palpite. Respostas:
-1. ISO/IEC 27001 (a única certificável).
-2. 93 controles na edição 2022.
-3. O RPO mostra quanto dado a empresa aceita perder, do último backup até o incidente.
-4. Só documento, um controle sem evidência recente.
-5. Um organismo certificador acreditado (no Brasil, a acreditação é do Inmetro).
-Elogie quem acertou e explique rápido os erros.
+**Slide 13 (como trabalham juntas).** Percorra o fluxo. Use a analogia da obra.
+- Diga que o ciclo fecha: o que a 27004 mede volta para a gestão do SGSI.
 
-**Slide 60 (referências).** Não leia a lista. Diga: "As normas, a ABNT, o Inmetro, a ANPD e a LGPD estão aqui para quem quiser estudar."
-
-**Slide 61 (perguntas).** Agradeça e abra para perguntas gerais do professor e da turma. Direcione cada pergunta ao colega do bloco certo: "Esse ponto é do bloco do Kawan, ele explica melhor."
-Se não souber: "Não tenho essa informação com segurança, mas posso verificar e enviar depois."
+**Slide 14 (comparativo).** Tabela de requisito versus orientação. Leia só a coluna "Pergunta que responde".
+- Interação: "Por que a 27002 não gera certificado?". Resposta: é diretriz, não requisito.
+- Curiosidade final: "deve" é requisito e "convém" é recomendação.
+- Passe a palavra: "Agora o Vinicius abre a 27001 e mostra como o SGSI funciona."
 
 ## Cola: se esquecer
 
@@ -79,6 +107,11 @@ Se não souber: "Não tenho essa informação com segurança, mas posso verifica
 - Risco = probabilidade × impacto.
 - Controle reduz o risco, não elimina.
 - Dica: casa, ladrão, janela aberta, fechadura.
+
+
+- 0, 1, 2, 3, 4: vocabulário, requisitos, controles, implantação, medição.
+- Só a 27001 é certificável.
+- 2013: 114 controles em 14 seções. 2022: 93 controles em 4 temas.
 
 ## Perguntas do professor
 
@@ -106,12 +139,42 @@ R: O não atendimento de um requisito. Gera ação corretiva. Em auditoria, pode
 **P: Todo ativo é igualmente importante?**
 R: Não. Por isso se classificam os ativos e se priorizam os controles nos mais críticos.
 
+
+**P: Por que a 27002 não é certificável?**
+R: Porque é um código de prática com diretrizes. A certificação é feita sobre requisitos, que estão na 27001. A organização escolhe os controles com base nos riscos e justifica a escolha.
+
+**P: A ISO 27001 substitui a 27002?**
+R: Não. A 27001 diz o que o sistema precisa ter. A 27002 ajuda a escolher e implementar os controles do Anexo A.
+
+**P: A ISO 27001 é obrigatória?**
+R: Não é obrigatória por lei. Pode ser exigida por contrato, por cliente ou por regulação setorial.
+
+**P: Quantas normas existem na família 27000?**
+R: Mais de cinco. O trabalho foca nas cinco principais (27000 a 27004). Existem outras específicas, por exemplo sobre privacidade e nuvem. Se perguntarem qual, diga que não vai citar números sem confirmar.
+
+**P: Qual a diferença entre a edição 2013 e a 2022?**
+R: Na edição de 2022, o Anexo A foi reorganizado em 4 temas e 93 controles. A de 2013 tinha 14 seções e 114 controles. Alguns controles foram fundidos e outros criados. Confirme os detalhes se o professor pedir mais.
+
+**P: Se a 27001 é a certificável, por que estudar as outras?**
+R: Porque a 27001 diz o que fazer, mas não ensina como. A 27002 traz os controles, a 27003 orienta a implantação e a 27004 ensina a medir. Sem elas, a organização teria o requisito sem o caminho.
+
+**P: A ABNT é a mesma coisa que a ISO?**
+R: Não. A ISO publica a norma internacional. A ABNT é o órgão brasileiro que publica a versão nacional (NBR ISO/IEC).
+
+**P: Quem muda a norma?**
+R: A ISO e a IEC, por comitê técnico, em revisões periódicas.
+
 ## Erros a evitar
 
 - Confundir **ameaça** com **vulnerabilidade** (o erro mais comum).
 - Dizer que o controle "elimina" o risco.
 - Ler todos os oito cartões do vocabulário.
 - Apresentar o hospital como caso real: é hipotético.
+
+- Dizer que a 27002 é certificável.
+- Dizer que a 27001 "é uma lista de controles": a lista (Anexo A) é parte dela, mas ela é um sistema de gestão.
+- Citar datas sem conferir.
+- Ler a tabela inteira: use só a coluna da pergunta.
 
 ## Para estudar mais
 
