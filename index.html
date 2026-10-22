@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ISO/IEC 27000 - Gestão de Segurança da Informação</title>
 <link rel="stylesheet" href="css/styles.css">
+<script>if(!(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches))document.documentElement.classList.add("anim")</script>
 <script src="js/notas.js" defer></script>
 <script src="js/app.js" defer></script>
 </head>
@@ -63,17 +64,18 @@
   <span id="blk" class="tb-blk">Abertura</span>
   <span id="timer" class="tb-timer" title="S inicia, P pausa, R zera">00:00</span>
   <span class="tb-keys">setas navegam · F tela cheia · N notas · S/P/R cronômetro</span>
+  <div id="prog"></div>
 </header>
 <main id="stage">
   <div id="view">
     <div id="deck">
 
 <!-- ============ 1. CAPA ============ -->
-<section class="slide cover">
+<section data-id="capa" data-bloco="Abertura · Rômulo" class="slide cover">
   <div class="bgimg" style="background-image:url(assets/bg/p01.jpg)"></div>
   <div class="haze"></div>
   <div class="z" style="position:absolute;left:80px;top:48px;right:80px;font-size:15px;color:var(--muted);line-height:1.5">
-    <b style="color:#c8d6ee">Alunos:</b> Guilherme Nunes da Cruz · Kaua Gabriel Ricardo · Vinicius Porto Augusto · Kaique Cirqueira · Gabriel Feitosa · Kawan Kelvin · Marcelo Pina · Emilly Gabrielly · Eduardo Santana · Rômulo Gomes Cavalcante
+    <b style="color:#c8d6ee">Alunos:</b> Guilherme Nunes da Cruz · Rômulo Gomes Cavalcante · Vinicius Porto Augusto · Kaique Cirqueira · Gabriel Feitosa · Kawan Kelvin · Kaua Gabriel Ricardo · Marcelo Pina · Eduardo Santana
   </div>
   <div class="z" style="position:absolute;left:80px;top:230px;width:720px">
     <div class="tag">Sistemas de Informação · 2026</div>
@@ -103,7 +105,7 @@
 </section>
 
 <!-- ============ 2. ROTEIRO ============ -->
-<section class="slide">
+<section data-id="roteiro" data-bloco="Abertura · Rômulo" class="slide">
   <div class="haze"></div><div class="grid"></div>
   <div class="z"><div class="tag">Abertura · Roteiro</div>
   <h2>Roteiro da <span class="a">aula</span> (3h)</h2>
@@ -126,7 +128,7 @@
 </section>
 
 <!-- ============ 3. REQUISITOS ============ -->
-<section class="slide">
+<section data-id="requisitos" data-bloco="Abertura · Rômulo" class="slide">
   <div class="haze"></div><div class="grid"></div>
   <div class="z"><div class="tag">Abertura · Requisitos</div>
   <h2>Mapa dos <span class="a">requisitos</span> do trabalho</h2>
@@ -144,7 +146,7 @@
 </section>
 
 <!-- ============ 4. CONTEXTO ============ -->
-<section class="slide">
+<section data-id="contexto" data-bloco="Abertura · Rômulo" class="slide">
   <div class="haze"></div><div class="grid"></div>
   <div class="z"><div class="tag">Abertura · Contexto</div>
   <h2>Por que <span class="a">segurança</span> importa agora?</h2>
@@ -159,8 +161,35 @@
   <div class="foot"><span>Apresentador: <b>Rômulo</b></span><span>04</span></div>
 </section>
 
-<!-- ============ 5. DIVISOR 1 ============ -->
-<section class="slide divider">
+<!-- ============ 5. A TRILHA DA AULA ============ -->
+<section data-id="trilha" data-bloco="Abertura · Rômulo" class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">Abertura · Trilha</div>
+  <h2>A trilha da <span class="a">aula</span></h2>
+  <p class="sub">Do conceito à evidência: cada bloco responde a uma parte do trabalho.</p></div>
+  <div class="z flow big" style="margin-top:56px">
+    <div class="step" style="--c:#3b82f6;--bgc:#0b1b3d"><div class="num">1</div><h4>Fundamentos</h4><p>CIA, risco e vocabulário</p><p style="margin-top:10px;color:#9fb0cc">Guilherme</p></div>
+    <div class="arrow">›</div>
+    <div class="step" style="--c:#8b5cf6;--bgc:#1c1138"><div class="num">2</div><h4>Família 27000</h4><p>Quem é quem entre as normas</p><p style="margin-top:10px;color:#9fb0cc">Kaua</p></div>
+    <div class="arrow">›</div>
+    <div class="step" style="--c:#22d3ee;--bgc:#0b2a36"><div class="num">3</div><h4>ISO 27001</h4><p>SGSI, Anexo A e certificação</p><p style="margin-top:10px;color:#9fb0cc">Vinicius e Kaique</p></div>
+    <div class="arrow">›</div>
+    <div class="step" style="--c:#22c55e;--bgc:#0b2a1c"><div class="num">4</div><h4>ISO 27002</h4><p>Controles: acessos, cripto, continuidade</p><p style="margin-top:10px;color:#9fb0cc">Gabriel e Kawan</p></div>
+    <div class="arrow">›</div>
+    <div class="step" style="--c:#f59e0b;--bgc:#2e2008"><div class="num">5</div><h4>27003 e 27004</h4><p>Implantar, provar e medir</p><p style="margin-top:10px;color:#9fb0cc">Marcelo, Gabriel e Kaique</p></div>
+    <div class="arrow">›</div>
+    <div class="step" style="--c:#f43f5e;--bgc:#2e0b14"><div class="num">6</div><h4>Caso real</h4><p>Eficaz, falha e melhoria</p><p style="margin-top:10px;color:#9fb0cc">Eduardo</p></div>
+  </div>
+  <div class="z" style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px">
+    <div class="qbox" style="font-size:19px;padding-left:34px">Vale certificar uma pequena empresa?<br><span style="font-size:15px;font-style:normal;color:#9fb0cc">Resposta no bloco da certificação</span></div>
+    <div class="qbox" style="font-size:19px;padding-left:34px">Como evitar controle só no papel?<br><span style="font-size:15px;font-style:normal;color:#9fb0cc">Resposta no bloco da 27003</span></div>
+    <div class="qbox" style="font-size:19px;padding-left:34px">Quais métricas usar?<br><span style="font-size:15px;font-style:normal;color:#9fb0cc">Resposta no bloco da 27004</span></div>
+  </div>
+  <div class="foot"><span>Apresentador: <b>Rômulo Gomes Cavalcante</b></span><span>05</span></div>
+</section>
+
+<!-- ============ 6. DIVISOR 1 ============ -->
+<section data-id="div-fund" data-bloco="Bloco 1 · Guilherme" class="slide divider">
   <div class="bgimg" style="background-image:url(assets/bg/p03.jpg)"></div><div class="haze"></div>
   <div class="z" style="position:absolute;left:80px;top:170px">
     <div class="num">01</div>
@@ -168,11 +197,11 @@
     <h1 style="margin-top:14px">Fundamentos <span class="a">da segurança</span></h1>
     <p class="sub" style="font-size:24px">Confidencialidade, integridade, disponibilidade e vocabulário comum.</p>
   </div>
-  <div class="foot"><span>Bloco 1 · <b>Guilherme Nunes da Cruz</b></span><span>05</span></div>
+  <div class="foot"><span>Bloco 1 · <b>Guilherme Nunes da Cruz</b></span><span>06</span></div>
 </section>
 
-<!-- ============ 6. CIA ============ -->
-<section class="slide">
+<!-- ============ 7. CIA ============ -->
+<section data-id="cia" data-bloco="Bloco 1 · Guilherme" class="slide">
   <div class="haze"></div><div class="grid"></div>
   <div class="z"><div class="tag">Fundamentos</div>
   <h2>Os três pilares: <span class="a">CIA</span></h2>
@@ -182,11 +211,28 @@
     <div class="card" style="--c:#8b5cf6;min-height:400px"><div class="badge b2" style="width:98px;height:98px;margin-bottom:24px"><svg style="width:48px;height:48px"><use href="#i-check"/></svg></div><h3 style="font-size:28px">INTEGRIDADE</h3><div class="lbl">Pode ser alterado?</div><p>A informação permanece exata e completa.</p><ul><li>Hash SHA-256</li><li>Assinatura digital</li><li>Trilha de auditoria</li></ul></div>
     <div class="card" style="--c:#22d3ee;min-height:400px"><div class="badge b3" style="width:98px;height:98px;margin-bottom:24px"><svg style="width:48px;height:48px"><use href="#i-cloud"/></svg></div><h3 style="font-size:28px">DISPONIBILIDADE</h3><div class="lbl">Está acessível quando preciso?</div><p>Sistemas e dados disponíveis na hora certa.</p><ul><li>Backup testado</li><li>Redundância</li><li>Plano de continuidade</li></ul></div>
   </div>
-  <div class="foot"><span>Apresentador: <b>Guilherme Nunes da Cruz</b></span><span>06</span></div>
+  <div class="z ask"><span class="ask-q">?</span><span class="ask-t">Qual dos três pilares vocês acham mais difícil de proteger?</span></div>
+  <div class="foot"><span>Apresentador: <b>Guilherme Nunes da Cruz</b></span><span>07</span></div>
 </section>
 
-<!-- ============ 7. VOCABULÁRIO ============ -->
-<section class="slide">
+<!-- ============ 8. CIA NA PRÁTICA ============ -->
+<section data-id="cia-cenarios" data-bloco="Bloco 1 · Guilherme" class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">Fundamentos · Exemplo</div>
+  <h2>CIA na prática: um <span class="a">hospital</span></h2>
+  <p class="sub">Mesmo sistema, três tipos de falha. Cada uma quebra um pilar diferente.</p></div>
+  <div class="z" style="display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:34px">
+    <div class="card" style="--c:#3b82f6;min-height:380px"><span class="chip" style="--c:#3b82f6;margin-bottom:16px">Quebra a confidencialidade</span><h3 style="font-size:26px">Prontuário vazado</h3><p style="margin-top:8px">Um funcionário sem permissão abre o prontuário de um paciente famoso.</p><div class="note blue" style="margin-top:18px;font-size:17px;padding:12px 16px"><b>Controle:</b> acesso por função, MFA e registro de quem consultou.</div></div>
+    <div class="card" style="--c:#8b5cf6;min-height:380px"><span class="chip" style="--c:#8b5cf6;margin-bottom:16px">Quebra a integridade</span><h3 style="font-size:26px">Dose alterada</h3><p style="margin-top:8px">Alguém altera a dose de um medicamento no sistema e ninguém percebe.</p><div class="note blue" style="margin-top:18px;font-size:17px;padding:12px 16px"><b>Controle:</b> trilha de auditoria, assinatura digital e controle de alterações.</div></div>
+    <div class="card" style="--c:#22d3ee;min-height:380px"><span class="chip" style="--c:#22d3ee;margin-bottom:16px">Quebra a disponibilidade</span><h3 style="font-size:26px">Sistema fora do ar</h3><p style="margin-top:8px">Um ransomware criptografa os servidores e o atendimento volta ao papel.</p><div class="note blue" style="margin-top:18px;font-size:17px;padding:12px 16px"><b>Controle:</b> backup testado, redundância e plano de continuidade.</div></div>
+  </div>
+  <div class="z note amber" style="margin-top:26px;font-size:17px;padding:12px 22px">Exemplo hipotético, criado apenas para fixar o conceito.</div>
+  <div class="z ask"><span class="ask-q">?</span><span class="ask-t">Em cada caso, qual pilar foi quebrado?</span></div>
+  <div class="foot"><span>Apresentador: <b>Guilherme Nunes da Cruz</b></span><span>08</span></div>
+</section>
+
+<!-- ============ 9. VOCABULÁRIO ============ -->
+<section data-id="vocab" data-bloco="Bloco 1 · Guilherme" class="slide">
   <div class="haze"></div><div class="grid"></div>
   <div class="z"><div class="tag">Fundamentos</div>
   <h2>Vocabulário <span class="a">essencial</span></h2>
@@ -201,11 +247,64 @@
     <div class="card mini" style="--c:#8b5cf6;min-height:200px"><div class="badge sm b2" style="margin-bottom:14px"><svg><use href="#i-doc"/></svg></div><h3>Evidência</h3><p>Registro que prova que o controle foi executado.</p></div>
     <div class="card mini" style="--c:#f43f5e;min-height:200px"><div class="badge sm b6" style="margin-bottom:14px"><svg><use href="#i-ban"/></svg></div><h3>Não conformidade</h3><p>Descumprimento de requisito, que exige correção.</p></div>
   </div>
-  <div class="foot"><span>Apresentador: <b>Guilherme Nunes da Cruz</b></span><span>07</span></div>
+  <div class="z ask ask-top"><span class="ask-q">?</span><span class="ask-t">Quem dá um exemplo de ameaça e de vulnerabilidade do dia a dia?</span></div>
+  <div class="foot"><span>Apresentador: <b>Guilherme Nunes da Cruz</b></span><span>09</span></div>
 </section>
 
-<!-- ============ 8. FAMÍLIA ============ -->
-<section class="slide">
+<!-- ============ 10. MATRIZ DE RISCO ============ -->
+<section data-id="risco-matriz" data-bloco="Bloco 1 · Guilherme" class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">Fundamentos · Risco</div>
+  <h2>Risco = probabilidade <span class="a">×</span> impacto</h2>
+  <p class="sub">A mesma conta organiza o que fazer primeiro.</p></div>
+  <div class="z" style="display:grid;grid-template-columns:1fr 1.15fr;gap:46px;margin-top:30px;align-items:center">
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <div class="card" style="--c:#f59e0b"><h3>Como ler</h3><ul><li><b>Probabilidade:</b> quão provável é acontecer</li><li><b>Impacto:</b> quanto dói se acontecer</li><li><b>Risco:</b> o produto das duas notas, de 1 a 25</li></ul></div>
+      <div class="card" style="--c:#22c55e"><h3>Por que multiplicar?</h3><p>Um evento raro e gravíssimo pode pesar mais que um evento comum e irrelevante. O produto define a prioridade.</p></div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap"><span class="pill" style="--c:#22c55e">1 a 4 baixo</span><span class="pill" style="--c:#f59e0b">5 a 9 médio</span><span class="pill" style="--c:#fb923c">10 a 16 alto</span><span class="pill" style="--c:#f43f5e">17 a 25 crítico</span></div>
+    </div>
+    <div class="card" style="--c:#3b82f6;padding:22px 26px">
+      <div style="display:flex;gap:14px;align-items:stretch">
+        <div class="axis-y">Probabilidade</div>
+        <div style="flex:1"><div class="matrix">
+        <div class="cell y">5</div>
+        <div class="cell o">10</div>
+        <div class="cell o">15</div>
+        <div class="cell r">20</div>
+        <div class="cell r">25</div>
+        <div class="cell g">4</div>
+        <div class="cell y">8</div>
+        <div class="cell o">12</div>
+        <div class="cell o">16</div>
+        <div class="cell r">20</div>
+        <div class="cell g">3</div>
+        <div class="cell y">6</div>
+        <div class="cell y">9</div>
+        <div class="cell o">12</div>
+        <div class="cell o">15</div>
+        <div class="cell g">2</div>
+        <div class="cell g">4</div>
+        <div class="cell y">6</div>
+        <div class="cell y">8</div>
+        <div class="cell o">10</div>
+        <div class="cell g">1</div>
+        <div class="cell g">2</div>
+        <div class="cell g">3</div>
+        <div class="cell g">4</div>
+        <div class="cell y">5</div>
+        </div>
+        <div class="axis-x"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
+        <div style="text-align:center;font-size:15px;color:var(--muted);margin-top:4px">Impacto</div></div>
+      </div>
+      <p style="font-size:14px;color:var(--muted);margin-top:8px">Linhas: probabilidade de 5 (topo) a 1 (base).</p>
+    </div>
+  </div>
+  <div class="z ask"><span class="ask-q">?</span><span class="ask-t">Onde vocês colocariam o risco “senha fraca”?</span></div>
+  <div class="foot"><span>Apresentador: <b>Guilherme Nunes da Cruz</b></span><span>10</span></div>
+</section>
+
+<!-- ============ 11. FAMÍLIA ============ -->
+<section data-id="familia" data-bloco="Bloco 2 · Kaua" class="slide">
   <div class="haze"></div><div class="grid"></div>
   <div class="z"><div class="tag">Família de normas</div>
   <h2>Família <span class="a">ISO/IEC 27000</span></h2>
@@ -217,11 +316,31 @@
     <div class="card mini" style="--c:#3b82f6;min-height:430px;text-align:left"><div class="badge b1" style="margin-bottom:18px"><svg><use href="#i-flag"/></svg></div><h3>27003</h3><div class="lbl">Orientações de implementação</div><p>Como planejar e conduzir a implantação do SGSI.</p><div style="margin-top:22px"><span class="chip" style="--c:#3b82f6">Orientativa</span></div></div>
     <div class="card mini" style="--c:#f59e0b;min-height:430px;text-align:left"><div class="badge b5" style="margin-bottom:18px"><svg><use href="#i-chart"/></svg></div><h3>27004</h3><div class="lbl">Medição e monitoramento</div><p>Como medir se o SGSI e os controles funcionam.</p><div style="margin-top:22px"><span class="chip" style="--c:#f59e0b">Orientativa</span></div></div>
   </div>
-  <div class="foot"><span>Apresentador: <b>Kaua Gabriel Ricardo</b></span><span>08</span></div>
+  <div class="z ask"><span class="ask-q">?</span><span class="ask-t">Qual dessas normas é a única certificável?</span></div>
+  <div class="foot"><span>Apresentador: <b>Kaua Gabriel Ricardo</b></span><span>11</span></div>
 </section>
 
-<!-- ============ 9. INTEGRAÇÃO ============ -->
-<section class="slide">
+<!-- ============ 12. LINHA DO TEMPO DAS NORMAS ============ -->
+<section data-id="linha-tempo" data-bloco="Bloco 2 · Kaua" class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">Família de normas · História</div>
+  <h2>De onde veio a <span class="a">família</span> 27000</h2>
+  <p class="sub">A norma atual é o resultado de quase 30 anos de revisões.</p></div>
+  <div class="z tl" style="margin-top:56px">
+    <div class="tl-line"><i></i></div>
+    <div class="tl-item" style="--c:#3b82f6"><div class="tl-dot"></div><div class="tl-year">1995</div><h4>BS 7799</h4><p>Norma britânica de boas práticas. É a origem de tudo.</p></div>
+    <div class="tl-item" style="--c:#8b5cf6"><div class="tl-dot"></div><div class="tl-year">2000</div><h4>ISO/IEC 17799</h4><p>Versão internacional do código de prática.</p></div>
+    <div class="tl-item" style="--c:#22d3ee"><div class="tl-dot"></div><div class="tl-year">2005</div><h4>ISO/IEC 27001</h4><p>Primeira edição com requisitos certificáveis do SGSI.</p></div>
+    <div class="tl-item" style="--c:#22c55e"><div class="tl-dot"></div><div class="tl-year">2013</div><h4>Revisão</h4><p>27001 e 27002 atualizadas. Anexo A com 114 controles em 14 seções.</p></div>
+    <div class="tl-item" style="--c:#f59e0b"><div class="tl-dot"></div><div class="tl-year">2022</div><h4>Edição atual</h4><p>Anexo A com 93 controles em 4 temas. 27002 reorganizada.</p></div>
+  </div>
+  <div class="z note cyan" style="position:absolute;left:80px;right:80px;bottom:70px">Quem tem certificado da edição 2013 precisa migrar para a de 2022. Por isso os dois números (114 e 93) aparecem em materiais diferentes.</div>
+  <div class="z ask ask-top"><span class="ask-q">?</span><span class="ask-t">Alguém já viu uma empresa citar a ISO 27001?</span></div>
+  <div class="foot"><span>Apresentador: <b>Kaua Gabriel Ricardo</b></span><span>12</span></div>
+</section>
+
+<!-- ============ 13. INTEGRAÇÃO ============ -->
+<section data-id="integracao" data-bloco="Bloco 2 · Kaua" class="slide">
   <div class="haze"></div><div class="grid"></div>
   <div class="z"><div class="tag">Família de normas</div>
   <h2>Como as normas <span class="a">trabalham juntas</span></h2>
@@ -241,11 +360,30 @@
     <div class="card" style="--c:#22c55e"><h3>A 27001 exige escolha justificada</h3><p>A organização escolhe os controles e justifica a escolha. A 27002 ajuda nessa escolha.</p></div>
     <div class="card" style="--c:#f59e0b"><h3>A 27004 comprova</h3><p>Com indicadores, mostra que os controles realmente funcionam e sustentam a melhoria.</p></div>
   </div>
-  <div class="foot"><span>Apresentador: <b>Kaua Gabriel Ricardo</b></span><span>09</span></div>
+  <div class="foot"><span>Apresentador: <b>Kaua Gabriel Ricardo</b></span><span>13</span></div>
 </section>
 
-<!-- ============ 10. DIVISOR 2 ============ -->
-<section class="slide divider">
+<!-- ============ 14. COMPARATIVO DAS NORMAS ============ -->
+<section data-id="comparativo" data-bloco="Bloco 2 · Kaua" class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">Família de normas · Comparativo</div>
+  <h2>Requisito <span class="a">ou</span> orientação?</h2>
+  <p class="sub">Só uma norma da família permite certificar. As outras ajudam a chegar lá.</p></div>
+  <table class="z" style="margin-top:30px">
+    <tr><th style="width:150px">Norma</th><th style="width:230px">Tipo</th><th style="width:170px">Certificável?</th><th>Pergunta que responde</th></tr>
+    <tr><td>27000</td><td>Visão geral e vocabulário</td><td><span class="pill" style="--c:#9fb0cc">Não</span></td><td>Que termos estamos usando?</td></tr>
+    <tr><td>27001</td><td>Requisitos do SGSI</td><td><span class="pill" style="--c:#22c55e">Sim</span></td><td>O que o sistema de gestão precisa ter?</td></tr>
+    <tr><td>27002</td><td>Código de prática (controles)</td><td><span class="pill" style="--c:#9fb0cc">Não</span></td><td>Como implementar cada controle?</td></tr>
+    <tr><td>27003</td><td>Diretrizes de implementação</td><td><span class="pill" style="--c:#9fb0cc">Não</span></td><td>Como implantar o SGSI na prática?</td></tr>
+    <tr><td>27004</td><td>Diretrizes de monitoramento e medição</td><td><span class="pill" style="--c:#9fb0cc">Não</span></td><td>Como saber se está funcionando?</td></tr>
+  </table>
+  <div class="z note blue" style="margin-top:26px;font-size:18px">Pista de leitura: nas normas, “deve” indica requisito. “Convém” indica recomendação. É por isso que a 27002 não é auditada como pass ou fail.</div>
+  <div class="z ask ask-top"><span class="ask-q">?</span><span class="ask-t">Por que a 27002 não gera certificado?</span></div>
+  <div class="foot"><span>Apresentador: <b>Kaua Gabriel Ricardo</b></span><span>14</span></div>
+</section>
+
+<!-- ============ 15. DIVISOR 2 ============ -->
+<section data-id="div-27001" data-bloco="Bloco 3 · Vinicius" class="slide divider">
   <div class="bgimg" style="background-image:url(assets/bg/p05.jpg)"></div><div class="haze"></div>
   <div class="z" style="position:absolute;left:80px;top:170px">
     <div class="num">02</div>
@@ -253,11 +391,11 @@
     <h1 style="margin-top:14px">ISO/IEC <span class="a">27001</span></h1>
     <p class="sub" style="font-size:24px">O SGSI, o ciclo de melhoria, o Anexo A e o caminho para a certificação.</p>
   </div>
-  <div class="foot"><span>Blocos 3 e 4 · <b>Vinicius Porto Augusto · Kaique Cirqueira</b></span><span>10</span></div>
+  <div class="foot"><span>Blocos 3 e 4 · <b>Vinicius Porto Augusto · Kaique Cirqueira</b></span><span>15</span></div>
 </section>
 
-<!-- ============ 11. PDCA ============ -->
-<section class="slide">
+<!-- ============ 16. PDCA ============ -->
+<section data-id="pdca" data-bloco="Bloco 3 · Vinicius" class="slide">
   <div class="haze"></div><div class="grid"></div>
   <div class="z"><div class="tag">ISO/IEC 27001 · SGSI</div>
   <h2>O SGSI em <span class="a">ciclo</span></h2>
@@ -271,10 +409,10 @@
         <linearGradient id="pG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#bbf7d0"/><stop offset="1" stop-color="#15803d"/></linearGradient>
       </defs>
       <circle cx="150" cy="150" r="118" fill="none" stroke="#14213f" stroke-width="58"/>
-      <circle cx="150" cy="150" r="118" fill="none" stroke="url(#pB)" stroke-width="50" stroke-dasharray="176 742" transform="rotate(-90 150 150)"/>
-      <circle cx="150" cy="150" r="118" fill="none" stroke="url(#pV)" stroke-width="50" stroke-dasharray="176 742" transform="rotate(0 150 150)" style="transform-origin:150px 150px;transform:rotate(0deg)"/>
-      <circle cx="150" cy="150" r="118" fill="none" stroke="url(#pC)" stroke-width="50" stroke-dasharray="176 742" transform="rotate(90 150 150)"/>
-      <circle cx="150" cy="150" r="118" fill="none" stroke="url(#pG)" stroke-width="50" stroke-dasharray="176 742" transform="rotate(180 150 150)"/>
+      <circle cx="150" cy="150" r="118" fill="none" stroke="url(#pB)" stroke-width="50" class="ring" style="--len:176;animation-delay:500ms" stroke-dasharray="176 742" transform="rotate(-90 150 150)"/>
+      <circle cx="150" cy="150" r="118" fill="none" stroke="url(#pV)" stroke-width="50" stroke-dasharray="176 742" transform="rotate(0 150 150)" class="ring" style="--len:176;animation-delay:950ms;transform-origin:150px 150px;transform:rotate(0deg)"/>
+      <circle cx="150" cy="150" r="118" fill="none" stroke="url(#pC)" stroke-width="50" class="ring" style="--len:176;animation-delay:1400ms" stroke-dasharray="176 742" transform="rotate(90 150 150)"/>
+      <circle cx="150" cy="150" r="118" fill="none" stroke="url(#pG)" stroke-width="50" class="ring" style="--len:176;animation-delay:1850ms" stroke-dasharray="176 742" transform="rotate(180 150 150)"/>
       <circle cx="150" cy="150" r="72" fill="#0b1430" stroke="#22345e" stroke-width="2"/>
       <text x="150" y="146" text-anchor="middle" font-size="22" font-weight="800" fill="#fff" font-family="Calibri,Carlito,Arial">PDCA</text>
       <text x="150" y="168" text-anchor="middle" font-size="13" fill="#9fb0cc" font-family="Calibri,Carlito,Arial">melhoria contínua</text>
@@ -290,11 +428,28 @@
       <div class="card" style="--c:#22c55e;display:flex;gap:20px;align-items:center;padding:20px 26px"><div class="badge sm b4"><svg><use href="#i-cycle"/></svg></div><div><h3>Agir (Act)</h3><p>Corrigir falhas, tratar não conformidades e melhorar.</p></div></div>
     </div>
   </div>
-  <div class="foot"><span>Apresentador: <b>Vinicius Porto Augusto</b></span><span>11</span></div>
+  <div class="z ask"><span class="ask-q">?</span><span class="ask-t">Onde o PDCA aparece nos estudos ou no trabalho de vocês?</span></div>
+  <div class="foot"><span>Apresentador: <b>Vinicius Porto Augusto</b></span><span>16</span></div>
 </section>
 
-<!-- ============ 12. COMPONENTES (pirâmide 3D) ============ -->
-<section class="slide">
+<!-- ============ 17. CLÁUSULAS DA 27001 ============ -->
+<section data-id="clausulas" data-bloco="Bloco 3 · Vinicius" class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">ISO/IEC 27001 · Estrutura</div>
+  <h2>As cláusulas <span class="a">4 a 10</span></h2>
+  <p class="sub">É nelas que está tudo o que o auditor verifica. Elas seguem o PDCA.</p></div>
+  <div class="z" style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:22px;margin-top:34px">
+    <div class="card" style="--c:#3b82f6;min-height:350px"><span class="pill" style="--c:#3b82f6;margin-bottom:14px">Planejar</span><ul style="margin-top:12px"><li><b>4 Contexto:</b> partes interessadas e escopo</li><li><b>5 Liderança:</b> direção, política e papéis</li><li><b>6 Planejamento:</b> riscos, oportunidades e objetivos</li><li><b>7 Apoio:</b> recursos, competência e documentação</li></ul></div>
+    <div class="card" style="--c:#8b5cf6;min-height:350px"><span class="pill" style="--c:#8b5cf6;margin-bottom:14px">Executar</span><ul style="margin-top:12px"><li><b>8 Operação:</b> aplicar o tratamento de riscos</li></ul></div>
+    <div class="card" style="--c:#22d3ee;min-height:350px"><span class="pill" style="--c:#22d3ee;margin-bottom:14px">Verificar</span><ul style="margin-top:12px"><li><b>9 Desempenho:</b> monitorar, auditar e análise crítica</li></ul></div>
+    <div class="card" style="--c:#22c55e;min-height:350px"><span class="pill" style="--c:#22c55e;margin-bottom:14px">Agir</span><ul style="margin-top:12px"><li><b>10 Melhoria:</b> corrigir e evoluir</li></ul></div>
+  </div>
+  <div class="z note amber" style="margin-top:26px;font-size:18px">As cláusulas 1 a 3 são introdutórias (escopo, referências e termos). Os requisitos começam na 4.</div>
+  <div class="foot"><span>Apresentador: <b>Vinicius Porto Augusto</b></span><span>17</span></div>
+</section>
+
+<!-- ============ 18. COMPONENTES (pirâmide 3D) ============ -->
+<section data-id="componentes" data-bloco="Bloco 3 · Vinicius" class="slide">
   <div class="haze"></div><div class="grid"></div>
   <div class="z"><div class="tag">ISO/IEC 27001 · Componentes</div>
   <h2>Componentes do <span class="a">SGSI</span></h2>
@@ -304,11 +459,11 @@
     <div class="layer" style="--c:#22d3ee;margin:0 60px"><div class="badge b3"><svg><use href="#i-shield"/></svg></div><div><div style="font-size:14px;letter-spacing:.14em;color:#67e8f9;font-weight:700">ESTRUTURA</div><h3 style="font-size:24px;color:#fff">Riscos e controles</h3><p style="font-size:18px;color:#d8e2f2">Avaliação de riscos, tratamento e escolha de controles, documentados na SoA.</p></div></div>
     <div class="layer" style="--c:#3b82f6"><div class="badge b1"><svg><use href="#i-pen"/></svg></div><div><div style="font-size:14px;letter-spacing:.14em;color:#93c5fd;font-weight:700">BASE</div><h3 style="font-size:24px;color:#fff">Política e objetivos</h3><p style="font-size:18px;color:#d8e2f2">Política de segurança, objetivos estratégicos e responsabilidades definidas pela direção.</p></div></div>
   </div>
-  <div class="foot"><span>Apresentador: <b>Vinicius Porto Augusto</b></span><span>12</span></div>
+  <div class="foot"><span>Apresentador: <b>Vinicius Porto Augusto</b></span><span>18</span></div>
 </section>
 
-<!-- ============ 13. ANEXO A ============ -->
-<section class="slide">
+<!-- ============ 19. ANEXO A ============ -->
+<section data-id="anexoa" data-bloco="Bloco 3 · Vinicius" class="slide">
   <div class="haze"></div><div class="grid"></div>
   <div class="z"><div class="tag">ISO/IEC 27001 · Anexo A</div>
   <h2><span class="a">93 controles</span> em 4 temas</h2>
@@ -320,11 +475,48 @@
     <div class="card" style="--c:#22d3ee;min-height:340px"><div class="stat" style="--c:#67e8f9">34</div><h3 style="margin-top:20px">Tecnológicos</h3><p class="lbl" style="font-size:16px">Autenticação, criptografia, backup, configuração, logs</p></div>
   </div>
   <div class="z note blue" style="position:absolute;left:80px;right:80px;bottom:70px">Não é preciso aplicar os 93. A organização escolhe os que se aplicam e documenta a decisão na Declaração de Aplicabilidade (SoA).</div>
-  <div class="foot"><span>Apresentador: <b>Vinicius Porto Augusto</b></span><span>13</span></div>
+  <div class="z ask ask-top"><span class="ask-q">?</span><span class="ask-t">Uma pequena empresa precisa aplicar os 93 controles?</span></div>
+  <div class="foot"><span>Apresentador: <b>Vinicius Porto Augusto</b></span><span>19</span></div>
 </section>
 
-<!-- ============ 14. CERTIFICAÇÃO ============ -->
-<section class="slide">
+<!-- ============ 20. DECLARAÇÃO DE APLICABILIDADE ============ -->
+<section data-id="soa" data-bloco="Bloco 3 · Vinicius" class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">ISO/IEC 27001 · SoA</div>
+  <h2>A Declaração de <span class="a">Aplicabilidade</span></h2>
+  <p class="sub">A SoA lista os controles do Anexo A, diz quais se aplicam e por quê.</p></div>
+  <table class="z" style="margin-top:28px">
+    <tr><th style="width:310px">Controle (Anexo A, 2022)</th><th style="width:130px">Aplicável?</th><th>Justificativa</th><th style="width:180px">Situação</th></tr>
+    <tr><td>5.15 Controle de acesso</td><td><span class="pill" style="--c:#22c55e">Sim</span></td><td>Evita acesso indevido a dados de clientes</td><td><span class="pill" style="--c:#22c55e">Implementado</span></td></tr>
+    <tr><td>8.24 Uso de criptografia</td><td><span class="pill" style="--c:#22c55e">Sim</span></td><td>Protege dados em trânsito e em repouso</td><td><span class="pill" style="--c:#22c55e">Implementado</span></td></tr>
+    <tr><td>8.13 Backup das informações</td><td><span class="pill" style="--c:#22c55e">Sim</span></td><td>Permite recuperar após falha ou ransomware</td><td><span class="pill" style="--c:#f59e0b">Parcial</span></td></tr>
+    <tr><td>6.3 Conscientização e treinamento</td><td><span class="pill" style="--c:#22c55e">Sim</span></td><td>Reduz erro humano e sucesso de phishing</td><td><span class="pill" style="--c:#3b82f6">Planejado</span></td></tr>
+    <tr><td>7.4 Monitoramento da segurança física</td><td><span class="pill" style="--c:#9fb0cc">Não</span></td><td>Sem sala de servidores própria; o provedor de nuvem cuida disso</td><td><span class="pill" style="--c:#9fb0cc">Excluído</span></td></tr>
+  </table>
+  <div class="z note amber" style="margin-top:24px;font-size:17px;padding:12px 22px">Exemplo ilustrativo de uma empresa fictícia. Excluir um controle exige justificativa registrada.</div>
+  <div class="z ask ask-prof"><span class="ask-q">?</span><span class="ask-t">Professor: essa justificativa para excluir o controle seria aceita em uma auditoria?</span></div>
+  <div class="foot"><span>Apresentador: <b>Vinicius Porto Augusto</b></span><span>20</span></div>
+</section>
+
+<!-- ============ 21. TRATAMENTO DO RISCO ============ -->
+<section data-id="tratamento" data-bloco="Bloco 3 · Vinicius" class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">ISO/IEC 27001 · Riscos</div>
+  <h2>Quatro formas de tratar um <span class="a">risco</span></h2>
+  <p class="sub">Depois de avaliar, a organização escolhe o que fazer com cada risco.</p></div>
+  <div class="z" style="display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:36px">
+    <div class="card" style="--c:#22c55e;min-height:330px"><div class="badge b4"><svg><use href="#i-shield"/></svg></div><h3 style="margin-top:16px">Mitigar</h3><div class="lbl">Reduzir com controles</div><p>Aplicar uma medida que baixa a probabilidade ou o impacto.</p><p style="margin-top:10px;color:#9fb0cc">Ex.: ativar MFA.</p></div>
+    <div class="card" style="--c:#f43f5e;min-height:330px"><div class="badge b6"><svg><use href="#i-ban"/></svg></div><h3 style="margin-top:16px">Evitar</h3><div class="lbl">Eliminar a causa</div><p>Deixar de fazer a atividade que gera o risco.</p><p style="margin-top:10px;color:#9fb0cc">Ex.: não guardar dado que não é necessário.</p></div>
+    <div class="card" style="--c:#8b5cf6;min-height:330px"><div class="badge b2"><svg><use href="#i-users"/></svg></div><h3 style="margin-top:16px">Transferir</h3><div class="lbl">Compartilhar o impacto</div><p>Passar parte do risco para terceiros.</p><p style="margin-top:10px;color:#9fb0cc">Ex.: seguro ou provedor especializado.</p></div>
+    <div class="card" style="--c:#f59e0b;min-height:330px"><div class="badge b5"><svg><use href="#i-check"/></svg></div><h3 style="margin-top:16px">Aceitar</h3><div class="lbl">Conviver com consciência</div><p>Decidir formalmente não agir, quando o risco é baixo.</p><p style="margin-top:10px;color:#9fb0cc">Ex.: risco residual aprovado pela direção.</p></div>
+  </div>
+  <div class="z note blue" style="margin-top:26px;font-size:18px">O que sobra depois do tratamento é o <b>risco residual</b>. Ele precisa ser aceito por quem é dono do risco.</div>
+  <div class="z ask"><span class="ask-q">?</span><span class="ask-t">Que tratamento vocês dariam ao risco “senha fraca”?</span></div>
+  <div class="foot"><span>Apresentador: <b>Vinicius Porto Augusto</b></span><span>21</span></div>
+</section>
+
+<!-- ============ 22. CERTIFICAÇÃO ============ -->
+<section data-id="certificacao" data-bloco="Bloco 4 · Kaique" class="slide">
   <div class="haze"></div><div class="grid"></div>
   <div class="z"><div class="tag">ISO/IEC 27001 · Certificação</div>
   <h2>Como funciona a <span class="a">certificação</span></h2>
@@ -341,11 +533,56 @@
     <div class="step" style="--c:#22d3ee;--bgc:#0b2a36"><div class="num">5</div><h4>Vigilância</h4><p>Auditorias anuais de acompanhamento</p></div>
   </div>
   <div class="z note amber" style="position:absolute;left:80px;right:80px;bottom:70px">Ponto de atenção: a certificação não é o fim do trabalho. Exige manutenção contínua e recertificação a cada ciclo de 3 anos.</div>
-  <div class="foot"><span>Apresentador: <b>Kaique Cirqueira</b></span><span>14</span></div>
+  <div class="foot"><span>Apresentador: <b>Kaique Cirqueira</b></span><span>22</span></div>
 </section>
 
-<!-- ============ 15. PERGUNTA 1 ============ -->
-<section class="slide">
+<!-- ============ 23. DOCUMENTOS PARA A AUDITORIA ============ -->
+<section data-id="documentos" data-bloco="Bloco 4 · Kaique" class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">ISO/IEC 27001 · Auditoria</div>
+  <h2>O que o auditor vai <span class="a">pedir</span></h2>
+  <p class="sub">A 27001 exige informação documentada. Sem ela, não há como provar.</p></div>
+  <div class="z" style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px">
+    <div class="card mini" style="--c:#3b82f6;min-height:130px;display:flex;gap:16px;align-items:center"><div class="badge sm b1"><svg><use href="#i-target"/></svg></div><div><h3>Escopo do SGSI</h3><p>O que está dentro e fora</p></div></div>
+    <div class="card mini" style="--c:#8b5cf6;min-height:130px;display:flex;gap:16px;align-items:center"><div class="badge sm b2"><svg><use href="#i-doc"/></svg></div><div><h3>Política de segurança</h3><p>Aprovada pela direção</p></div></div>
+    <div class="card mini" style="--c:#22d3ee;min-height:130px;display:flex;gap:16px;align-items:center"><div class="badge sm b3"><svg><use href="#i-search"/></svg></div><div><h3>Método de riscos</h3><p>Critérios e como avaliar</p></div></div>
+    <div class="card mini" style="--c:#22c55e;min-height:130px;display:flex;gap:16px;align-items:center"><div class="badge sm b4"><svg><use href="#i-check"/></svg></div><div><h3>SoA</h3><p>Controles aplicáveis e por quê</p></div></div>
+    <div class="card mini" style="--c:#f59e0b;min-height:130px;display:flex;gap:16px;align-items:center"><div class="badge sm b5"><svg><use href="#i-gear"/></svg></div><div><h3>Plano de tratamento</h3><p>O que fazer com cada risco</p></div></div>
+    <div class="card mini" style="--c:#f43f5e;min-height:130px;display:flex;gap:16px;align-items:center"><div class="badge sm b6"><svg><use href="#i-flag"/></svg></div><div><h3>Objetivos</h3><p>Metas de segurança</p></div></div>
+    <div class="card mini" style="--c:#3b82f6;min-height:130px;display:flex;gap:16px;align-items:center"><div class="badge sm b1"><svg><use href="#i-chart"/></svg></div><div><h3>Monitoramento</h3><p>Resultados medidos</p></div></div>
+    <div class="card mini" style="--c:#8b5cf6;min-height:130px;display:flex;gap:16px;align-items:center"><div class="badge sm b2"><svg><use href="#i-eye"/></svg></div><div><h3>Auditoria interna</h3><p>Programa e resultados</p></div></div>
+    <div class="card mini" style="--c:#22d3ee;min-height:130px;display:flex;gap:16px;align-items:center"><div class="badge sm b3"><svg><use href="#i-users"/></svg></div><div><h3>Análise crítica</h3><p>Registro da direção</p></div></div>
+  </div>
+  <div class="z note amber" style="margin-top:24px;font-size:18px">Também entram os registros de competência e de ações corretivas. Documento sem registro de uso não convence o auditor.</div>
+  <div class="z ask ask-top"><span class="ask-q">?</span><span class="ask-t">Qual desses documentos um projeto de vocês já teria?</span></div>
+  <div class="foot"><span>Apresentador: <b>Kaique Cirqueira</b></span><span>23</span></div>
+</section>
+
+<!-- ============ 24. NÃO CONFORMIDADES ============ -->
+<section data-id="nc" data-bloco="Bloco 4 · Kaique" class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">ISO/IEC 27001 · Auditoria</div>
+  <h2>Quando o auditor encontra um <span class="a">problema</span></h2>
+  <p class="sub">Achado não é reprovação automática. O que conta é como a empresa reage.</p></div>
+  <div class="z flow big" style="margin-top:50px">
+    <div class="step" style="--c:#3b82f6;--bgc:#0b1b3d"><div class="num">1</div><h4>Achado</h4><p>Auditor registra o desvio com evidência</p></div>
+    <div class="arrow">›</div>
+    <div class="step" style="--c:#f59e0b;--bgc:#2e2008"><div class="num">2</div><h4>Classificação</h4><p>Não conformidade maior ou menor</p></div>
+    <div class="arrow">›</div>
+    <div class="step" style="--c:#8b5cf6;--bgc:#1c1138"><div class="num">3</div><h4>Plano de ação</h4><p>Causa, correção e prazo</p></div>
+    <div class="arrow">›</div>
+    <div class="step" style="--c:#22c55e;--bgc:#0b2a1c"><div class="num">4</div><h4>Verificação</h4><p>Auditor confere se foi resolvido</p></div>
+  </div>
+  <div class="z" style="display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:34px">
+    <div class="card" style="--c:#f43f5e"><h3>Maior</h3><p>Compromete o sistema ou falta um requisito inteiro. Sem correção, o certificado não sai.</p></div>
+    <div class="card" style="--c:#f59e0b"><h3>Menor</h3><p>Falha pontual. Entra em plano de ação e é verificada na auditoria seguinte.</p></div>
+  </div>
+  <div class="z ask"><span class="ask-q">?</span><span class="ask-t">O que é pior: uma falha maior ou várias menores?</span></div>
+  <div class="foot"><span>Apresentador: <b>Kaique Cirqueira</b></span><span>24</span></div>
+</section>
+
+<!-- ============ 25. PERGUNTA 1 ============ -->
+<section data-id="pg1" data-bloco="Bloco 4 · Kaique" class="slide">
   <div class="haze"></div><div class="grid"></div>
   <div class="z"><div class="tag">Pergunta-guia 1</div>
   <h2>Vale a pena certificar uma <span class="a">pequena empresa</span>?</h2>
@@ -356,11 +593,36 @@
     <div class="card" style="--c:#3b82f6;min-height:300px;box-shadow:0 26px 50px rgba(0,0,0,.6),0 0 40px -10px #3b82f6"><div class="badge b1" style="margin-bottom:18px"><svg><use href="#i-check"/></svg></div><h3>C) Abordagem híbrida</h3><div class="lbl">Recomendada</div><ul><li>+ Controles essenciais agora</li><li>+ Certificação quando o mercado exigir</li><li>+ Crescimento sem gasto antecipado</li></ul></div>
   </div>
   <div class="z note" style="position:absolute;left:80px;right:80px;bottom:70px">Resposta curta: sim, se houver exigência de mercado. Para a maioria das PMEs, comece pelos controles essenciais e certifique quando houver retorno comercial.</div>
-  <div class="foot"><span>Apresentador: <b>Kaique Cirqueira</b></span><span>15</span></div>
+  <div class="foot"><span>Apresentador: <b>Kaique Cirqueira</b></span><span>25</span></div>
 </section>
 
-<!-- ============ 16. DIVISOR 3 ============ -->
-<section class="slide divider">
+<!-- ============ 26. ROTEIRO PARA PME ============ -->
+<section data-id="pme" data-bloco="Bloco 4 · Kaique" class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">Pergunta-guia 1 · Na prática</div>
+  <h2>Um caminho <span class="a">enxuto</span> para a pequena empresa</h2>
+  <p class="sub">Recomendação do grupo: começar pequeno, provar valor e só então certificar.</p></div>
+  <div class="z flow big" style="margin-top:56px">
+    <div class="step" style="--c:#3b82f6;--bgc:#0b1b3d"><div class="num">1</div><h4>Escopo enxuto</h4><p>Só o que sustenta o negócio</p></div>
+    <div class="arrow">›</div>
+    <div class="step" style="--c:#8b5cf6;--bgc:#1c1138"><div class="num">2</div><h4>Poucos riscos</h4><p>Os que mais doem, em uma planilha</p></div>
+    <div class="arrow">›</div>
+    <div class="step" style="--c:#22d3ee;--bgc:#0b2a36"><div class="num">3</div><h4>Controles essenciais</h4><p>MFA, backup testado e treinamento</p></div>
+    <div class="arrow">›</div>
+    <div class="step" style="--c:#22c55e;--bgc:#0b2a1c"><div class="num">4</div><h4>Medir e registrar</h4><p>Dois ou três indicadores com meta</p></div>
+    <div class="arrow">›</div>
+    <div class="step" style="--c:#f59e0b;--bgc:#2e2008"><div class="num">5</div><h4>Decidir</h4><p>Certificar quando o mercado pedir</p></div>
+  </div>
+  <div class="z" style="display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:36px">
+    <div class="card" style="--c:#22c55e"><h3>Certificar vale a pena se</h3><ul><li>Clientes ou editais exigem</li><li>O certificado abre mercado</li><li>O escopo é pequeno e mantível</li></ul></div>
+    <div class="card" style="--c:#f59e0b"><h3>Esperar é melhor se</h3><ul><li>Ninguém pediu o certificado</li><li>Ainda não há dono dos controles</li><li>Orçamento não cobre a manutenção</li></ul></div>
+  </div>
+  <div class="z ask ask-top"><span class="ask-q">?</span><span class="ask-t">Se fosse a sua empresa, certificaria agora ou esperaria? Levantem a mão.</span></div>
+  <div class="foot"><span>Apresentador: <b>Kaique Cirqueira</b></span><span>26</span></div>
+</section>
+
+<!-- ============ 27. DIVISOR 3 ============ -->
+<section data-id="div-27002" data-bloco="Bloco 5 · Gabriel" class="slide divider">
   <div class="bgimg" style="background-image:url(assets/bg/p07.jpg)"></div><div class="haze"></div>
   <div class="z" style="position:absolute;left:80px;top:170px">
     <div class="num">03</div>
@@ -368,11 +630,11 @@
     <h1 style="margin-top:14px">ISO/IEC <span class="a">27002</span></h1>
     <p class="sub" style="font-size:24px">Controles práticos com exemplos de acessos, criptografia e continuidade.</p>
   </div>
-  <div class="foot"><span>Blocos 5 e 6 · <b>Gabriel Feitosa · Kawan Kelvin</b></span><span>16</span></div>
+  <div class="foot"><span>Blocos 5 e 6 · <b>Gabriel Feitosa · Kawan Kelvin</b></span><span>27</span></div>
 </section>
 
-<!-- ============ 17. CONTROLES ============ -->
-<section class="slide">
+<!-- ============ 28. CONTROLES ============ -->
+<section data-id="controles" data-bloco="Bloco 5 · Gabriel" class="slide">
   <div class="haze"></div><div class="grid"></div>
   <div class="z"><div class="tag">ISO/IEC 27002 · Controles</div>
   <h2>Controles de segurança <span class="a">práticos</span></h2>
@@ -384,11 +646,28 @@
     <tr><td><span style="display:inline-flex;align-items:center;gap:14px"><span class="badge sm b3"><svg><use href="#i-disk"/></svg></span>Continuidade</span></td><td>Backup, plano de recuperação de desastres (DR), redundância</td><td>Indisponibilidade</td></tr>
   </table>
   <div class="z note blue" style="position:absolute;left:80px;right:80px;bottom:70px">Regra de ouro: todo controle precisa de um responsável, de uma forma de execução e de uma evidência.</div>
-  <div class="foot"><span>Apresentador: <b>Gabriel Feitosa</b></span><span>17</span></div>
+  <div class="z ask ask-top"><span class="ask-q">?</span><span class="ask-t">Qual desses controles vocês já veem na faculdade ou no trabalho?</span></div>
+  <div class="foot"><span>Apresentador: <b>Gabriel Feitosa</b></span><span>28</span></div>
 </section>
 
-<!-- ============ 18. GESTÃO DE ACESSOS ============ -->
-<section class="slide">
+<!-- ============ 29. TIPOS DE CONTROLE ============ -->
+<section data-id="tipos-controle" data-bloco="Bloco 5 · Gabriel" class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">ISO/IEC 27002 · Tipos</div>
+  <h2>Preventivo, detectivo ou <span class="a">corretivo</span></h2>
+  <p class="sub">Cada controle atua em um momento diferente do incidente. Um bom conjunto mistura os três.</p></div>
+  <div class="z" style="display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:34px">
+    <div class="card" style="--c:#3b82f6;min-height:330px"><div class="badge b1"><svg><use href="#i-shield"/></svg></div><h3 style="margin-top:16px">Preventivo</h3><div class="lbl">Evita que aconteça</div><p>Ex.: MFA, menor privilégio, bloqueio de contas.</p></div>
+    <div class="card" style="--c:#f59e0b;min-height:330px"><div class="badge b5"><svg><use href="#i-eye"/></svg></div><h3 style="margin-top:16px">Detectivo</h3><div class="lbl">Percebe que aconteceu</div><p>Ex.: logs, alertas de login suspeito, revisão periódica.</p></div>
+    <div class="card" style="--c:#22c55e;min-height:330px"><div class="badge b4"><svg><use href="#i-cycle"/></svg></div><h3 style="margin-top:16px">Corretivo</h3><div class="lbl">Resolve e recupera</div><p>Ex.: revogar acesso, restaurar backup, plano de resposta.</p></div>
+  </div>
+  <div class="z" style="margin-top:28px;display:flex;gap:14px;align-items:center;flex-wrap:wrap"><span style="font-size:17px;color:var(--muted)">Os 93 controles se dividem em 4 temas:</span><span class="chip" style="--c:#3b82f6">37 Organizacionais</span><span class="chip" style="--c:#8b5cf6">8 Pessoas</span><span class="chip" style="--c:#22d3ee">14 Físicos</span><span class="chip" style="--c:#22c55e">34 Tecnológicos</span></div>
+  <div class="z ask"><span class="ask-q">?</span><span class="ask-t">Um alarme de incêndio é preventivo, detectivo ou corretivo?</span></div>
+  <div class="foot"><span>Apresentador: <b>Gabriel Feitosa</b></span><span>29</span></div>
+</section>
+
+<!-- ============ 30. GESTÃO DE ACESSOS ============ -->
+<section data-id="acessos" data-bloco="Bloco 5 · Gabriel" class="slide">
   <div class="haze"></div><div class="grid"></div>
   <div class="z"><div class="tag">ISO/IEC 27002 · Controle 1</div>
   <h2>Gestão de acessos: <span class="a">ciclo de vida</span></h2>
@@ -404,11 +683,29 @@
     <div class="card" style="--c:#3b82f6"><h3>Controles de apoio</h3><ul><li>MFA em sistemas críticos</li><li>RBAC: permissões por papel</li><li>PAM para contas privilegiadas</li><li>Logs de acesso centralizados</li></ul></div>
     <div class="card" style="--c:#f59e0b"><h3>Indicador (27004)</h3><div class="lbl">% de usuários revisados no prazo · meta 95%</div><ul><li>Atraso na revogação de desligados é falha crítica</li><li>Alertas automáticos reduzem o esquecimento</li></ul></div>
   </div>
-  <div class="foot"><span>Apresentador: <b>Gabriel Feitosa</b></span><span>18</span></div>
+  <div class="z ask"><span class="ask-q">?</span><span class="ask-t">Quem já ficou com acesso a um sistema que não precisava mais?</span></div>
+  <div class="foot"><span>Apresentador: <b>Gabriel Feitosa</b></span><span>30</span></div>
 </section>
 
-<!-- ============ 19. CRIPTOGRAFIA ============ -->
-<section class="slide">
+<!-- ============ 31. MECANISMOS DE ACESSO ============ -->
+<section data-id="mecanismos" data-bloco="Bloco 5 · Gabriel" class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">ISO/IEC 27002 · Acessos</div>
+  <h2>As ferramentas por trás do <span class="a">acesso</span></h2>
+  <p class="sub">Quatro mecanismos que aparecem em quase toda auditoria de acessos.</p></div>
+  <div class="z" style="display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:34px">
+    <div class="card mini" style="--c:#3b82f6;min-height:340px"><div class="badge b1"><svg><use href="#i-key"/></svg></div><h3 style="margin-top:14px">MFA</h3><div class="lbl">Autenticação em mais de um fator</div><p>Senha mais algo que você tem ou é.</p><p style="margin-top:10px;color:#9fb0cc">Barra: senha roubada.</p></div>
+    <div class="card mini" style="--c:#8b5cf6;min-height:340px"><div class="badge b2"><svg><use href="#i-users"/></svg></div><h3 style="margin-top:14px">RBAC</h3><div class="lbl">Acesso por papel</div><p>Permissões ficam no cargo, não na pessoa.</p><p style="margin-top:10px;color:#9fb0cc">Barra: privilégio acumulado.</p></div>
+    <div class="card mini" style="--c:#22d3ee;min-height:340px"><div class="badge b3"><svg><use href="#i-lock"/></svg></div><h3 style="margin-top:14px">PAM</h3><div class="lbl">Gestão de acesso privilegiado</div><p>Contas de administrador com aprovação e gravação de uso.</p><p style="margin-top:10px;color:#9fb0cc">Barra: abuso de admin.</p></div>
+    <div class="card mini" style="--c:#f59e0b;min-height:340px"><div class="badge b5"><svg><use href="#i-eye"/></svg></div><h3 style="margin-top:14px">Logs centralizados</h3><div class="lbl">Registro de quem fez o quê</div><p>Eventos reunidos em um lugar protegido contra alteração.</p><p style="margin-top:10px;color:#9fb0cc">Dá: evidência.</p></div>
+  </div>
+  <div class="z note cyan" style="margin-top:26px;font-size:18px">Princípio por trás de tudo: <b>menor privilégio</b>. Cada pessoa recebe só o acesso necessário para a sua função.</div>
+  <div class="z ask"><span class="ask-q">?</span><span class="ask-t">Quem aqui usa MFA no e-mail? Levantem a mão.</span></div>
+  <div class="foot"><span>Apresentador: <b>Gabriel Feitosa</b></span><span>31</span></div>
+</section>
+
+<!-- ============ 32. CRIPTOGRAFIA ============ -->
+<section data-id="cripto" data-bloco="Bloco 6 · Kawan" class="slide">
   <div class="haze"></div><div class="grid"></div>
   <div class="z"><div class="tag">ISO/IEC 27002 · Controle 2</div>
   <h2>Criptografia: <span class="a">proteção de dados</span></h2>
@@ -423,11 +720,37 @@
     <div class="note" style="font-size:19px">Impacto: dados interceptados permanecem ilegíveis e a exposição cai.</div>
     <div class="note blue" style="font-size:19px">Apoio à LGPD (art. 46): medidas técnicas e administrativas de segurança.</div>
   </div>
-  <div class="foot"><span>Apresentador: <b>Kawan Kelvin</b></span><span>19</span></div>
+  <div class="z ask"><span class="ask-q">?</span><span class="ask-t">O cadeado do navegador (HTTPS) protege o quê?</span></div>
+  <div class="foot"><span>Apresentador: <b>Kawan Kelvin</b></span><span>32</span></div>
 </section>
 
-<!-- ============ 20. CONTINUIDADE ============ -->
-<section class="slide">
+<!-- ============ 33. GESTÃO DE CHAVES ============ -->
+<section data-id="chaves" data-bloco="Bloco 6 · Kawan" class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">ISO/IEC 27002 · Criptografia</div>
+  <h2>A força está na gestão das <span class="a">chaves</span></h2>
+  <p class="sub">Criptografia forte com chave mal guardada protege pouco.</p></div>
+  <div class="z flow big" style="margin-top:56px">
+    <div class="step" style="--c:#3b82f6;--bgc:#0b1b3d"><div class="num">1</div><h4>Gerar</h4><p>Com algoritmo e tamanho adequados</p></div>
+    <div class="arrow">›</div>
+    <div class="step" style="--c:#8b5cf6;--bgc:#1c1138"><div class="num">2</div><h4>Guardar</h4><p>Cofre ou HSM, nunca no código</p></div>
+    <div class="arrow">›</div>
+    <div class="step" style="--c:#22d3ee;--bgc:#0b2a36"><div class="num">3</div><h4>Usar</h4><p>Acesso restrito e registrado</p></div>
+    <div class="arrow">›</div>
+    <div class="step" style="--c:#22c55e;--bgc:#0b2a1c"><div class="num">4</div><h4>Rotacionar</h4><p>Troca periódica</p></div>
+    <div class="arrow">›</div>
+    <div class="step" style="--c:#f43f5e;--bgc:#2e0b14"><div class="num">5</div><h4>Revogar</h4><p>Retirar de uso e destruir</p></div>
+  </div>
+  <div class="z" style="display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:40px">
+    <div class="card" style="--c:#8b5cf6"><h3>Simétrica</h3><p>A mesma chave cifra e decifra. Rápida. Exemplo: AES-256 para dados em repouso.</p></div>
+    <div class="card" style="--c:#22d3ee"><h3>Assimétrica</h3><p>Par de chaves, pública e privada. Usada para negociar a conexão. O TLS combina as duas.</p></div>
+  </div>
+  <div class="z ask"><span class="ask-q">?</span><span class="ask-t">Onde uma chave nunca deve ficar guardada?</span></div>
+  <div class="foot"><span>Apresentador: <b>Kawan Kelvin</b></span><span>33</span></div>
+</section>
+
+<!-- ============ 34. CONTINUIDADE ============ -->
+<section data-id="continuidade" data-bloco="Bloco 6 · Kawan" class="slide">
   <div class="haze"></div><div class="grid"></div>
   <div class="z"><div class="tag">ISO/IEC 27002 · Controle 3</div>
   <h2>Continuidade e <span class="a">recuperação de desastres</span></h2>
@@ -441,11 +764,58 @@
     <div class="card" style="--c:#22d3ee;display:flex;gap:20px;align-items:center"><div class="badge sm b3"><svg><use href="#i-clock"/></svg></div><div><h3>RTO</h3><p>Quanto tempo posso ficar fora do ar? Ex.: 4 horas.</p></div></div>
     <div class="card" style="--c:#22c55e;display:flex;gap:20px;align-items:center"><div class="badge sm b4"><svg><use href="#i-disk"/></svg></div><div><h3>RPO</h3><p>Quantos dados posso perder? Ex.: 1 hora.</p></div></div>
   </div>
-  <div class="foot"><span>Apresentador: <b>Kawan Kelvin</b></span><span>20</span></div>
+  <div class="z ask"><span class="ask-q">?</span><span class="ask-t">Quando foi a última vez que vocês testaram um backup?</span></div>
+  <div class="foot"><span>Apresentador: <b>Kawan Kelvin</b></span><span>34</span></div>
 </section>
 
-<!-- ============ 21. ANÁLISE EM OPERAÇÃO ============ -->
-<section class="slide">
+<!-- ============ 35. REGRA DE BACKUP 3-2-1 ============ -->
+<section data-id="backup321" data-bloco="Bloco 6 · Kawan" class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">Continuidade · Backup</div>
+  <h2>A regra do <span class="a">3-2-1</span></h2>
+  <p class="sub">Uma receita simples para o backup sobreviver ao pior dia.</p></div>
+  <div class="z" style="display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:34px">
+    <div class="card" style="--c:#3b82f6;min-height:320px;text-align:center"><div class="stat" style="--c:#60a5fa;font-size:130px">3</div><h3 style="margin-top:12px">cópias dos dados</h3><p style="margin-top:8px">O original e duas cópias.</p></div>
+    <div class="card" style="--c:#8b5cf6;min-height:320px;text-align:center"><div class="stat" style="--c:#a78bfa;font-size:130px">2</div><h3 style="margin-top:12px">tipos de mídia</h3><p style="margin-top:8px">Por exemplo, disco local e nuvem.</p></div>
+    <div class="card" style="--c:#22d3ee;min-height:320px;text-align:center"><div class="stat" style="--c:#67e8f9;font-size:130px">1</div><h3 style="margin-top:12px">cópia fora do local</h3><p style="margin-top:8px">Longe do incêndio, do ransomware e do erro.</p></div>
+  </div>
+  <div class="z note amber" style="margin-top:28px;font-size:19px">Backup sem teste de restauração não é backup, é esperança. Teste periodicamente e registre o resultado como evidência.</div>
+  <div class="z ask"><span class="ask-q">?</span><span class="ask-t">As fotos do seu celular seguem a regra 3-2-1?</span></div>
+  <div class="foot"><span>Apresentador: <b>Kawan Kelvin</b></span><span>35</span></div>
+</section>
+
+<!-- ============ 36. RTO E RPO ============ -->
+<section data-id="rto-rpo" data-bloco="Bloco 6 · Kawan" class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">Continuidade · Metas</div>
+  <h2>RTO e RPO em uma <span class="a">linha do tempo</span></h2>
+  <p class="sub">Duas perguntas que o plano de continuidade precisa responder antes do desastre.</p></div>
+  <div class="z card" style="--c:#3b82f6;margin-top:26px;padding:26px 30px 18px">
+    <svg viewBox="0 0 1180 250" width="1180" height="250" style="display:block">
+      <line x1="40" y1="130" x2="1140" y2="130" stroke="#24386a" stroke-width="4" stroke-linecap="round"/>
+      <rect class="gx" x="150" y="108" width="420" height="44" rx="10" fill="#f59e0b" opacity=".85"/>
+      <rect class="gx" x="570" y="108" width="450" height="44" rx="10" fill="#f43f5e" opacity=".85"/>
+      <text x="360" y="136" text-anchor="middle" font-size="20" font-weight="800" fill="#1a1204" font-family="Calibri,Carlito,Arial">RPO: dados perdidos</text>
+      <text x="795" y="136" text-anchor="middle" font-size="20" font-weight="800" fill="#2a0610" font-family="Calibri,Carlito,Arial">RTO: sistema parado</text>
+      <g font-family="Calibri,Carlito,Arial" text-anchor="middle">
+        <circle cx="150" cy="130" r="13" fill="#0b1430" stroke="#f59e0b" stroke-width="5"/><text x="150" y="82" font-size="19" font-weight="700" fill="#fff">Último backup</text>
+        <circle cx="570" cy="130" r="13" fill="#0b1430" stroke="#fff" stroke-width="5"/><text x="570" y="82" font-size="19" font-weight="700" fill="#fff">Incidente</text>
+        <circle cx="1020" cy="130" r="13" fill="#0b1430" stroke="#22c55e" stroke-width="5"/><text x="1020" y="82" font-size="19" font-weight="700" fill="#fff">Sistema de volta</text>
+        <text x="360" y="200" font-size="17" fill="#9fb0cc">Tudo o que mudou depois do backup se perde</text>
+        <text x="795" y="200" font-size="17" fill="#9fb0cc">Tempo até a operação normal</text>
+      </g>
+    </svg>
+  </div>
+  <div class="z" style="display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:22px">
+    <div class="card mini" style="--c:#f59e0b"><h3>RPO: quanto dado posso perder?</h3><p>Se o RPO é de 1 hora, o backup precisa rodar pelo menos a cada hora.</p></div>
+    <div class="card mini" style="--c:#f43f5e"><h3>RTO: quanto tempo posso ficar parado?</h3><p>Se o RTO é de 4 horas, a restauração precisa caber nesse prazo.</p></div>
+  </div>
+  <div class="z ask"><span class="ask-q">?</span><span class="ask-t">Se o sistema de matrícula cair, quanto tempo a faculdade aguenta?</span></div>
+  <div class="foot"><span>Apresentador: <b>Kawan Kelvin</b></span><span>36</span></div>
+</section>
+
+<!-- ============ 37. ANÁLISE EM OPERAÇÃO ============ -->
+<section data-id="operacao" data-bloco="Bloco 6 · Kawan" class="slide">
   <div class="haze"></div><div class="grid"></div>
   <div class="z"><div class="tag">Análise dos controles</div>
   <h2>Controles <span class="a">em operação</span></h2>
@@ -457,11 +827,12 @@
     <tr><td>Criptografia</td><td><span class="pill" style="--c:#22c55e">Implementado</span></td><td><span class="chip" style="--c:#22c55e">Alta</span></td><td>Chaves sem rotação definida em sistemas legados</td><td>Política de rotação e ampliação do AES-256</td></tr>
   </table>
   <div class="z note amber" style="position:absolute;left:80px;right:80px;bottom:70px">Dados ilustrativos, para demonstrar o método. Substitua por dados reais, se houver.</div>
-  <div class="foot"><span>Apresentador: <b>Kawan Kelvin</b></span><span>21</span></div>
+  <div class="z ask ask-top ask-prof"><span class="ask-q">?</span><span class="ask-t">Professor: esses status (eficaz, parcial) parecem adequados para a análise?</span></div>
+  <div class="foot"><span>Apresentador: <b>Kawan Kelvin</b></span><span>37</span></div>
 </section>
 
-<!-- ============ 22. DIVISOR 4 ============ -->
-<section class="slide divider">
+<!-- ============ 38. DIVISOR 4 ============ -->
+<section data-id="div-27003" data-bloco="Bloco 7 · Marcelo" class="slide divider">
   <div class="bgimg" style="background-image:url(assets/bg/p09.jpg)"></div><div class="haze"></div>
   <div class="z" style="position:absolute;left:80px;top:170px">
     <div class="num">04</div>
@@ -469,11 +840,11 @@
     <h1 style="margin-top:14px">ISO/IEC <span class="a">27003 e 27004</span></h1>
     <p class="sub" style="font-size:24px">Implementar, accountability e medir se o SGSI funciona.</p>
   </div>
-  <div class="foot"><span>Blocos 7 e 8 · <b>Marcelo Pina · Gabriel Feitosa · Kaique Cirqueira</b></span><span>22</span></div>
+  <div class="foot"><span>Blocos 7 e 8 · <b>Marcelo Pina · Gabriel Feitosa · Kaique Cirqueira</b></span><span>38</span></div>
 </section>
 
-<!-- ============ 23. 27003 ============ -->
-<section class="slide">
+<!-- ============ 39. 27003 ============ -->
+<section data-id="s27003" data-bloco="Bloco 7 · Marcelo" class="slide">
   <div class="haze"></div><div class="grid"></div>
   <div class="z"><div class="tag">ISO/IEC 27003</div>
   <h2>Do conceito à <span class="a">realidade</span></h2>
@@ -486,11 +857,41 @@
     <div class="step" style="--c:#22d3ee;--bgc:#0b2a36;min-height:300px"><div class="num">3</div><h4>Tratamento</h4><p>Definir controle, responsável, evidência e indicador para cada risco.</p></div>
   </div>
   <div class="z note blue" style="position:absolute;left:80px;right:80px;bottom:70px">Na prática, uma tabela simples de risco (probabilidade × impacto) já basta para começar.</div>
-  <div class="foot"><span>Apresentador: <b>Marcelo Pina</b></span><span>23</span></div>
+  <div class="z ask ask-top"><span class="ask-q">?</span><span class="ask-t">Quem é o dono do risco em uma empresa pequena?</span></div>
+  <div class="foot"><span>Apresentador: <b>Marcelo Pina</b></span><span>39</span></div>
 </section>
 
-<!-- ============ 24. ACCOUNTABILITY ============ -->
-<section class="slide">
+<!-- ============ 40. UM RISCO DO INÍCIO AO FIM ============ -->
+<section data-id="risco-ficha" data-bloco="Bloco 7 · Marcelo" class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">ISO/IEC 27003 · Na prática</div>
+  <h2>Um risco do <span class="a">começo ao fim</span></h2>
+  <p class="sub">Cada risco vira uma ficha com dono, controle, evidência e indicador.</p></div>
+  <div class="z flow" style="margin-top:36px">
+    <div class="step" style="--c:#3b82f6;--bgc:#0b1b3d"><div class="num">1</div><h4>Ativo</h4><p>Banco de dados de clientes</p></div>
+    <div class="arrow">›</div>
+    <div class="step" style="--c:#8b5cf6;--bgc:#1c1138"><div class="num">2</div><h4>Ameaça</h4><p>Ransomware</p></div>
+    <div class="arrow">›</div>
+    <div class="step" style="--c:#22d3ee;--bgc:#0b2a36"><div class="num">3</div><h4>Vulnerabilidade</h4><p>Backup nunca testado</p></div>
+    <div class="arrow">›</div>
+    <div class="step" style="--c:#f59e0b;--bgc:#2e2008"><div class="num">4</div><h4>Risco</h4><p>Probabilidade 3 × impacto 5 = 15 (alto)</p></div>
+  </div>
+  <div class="z flow" style="margin-top:22px">
+    <div class="step" style="--c:#22c55e;--bgc:#0b2a1c"><div class="num">5</div><h4>Tratamento</h4><p>Mitigar: cópia offline e teste de restauração</p></div>
+    <div class="arrow">›</div>
+    <div class="step" style="--c:#3b82f6;--bgc:#0b1b3d"><div class="num">6</div><h4>Responsável</h4><p>Gerente de infraestrutura</p></div>
+    <div class="arrow">›</div>
+    <div class="step" style="--c:#8b5cf6;--bgc:#1c1138"><div class="num">7</div><h4>Evidência</h4><p>Relatório mensal de restauração</p></div>
+    <div class="arrow">›</div>
+    <div class="step" style="--c:#22d3ee;--bgc:#0b2a36"><div class="num">8</div><h4>Indicador</h4><p>% de restaurações bem-sucedidas</p></div>
+  </div>
+  <div class="z note amber" style="margin-top:22px;font-size:17px;padding:12px 22px">Exemplo ilustrativo, montado para mostrar a lógica. Os valores não vêm de uma empresa real.</div>
+  <div class="z ask"><span class="ask-q">?</span><span class="ask-t">Que indicador vocês escolheriam para esse risco?</span></div>
+  <div class="foot"><span>Apresentador: <b>Marcelo Pina</b></span><span>40</span></div>
+</section>
+
+<!-- ============ 41. ACCOUNTABILITY ============ -->
+<section data-id="accountability" data-bloco="Bloco 7 · Marcelo" class="slide">
   <div class="haze"></div><div class="grid"></div>
   <div class="z"><div class="tag">ISO/IEC 27003 · Accountability</div>
   <h2>Ciclo de <span class="a">accountability</span></h2>
@@ -504,11 +905,27 @@
     <div class="card mini" style="--c:#f43f5e;text-align:center;min-height:250px;padding:22px 14px"><div class="badge sm b6" style="margin:0 auto 14px"><svg><use href="#i-search"/></svg></div><h3>Auditoria</h3><p>Verifica a conformidade</p></div>
   </div>
   <div class="z note" style="position:absolute;left:80px;right:80px;bottom:70px">Os resultados da auditoria alimentam a melhoria, que volta para a política. Sem evidência e medição, o controle existe apenas no papel.</div>
-  <div class="foot"><span>Apresentador: <b>Marcelo Pina</b></span><span>24</span></div>
+  <div class="z ask ask-top"><span class="ask-q">?</span><span class="ask-t">O que acontece quando “todo mundo” é responsável por um controle?</span></div>
+  <div class="foot"><span>Apresentador: <b>Marcelo Pina</b></span><span>41</span></div>
 </section>
 
-<!-- ============ 25. PERGUNTA 2 ============ -->
-<section class="slide">
+<!-- ============ 42. EVIDÊNCIA ============ -->
+<section data-id="evidencia" data-bloco="Bloco 7 · Marcelo" class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">Pergunta-guia 2 · Evidência</div>
+  <h2>O que vale como <span class="a">evidência</span></h2>
+  <p class="sub">Evidência é o que separa um controle real de um controle de papel.</p></div>
+  <div class="z" style="display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:34px">
+    <div class="card" style="--c:#22c55e;min-height:330px"><div class="badge b4"><svg><use href="#i-check"/></svg></div><h3 style="margin-top:14px">Vale</h3><ul><li>Log com data e usuário</li><li>Relatório de teste de restauração</li><li>Ticket de revisão de acessos aprovado</li><li>Ata de análise crítica da direção</li><li>Lista de presença do treinamento</li></ul></div>
+    <div class="card" style="--c:#f43f5e;min-height:330px"><div class="badge b6"><svg><use href="#i-ban"/></svg></div><h3 style="margin-top:14px">Não vale</h3><ul><li>Política que ninguém aplica</li><li>Planilha sem data nem autor</li><li>“A gente sempre fez assim”</li><li>Print antigo, de outro período</li><li>Declaração sem registro</li></ul></div>
+  </div>
+  <div class="z qbox" style="margin:34px 0 0 22px">“Como você sabe que o controle funciona?” A resposta é sempre a evidência.</div>
+  <div class="z ask"><span class="ask-q">?</span><span class="ask-t">Um print de dois anos atrás serve como evidência?</span></div>
+  <div class="foot"><span>Apresentador: <b>Marcelo Pina</b></span><span>42</span></div>
+</section>
+
+<!-- ============ 43. PERGUNTA 2 ============ -->
+<section data-id="pg2" data-bloco="Bloco 7 · Marcelo" class="slide">
   <div class="haze"></div><div class="grid"></div>
   <div class="z"><div class="tag">Pergunta-guia 2</div>
   <h2>Como evitar que os controles fiquem <span class="a">só no papel</span>?</h2>
@@ -528,11 +945,11 @@
       <p style="font-size:19px;color:var(--muted)">Pergunte sempre: quem fez, quando e onde está o registro?</p>
     </div>
   </div>
-  <div class="foot"><span>Apresentador: <b>Marcelo Pina</b></span><span>25</span></div>
+  <div class="foot"><span>Apresentador: <b>Marcelo Pina</b></span><span>43</span></div>
 </section>
 
-<!-- ============ 26. COMO SABER SE FUNCIONA (donut) ============ -->
-<section class="slide">
+<!-- ============ 44. COMO SABER SE FUNCIONA (donut) ============ -->
+<section data-id="medicao" data-bloco="Bloco 8 · Gabriel e Kaique" class="slide">
   <div class="haze"></div><div class="grid"></div>
   <div class="z"><div class="tag">ISO/IEC 27004 · Medição</div>
   <h2>Como saber se o controle <span class="a">funciona</span>?</h2>
@@ -552,7 +969,7 @@
       <svg width="260" height="260" viewBox="0 0 220 220" style="flex:none;filter:drop-shadow(0 20px 26px rgba(0,0,0,.55))">
         <defs><linearGradient id="dn" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#93c5fd"/><stop offset="1" stop-color="#1d4ed8"/></linearGradient></defs>
         <circle cx="110" cy="110" r="88" fill="none" stroke="#14213f" stroke-width="30"/>
-        <circle cx="110" cy="110" r="88" fill="none" stroke="url(#dn)" stroke-width="30" stroke-dasharray="492 553" transform="rotate(-90 110 110)" stroke-linecap="round"/>
+        <circle cx="110" cy="110" r="88" fill="none" class="ring" style="--len:481" stroke="url(#dn)" stroke-width="30" stroke-dasharray="481 553" transform="rotate(-90 110 110)" stroke-linecap="round"/>
         <circle cx="110" cy="110" r="88" fill="none" stroke="#fbbf24" stroke-width="4" stroke-dasharray="3 6" transform="rotate(-90 110 110)" opacity="0"/>
         <circle cx="110" cy="110" r="58" fill="#0b1430"/>
         <text x="110" y="122" text-anchor="middle" font-size="44" font-weight="900" fill="#fff" font-family="Calibri,Carlito,Arial">87%</text>
@@ -564,11 +981,37 @@
       </div>
     </div>
   </div>
-  <div class="foot"><span>Apresentador: <b>Gabriel Feitosa</b></span><span>26</span></div>
+  <div class="z ask"><span class="ask-q">?</span><span class="ask-t">A meta não foi atingida. O que vocês fariam primeiro?</span></div>
+  <div class="foot"><span>Apresentador: <b>Gabriel Feitosa</b></span><span>44</span></div>
 </section>
 
-<!-- ============ 27. TIPOS DE INDICADORES ============ -->
-<section class="slide">
+<!-- ============ 45. CICLO DE MEDIÇÃO ============ -->
+<section data-id="ciclo-medicao" data-bloco="Bloco 8 · Gabriel e Kaique" class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">ISO/IEC 27004 · Processo</div>
+  <h2>Medir também é um <span class="a">processo</span></h2>
+  <p class="sub">A 27004 orienta como definir, coletar e usar as medições para decidir.</p></div>
+  <div class="z flow big" style="margin-top:56px">
+    <div class="step" style="--c:#3b82f6;--bgc:#0b1b3d"><div class="num">1</div><h4>Definir</h4><p>O que medir e por quê</p></div>
+    <div class="arrow">›</div>
+    <div class="step" style="--c:#8b5cf6;--bgc:#1c1138"><div class="num">2</div><h4>Coletar</h4><p>De onde vêm os dados</p></div>
+    <div class="arrow">›</div>
+    <div class="step" style="--c:#22d3ee;--bgc:#0b2a36"><div class="num">3</div><h4>Analisar</h4><p>Comparar com a meta</p></div>
+    <div class="arrow">›</div>
+    <div class="step" style="--c:#f59e0b;--bgc:#2e2008"><div class="num">4</div><h4>Comunicar</h4><p>Levar a quem decide</p></div>
+    <div class="arrow">›</div>
+    <div class="step" style="--c:#22c55e;--bgc:#0b2a1c"><div class="num">5</div><h4>Agir</h4><p>Corrigir e melhorar</p></div>
+  </div>
+  <div class="z" style="display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:40px">
+    <div class="card" style="--c:#3b82f6"><h3>Para cada indicador, registre</h3><ul><li>Definição e fórmula</li><li>Meta</li><li>Responsável e frequência</li></ul></div>
+    <div class="card" style="--c:#f59e0b"><h3>Cuidado</h3><p>Medir sem agir é só burocracia. Todo número que sai da meta precisa gerar uma decisão.</p></div>
+  </div>
+  <div class="z ask ask-top"><span class="ask-q">?</span><span class="ask-t">Qual etapa as empresas mais esquecem de fazer?</span></div>
+  <div class="foot"><span>Apresentador: <b>Gabriel Feitosa</b></span><span>45</span></div>
+</section>
+
+<!-- ============ 46. TIPOS DE INDICADORES ============ -->
+<section data-id="indicadores" data-bloco="Bloco 8 · Gabriel e Kaique" class="slide">
   <div class="haze"></div><div class="grid"></div>
   <div class="z"><div class="tag">ISO/IEC 27004 · Indicadores</div>
   <h2>Indicadores <span class="a">essenciais</span> por tipo</h2>
@@ -578,11 +1021,33 @@
     <div class="card" style="--c:#8b5cf6;min-height:380px"><div class="badge b2" style="margin-bottom:18px"><svg><use href="#i-gear"/></svg></div><h3>B) Processo</h3><div class="lbl">Como foi feito</div><ul><li>Revisões de acesso no prazo</li><li>Testes de backup mensais</li><li>Auditorias internas concluídas</li><li>Controles conforme o plano</li></ul></div>
     <div class="card" style="--c:#22c55e;min-height:380px"><div class="badge b4" style="margin-bottom:18px"><svg><use href="#i-check"/></svg></div><h3>C) Conformidade</h3><div class="lbl">Se cumpre o requisito</div><ul><li>Funcionários treinados em segurança</li><li>Não conformidades tratadas no prazo</li><li>Políticas revisadas anualmente</li><li>Evidências auditáveis</li></ul></div>
   </div>
-  <div class="foot"><span>Apresentador: <b>Gabriel Feitosa</b></span><span>27</span></div>
+  <div class="z ask"><span class="ask-q">?</span><span class="ask-t">“Revisão de acesso no prazo” é indicador de resultado, processo ou conformidade?</span></div>
+  <div class="foot"><span>Apresentador: <b>Gabriel Feitosa</b></span><span>46</span></div>
 </section>
 
-<!-- ============ 28. PERGUNTA 3 ============ -->
-<section class="slide">
+<!-- ============ 47. PAINEL ILUSTRATIVO ============ -->
+<section data-id="painel" data-bloco="Bloco 8 · Gabriel e Kaique" class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">ISO/IEC 27004 · Painel</div>
+  <h2>Um painel que <span class="a">decide</span></h2>
+  <p class="sub">Poucos indicadores, cada um com meta. A cor mostra onde agir.</p></div>
+  <div class="z card" style="--c:#22d3ee;margin-top:30px;padding:30px 36px">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px"><h3 style="margin:0">Painel do SGSI</h3><span class="chip" style="--c:#f59e0b">Dados ilustrativos</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:26px 50px">
+      <div class="kpi"><div class="kpi-h"><span>Revisões de acesso no prazo</span><b>87%</b></div><div class="bar" style="--w:87%;--m:95%;--c:#f59e0b"><i></i><u></u></div><div class="kpi-f">Meta 95%</div></div>
+      <div class="kpi"><div class="kpi-h"><span>Restaurações de backup bem-sucedidas</span><b>100%</b></div><div class="bar" style="--w:100%;--m:100%;--c:#22c55e"><i></i><u></u></div><div class="kpi-f">Meta 100%</div></div>
+      <div class="kpi"><div class="kpi-h"><span>Pessoas treinadas em segurança</span><b>72%</b></div><div class="bar" style="--w:72%;--m:90%;--c:#f43f5e"><i></i><u></u></div><div class="kpi-f">Meta 90%</div></div>
+      <div class="kpi"><div class="kpi-h"><span>Não conformidades fechadas no prazo</span><b>91%</b></div><div class="bar" style="--w:91%;--m:90%;--c:#22c55e"><i></i><u></u></div><div class="kpi-f">Meta 90%</div></div>
+    </div>
+    <div style="display:flex;gap:22px;margin-top:20px;font-size:15px;color:var(--muted)"><span><b style="color:#22c55e">Verde</b> meta atingida</span><span><b style="color:#f59e0b">Amarelo</b> perto da meta</span><span><b style="color:#f43f5e">Vermelho</b> longe da meta</span></div>
+  </div>
+  <div class="z note blue" style="margin-top:22px;font-size:18px">Leitura: treinamento é o gap mais urgente. Acessos pedem ajuste. Backup e correções estão em dia.</div>
+  <div class="z ask"><span class="ask-q">?</span><span class="ask-t">Qual barra pede ação primeiro?</span></div>
+  <div class="foot"><span>Apresentador: <b>Gabriel Feitosa</b></span><span>47</span></div>
+</section>
+
+<!-- ============ 48. PERGUNTA 3 ============ -->
+<section data-id="pg3" data-bloco="Bloco 8 · Gabriel e Kaique" class="slide">
   <div class="haze"></div><div class="grid"></div>
   <div class="z"><div class="tag">Pergunta-guia 3</div>
   <h2>Quais métricas são mais <span class="a">úteis</span>?</h2>
@@ -599,11 +1064,11 @@
     </table>
     <div class="card" style="--c:#f59e0b"><div class="badge b5" style="margin-bottom:18px"><svg><use href="#i-check"/></svg></div><h3>Critério de escolha</h3><ul><li>Definição clara</li><li>Fórmula</li><li>Meta</li><li>Responsável</li><li>Frequência de medição</li></ul><p style="margin-top:16px;font-size:18px">Poucas métricas, bem escolhidas, valem mais que muitas.</p></div>
   </div>
-  <div class="foot"><span>Apresentador: <b>Kaique Cirqueira</b></span><span>28</span></div>
+  <div class="foot"><span>Apresentador: <b>Kaique Cirqueira</b></span><span>48</span></div>
 </section>
 
-<!-- ============ 29. DIVISOR 5 ============ -->
-<section class="slide divider">
+<!-- ============ 49. DIVISOR 5 ============ -->
+<section data-id="div-caso" data-bloco="Bloco 9 · Eduardo" class="slide divider">
   <div class="bgimg" style="background-image:url(assets/bg/p11.jpg)"></div><div class="haze"></div>
   <div class="z" style="position:absolute;left:80px;top:170px">
     <div class="num">05</div>
@@ -611,11 +1076,34 @@
     <h1 style="margin-top:14px">Estudo de caso <span class="a">e análise</span></h1>
     <p class="sub" style="font-size:24px">Uma empresa certificada, o que funcionou, o que falhou e o que melhorar.</p>
   </div>
-  <div class="foot"><span>Bloco 9 · <b>Eduardo Santana</b></span><span>29</span></div>
+  <div class="foot"><span>Bloco 9 · <b>Eduardo Santana</b></span><span>49</span></div>
 </section>
 
-<!-- ============ 30. CASO BB ============ -->
-<section class="slide">
+<!-- ============ 50. MÉTODO DE ANÁLISE DO CASO ============ -->
+<section data-id="metodo-caso" data-bloco="Bloco 9 · Eduardo" class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">Estudo de caso · Método</div>
+  <h2>Como vamos <span class="a">analisar</span> o caso</h2>
+  <p class="sub">O mesmo roteiro serve para qualquer empresa certificada.</p></div>
+  <div class="z flow big" style="margin-top:56px">
+    <div class="step" style="--c:#3b82f6;--bgc:#0b1b3d"><div class="num">1</div><h4>Contexto</h4><p>Setor, porte e exigências</p></div>
+    <div class="arrow">›</div>
+    <div class="step" style="--c:#8b5cf6;--bgc:#1c1138"><div class="num">2</div><h4>Ativos e riscos</h4><p>O que precisa ser protegido</p></div>
+    <div class="arrow">›</div>
+    <div class="step" style="--c:#22d3ee;--bgc:#0b2a36"><div class="num">3</div><h4>Controles</h4><p>O que foi aplicado</p></div>
+    <div class="arrow">›</div>
+    <div class="step" style="--c:#f59e0b;--bgc:#2e2008"><div class="num">4</div><h4>Evidências</h4><p>O que prova o resultado</p></div>
+    <div class="arrow">›</div>
+    <div class="step" style="--c:#22c55e;--bgc:#0b2a1c"><div class="num">5</div><h4>Veredito</h4><p>Eficaz, falha ou melhoria</p></div>
+  </div>
+  <div class="z" style="display:flex;gap:18px;margin-top:44px;justify-content:center"><span class="pill" style="--c:#22c55e;font-size:20px;padding:10px 26px">Eficaz</span><span class="pill" style="--c:#f43f5e;font-size:20px;padding:10px 26px">Apresentou falha</span><span class="pill" style="--c:#f59e0b;font-size:20px;padding:10px 26px">Pode melhorar</span></div>
+  <div class="z note cyan" style="margin-top:34px;font-size:18px">Regra do grupo: só afirmamos o que tem fonte pública. O que for análise típica fica identificado como tal.</div>
+  <div class="z ask"><span class="ask-q">?</span><span class="ask-t">Que empresa certificada vocês conhecem?</span></div>
+  <div class="foot"><span>Apresentador: <b>Eduardo Santana</b></span><span>50</span></div>
+</section>
+
+<!-- ============ 51. CASO BB ============ -->
+<section data-id="caso" data-bloco="Bloco 9 · Eduardo" class="slide">
   <div class="haze"></div><div class="grid"></div>
   <div class="z"><div class="tag">Estudo de caso · ISO/IEC 27001</div>
   <h2>Estudo de caso: <span class="a">Banco do Brasil</span></h2>
@@ -626,11 +1114,11 @@
     <div class="card" style="--c:#22c55e;min-height:340px"><div class="badge b4" style="margin-bottom:18px"><svg><use href="#i-award"/></svg></div><h3>Caminho até a certificação</h3><ul><li>Mapeamento de ativos</li><li>Avaliação de riscos</li><li>Definição de controles</li><li>Auditorias internas</li><li>Certificação ISO/IEC 27001</li></ul></div>
   </div>
   <div class="z note amber" style="position:absolute;left:80px;right:80px;bottom:70px">Fonte a confirmar: certificação e números devem ser checados em relatórios públicos do Banco do Brasil antes da apresentação.</div>
-  <div class="foot"><span>Apresentador: <b>Eduardo Santana</b></span><span>30</span></div>
+  <div class="foot"><span>Apresentador: <b>Eduardo Santana</b></span><span>51</span></div>
 </section>
 
-<!-- ============ 31. CONTROLES EFICAZES ============ -->
-<section class="slide">
+<!-- ============ 52. CONTROLES EFICAZES ============ -->
+<section data-id="eficazes" data-bloco="Bloco 9 · Eduardo" class="slide">
   <div class="haze"></div><div class="grid"></div>
   <div class="z"><div class="tag">Estudo de caso · Eficácia</div>
   <h2>Controles <span class="a">eficazes</span> e por quê</h2>
@@ -641,11 +1129,12 @@
     <div class="card" style="--c:#22d3ee;min-height:330px"><div class="badge b3" style="width:96px;height:96px;margin-bottom:20px"><svg style="width:46px;height:46px"><use href="#i-cloud"/></svg></div><h3>Plano de continuidade</h3><p>Operação em múltiplos datacenters, com testes de recuperação. Reduz o impacto de falhas.</p></div>
   </div>
   <div class="z note" style="position:absolute;left:80px;right:80px;bottom:70px">Critério de eficácia: o controle reduz o risco que deveria reduzir, e isso pode ser verificado por evidência.</div>
-  <div class="foot"><span>Apresentador: <b>Eduardo Santana</b></span><span>31</span></div>
+  <div class="z ask ask-top"><span class="ask-q">?</span><span class="ask-t">Por que o MFA funciona mesmo com a senha vazada?</span></div>
+  <div class="foot"><span>Apresentador: <b>Eduardo Santana</b></span><span>52</span></div>
 </section>
 
-<!-- ============ 32. FALHAS ============ -->
-<section class="slide">
+<!-- ============ 53. FALHAS ============ -->
+<section data-id="falhas" data-bloco="Bloco 9 · Eduardo" class="slide">
   <div class="haze"></div><div class="grid"></div>
   <div class="z"><div class="tag">Estudo de caso · Falhas</div>
   <h2>Falhas e <span class="a">oportunidades</span></h2>
@@ -655,11 +1144,12 @@
     <div class="card" style="--c:#f59e0b;display:grid;grid-template-columns:90px 1fr 1fr;gap:26px;align-items:center;padding:24px 30px"><div class="badge b5"><svg><use href="#i-user"/></svg></div><div><h3>Baixa conscientização</h3><p>Falha: colaboradores pouco preparados para ameaças.</p></div><div><p style="color:#86efac"><b>Melhoria:</b> treinamento intensivo e campanhas com medição.</p></div></div>
     <div class="card" style="--c:#8b5cf6;display:grid;grid-template-columns:90px 1fr 1fr;gap:26px;align-items:center;padding:24px 30px"><div class="badge b2"><svg><use href="#i-disk"/></svg></div><div><h3>Testes de backup insuficientes</h3><p>Falha: testes esporádicos e sem registro.</p></div><div><p style="color:#86efac"><b>Melhoria:</b> testes mensais automatizados em ambiente isolado.</p></div></div>
   </div>
-  <div class="foot"><span>Apresentador: <b>Eduardo Santana</b></span><span>32</span></div>
+  <div class="z ask"><span class="ask-q">?</span><span class="ask-t">Qual falha vocês corrigiriam primeiro?</span></div>
+  <div class="foot"><span>Apresentador: <b>Eduardo Santana</b></span><span>53</span></div>
 </section>
 
-<!-- ============ 33. ANÁLISE CONSOLIDADA ============ -->
-<section class="slide">
+<!-- ============ 54. ANÁLISE CONSOLIDADA ============ -->
+<section data-id="consolidada" data-bloco="Bloco 9 · Eduardo" class="slide">
   <div class="haze"></div><div class="grid"></div>
   <div class="z"><div class="tag">Estudo de caso · Análise consolidada</div>
   <h2>Análise <span class="a">consolidada</span></h2>
@@ -672,11 +1162,28 @@
     <tr><td>Conscientização</td><td>Treinamento básico existente</td><td>Baixa adesão</td><td>Campanhas contínuas e medição</td></tr>
   </table>
   <div class="z note" style="position:absolute;left:80px;right:80px;bottom:70px">Conclusão: um controle eficaz hoje precisa de medição e revisão para continuar eficaz amanhã.</div>
-  <div class="foot"><span>Apresentador: <b>Eduardo Santana</b></span><span>33</span></div>
+  <div class="foot"><span>Apresentador: <b>Eduardo Santana</b></span><span>54</span></div>
 </section>
 
-<!-- ============ 34. PROCESSO, NÃO DESTINO ============ -->
-<section class="slide">
+<!-- ============ 55. LIÇÕES DO CASO ============ -->
+<section data-id="licoes" data-bloco="Bloco 9 · Eduardo" class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">Estudo de caso · Lições</div>
+  <h2>O que levar do caso para <span class="a">qualquer</span> empresa</h2>
+  <p class="sub">Quatro lições que servem para uma multinacional e para uma startup.</p></div>
+  <div class="z" style="display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:38px">
+    <div class="card" style="--c:#3b82f6;min-height:320px"><div class="stat" style="font-size:64px;--c:#60a5fa">1</div><h3 style="margin-top:10px">Escopo claro</h3><p>Certifique o que consegue manter.</p></div>
+    <div class="card" style="--c:#8b5cf6;min-height:320px"><div class="stat" style="font-size:64px;--c:#a78bfa">2</div><h3 style="margin-top:10px">Dono e evidência</h3><p>Todo controle precisa de responsável e de prova.</p></div>
+    <div class="card" style="--c:#22d3ee;min-height:320px"><div class="stat" style="font-size:64px;--c:#67e8f9">3</div><h3 style="margin-top:10px">Medir</h3><p>Sem indicador, a eficácia é opinião.</p></div>
+    <div class="card" style="--c:#22c55e;min-height:320px"><div class="stat" style="font-size:64px;--c:#86efac">4</div><h3 style="margin-top:10px">Melhorar sempre</h3><p>Até controle eficaz envelhece sem revisão.</p></div>
+  </div>
+  <div class="z note amber" style="margin-top:28px;font-size:18px">Esses pontos respondem diretamente às três perguntas-guia do trabalho.</div>
+  <div class="z ask"><span class="ask-q">?</span><span class="ask-t">Qual lição vocês aplicariam hoje no seu trabalho?</span></div>
+  <div class="foot"><span>Apresentador: <b>Eduardo Santana</b></span><span>55</span></div>
+</section>
+
+<!-- ============ 56. PROCESSO, NÃO DESTINO ============ -->
+<section data-id="processo" data-bloco="Fechamento · Rômulo" class="slide">
   <div class="haze"></div><div class="grid"></div>
   <div class="z"><div class="tag">Fechamento</div>
   <h2>Segurança é <span class="a">processo</span>, não destino</h2>
@@ -685,7 +1192,7 @@
     <div class="card" style="--c:#f43f5e;min-height:290px"><div class="badge b6" style="margin-bottom:16px"><svg><use href="#i-ban"/></svg></div><h3>Mindset estático</h3><p>“Instalamos o antivírus, estamos seguros.”</p></div>
     <div class="card" style="--c:#3b82f6;min-height:340px;text-align:center"><svg width="250" height="250" viewBox="0 0 200 200" style="margin:0 auto;display:block;filter:drop-shadow(0 20px 26px rgba(0,0,0,.55))">
       <defs><linearGradient id="cy" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#93c5fd"/><stop offset="1" stop-color="#6d28d9"/></linearGradient></defs>
-      <circle cx="100" cy="100" r="78" fill="none" stroke="url(#cy)" stroke-width="18" stroke-dasharray="450 540" transform="rotate(-90 100 100)"/>
+      <circle cx="100" cy="100" r="78" fill="none" class="ring" style="--len:450" stroke="url(#cy)" stroke-width="18" stroke-dasharray="450 540" transform="rotate(-90 100 100)"/>
       <circle cx="100" cy="100" r="78" fill="none" stroke="#14213f" stroke-width="18" stroke-dasharray="0 0"/>
       <circle cx="100" cy="100" r="50" fill="#0b1430"/>
       <text x="100" y="98" text-anchor="middle" font-size="18" font-weight="800" fill="#fff" font-family="Calibri,Carlito,Arial">CICLO</text>
@@ -694,11 +1201,12 @@
       <p style="margin-top:16px;font-size:19px;color:#e4ecf8">Avaliar · Implementar · Monitorar · Auditar · Melhorar · Repetir</p></div>
     <div class="card" style="--c:#22c55e;min-height:290px"><div class="badge b4" style="margin-bottom:16px"><svg><use href="#i-cycle"/></svg></div><h3>Mindset dinâmico</h3><p>Segurança é revisada, medida e aprimorada continuamente.</p></div>
   </div>
-  <div class="foot"><span>Apresentador: <b>Rômulo Gomes Cavalcante</b></span><span>34</span></div>
+  <div class="z ask"><span class="ask-q">?</span><span class="ask-t">Alguém acha que dá para “terminar” a segurança?</span></div>
+  <div class="foot"><span>Apresentador: <b>Rômulo Gomes Cavalcante</b></span><span>56</span></div>
 </section>
 
-<!-- ============ 35. O QUE LEVAR ============ -->
-<section class="slide">
+<!-- ============ 57. O QUE LEVAR ============ -->
+<section data-id="levar" data-bloco="Fechamento · Rômulo" class="slide">
   <div class="haze"></div><div class="grid"></div>
   <div class="z"><div class="tag">Fechamento</div>
   <h2>O que <span class="a">levar</span> desta aula</h2></div>
@@ -707,11 +1215,12 @@
     <div class="card" style="--c:#8b5cf6;min-height:390px"><div class="badge b2" style="margin-bottom:20px"><svg><use href="#i-users"/></svg></div><h3 style="font-size:28px">Gestão</h3><ul><li>SGSI exige responsáveis, execução, evidência e auditoria</li><li>Indicadores medem se os controles funcionam</li><li>Controle sem evidência é só documento</li></ul></div>
     <div class="card" style="--c:#22d3ee;min-height:390px"><div class="badge b3" style="margin-bottom:20px"><svg><use href="#i-hand"/></svg></div><h3 style="font-size:28px">Prática</h3><ul><li>Certificação importa, mas a prática diária é essencial</li><li>Para PMEs, a abordagem híbrida costuma ser a mais segura</li><li>Melhoria contínua é o coração da segurança</li></ul></div>
   </div>
-  <div class="foot"><span>Apresentador: <b>Rômulo Gomes Cavalcante</b></span><span>35</span></div>
+  <div class="z ask ask-prof"><span class="ask-q">?</span><span class="ask-t">Professor: algum ponto merece ser aprofundado?</span></div>
+  <div class="foot"><span>Apresentador: <b>Rômulo Gomes Cavalcante</b></span><span>57</span></div>
 </section>
 
-<!-- ============ 36. RESPOSTAS-GUIA ============ -->
-<section class="slide">
+<!-- ============ 58. RESPOSTAS-GUIA ============ -->
+<section data-id="respostas" data-bloco="Fechamento · Rômulo" class="slide">
   <div class="haze"></div><div class="grid"></div>
   <div class="z"><div class="tag">Fechamento</div>
   <h2>Respostas às <span class="a">três perguntas-guia</span></h2></div>
@@ -720,11 +1229,27 @@
     <div class="card" style="--c:#8b5cf6;display:flex;gap:26px;align-items:center;padding:26px 32px"><div class="badge b2"><svg><use href="#i-hand"/></svg></div><div><h3>Como evitar controles só no papel?</h3><p>Dono nomeado, evidência automática, testes periódicos, indicador com meta e auditoria.</p></div></div>
     <div class="card" style="--c:#22d3ee;display:flex;gap:26px;align-items:center;padding:26px 32px"><div class="badge b3"><svg><use href="#i-chart"/></svg></div><div><h3>Quais métricas da 27004 são mais úteis?</h3><p>Poucas e bem definidas: acessos no prazo, testes de restauração, tempo de resposta, controles com evidência e não conformidades.</p></div></div>
   </div>
-  <div class="foot"><span>Apresentador: <b>Rômulo Gomes Cavalcante</b></span><span>36</span></div>
+  <div class="foot"><span>Apresentador: <b>Rômulo Gomes Cavalcante</b></span><span>58</span></div>
 </section>
 
-<!-- ============ 37. REFERÊNCIAS ============ -->
-<section class="slide">
+<!-- ============ 59. QUIZ RELÂMPAGO ============ -->
+<section data-id="quiz" data-bloco="Fechamento · Rômulo" class="slide">
+  <div class="haze"></div><div class="grid"></div>
+  <div class="z"><div class="tag">Fechamento · Quiz</div>
+  <h2>Quiz <span class="a">relâmpago</span></h2>
+  <p class="sub">Cinco perguntas rápidas para fixar o que vimos. Respondam em voz alta.</p></div>
+  <div class="z" style="display:flex;flex-direction:column;gap:16px;margin-top:30px">
+    <div class="card mini" style="--c:#3b82f6;display:flex;gap:20px;align-items:center;padding:22px 30px"><div class="qn" style="--c:#3b82f6">1</div><p style="font-size:25px">Qual norma da família permite certificação?</p></div>
+    <div class="card mini" style="--c:#8b5cf6;display:flex;gap:20px;align-items:center;padding:22px 30px"><div class="qn" style="--c:#8b5cf6">2</div><p style="font-size:25px">Quantos controles tem o Anexo A da edição 2022?</p></div>
+    <div class="card mini" style="--c:#22d3ee;display:flex;gap:20px;align-items:center;padding:22px 30px"><div class="qn" style="--c:#22d3ee">3</div><p style="font-size:25px">O que o RPO mede?</p></div>
+    <div class="card mini" style="--c:#f59e0b;display:flex;gap:20px;align-items:center;padding:22px 30px"><div class="qn" style="--c:#f59e0b">4</div><p style="font-size:25px">Controle sem evidência recente é o quê?</p></div>
+    <div class="card mini" style="--c:#22c55e;display:flex;gap:20px;align-items:center;padding:22px 30px"><div class="qn" style="--c:#22c55e">5</div><p style="font-size:25px">Quem emite o certificado ISO/IEC 27001?</p></div>
+  </div>
+  <div class="foot"><span>Apresentador: <b>Rômulo Gomes Cavalcante</b></span><span>59</span></div>
+</section>
+
+<!-- ============ 60. REFERÊNCIAS ============ -->
+<section data-id="refs" data-bloco="Fechamento · Rômulo" class="slide">
   <div class="haze"></div><div class="grid"></div>
   <div class="z"><div class="tag">Referências</div><h2><span class="a">Referências</span></h2></div>
   <div class="z" style="display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:36px">
@@ -742,11 +1267,11 @@
       <li>Lei nº 13.709/2018 (LGPD)</li>
       <li>Banco do Brasil: relatórios públicos (validar antes da aula)</li></ul></div>
   </div>
-  <div class="foot"><span>Apresentador: <b>Rômulo Gomes Cavalcante</b></span><span>37</span></div>
+  <div class="foot"><span>Apresentador: <b>Rômulo Gomes Cavalcante</b></span><span>60</span></div>
 </section>
 
-<!-- ============ 38. PERGUNTAS ============ -->
-<section class="slide cover">
+<!-- ============ 61. PERGUNTAS ============ -->
+<section data-id="perguntas" data-bloco="Fechamento · Rômulo" class="slide cover">
   <div class="bgimg" style="background-image:url(assets/bg/p13.jpg)"></div><div class="haze"></div>
   <div class="z" style="position:absolute;left:80px;top:250px;width:760px">
     <div class="tag">Encerramento</div>
@@ -760,11 +1285,11 @@
     <circle cx="100" cy="100" r="40" fill="url(#gBlue)" opacity=".9" style="filter:drop-shadow(0 16px 24px rgba(0,0,0,.6))"/>
     <text x="100" y="128" text-anchor="middle" font-size="84" font-weight="900" fill="#fff" font-family="Calibri,Carlito,Arial">?</text>
   </svg>
-  <div class="foot"><span>ISO/IEC 27000 · 2026</span><span>38</span></div>
+  <div class="foot"><span>ISO/IEC 27000 · 2026</span><span>61</span></div>
 </section>
 
-<!-- ============ 39. GLOSSÁRIO ============ -->
-<section class="slide">
+<!-- ============ 62. GLOSSÁRIO ============ -->
+<section data-id="glossario" data-bloco="Fechamento · Rômulo" class="slide">
   <div class="haze"></div><div class="grid"></div>
   <div class="z"><div class="tag">Apêndice A · consulta</div><h2>Glossário <span class="a">rápido</span></h2></div>
   <table class="z" style="margin-top:30px;font-size:17px">
@@ -777,11 +1302,11 @@
     <tr><td>DR</td><td>Recuperação de desastres (Disaster Recovery)</td><td>MTTD / MTTR</td><td>Tempo médio de detecção / de resposta</td></tr>
     <tr><td>LGPD</td><td>Lei Geral de Proteção de Dados</td><td>ANPD</td><td>Autoridade Nacional de Proteção de Dados</td></tr>
   </table>
-  <div class="foot"><span>Apresentação do grupo</span><span>39</span></div>
+  <div class="foot"><span>Apresentação do grupo</span><span>62</span></div>
 </section>
 
-<!-- ============ 40. NÚMEROS ============ -->
-<section class="slide">
+<!-- ============ 63. NÚMEROS ============ -->
+<section data-id="numeros" data-bloco="Fechamento · Rômulo" class="slide">
   <div class="haze"></div><div class="grid"></div>
   <div class="z"><div class="tag">Apêndice B · consulta</div><h2>Números para <span class="a">memorizar</span></h2></div>
   <div class="z" style="display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:40px">
@@ -794,7 +1319,7 @@
     <div class="card mini" style="--c:#3b82f6;text-align:center;min-height:200px"><div class="stat" style="font-size:64px;--c:#93c5fd">95 / 87</div><p style="margin-top:10px">meta x resultado do exemplo</p></div>
     <div class="card mini" style="--c:#22d3ee;text-align:center;min-height:200px"><div class="stat" style="font-size:84px;--c:#67e8f9">3-2-1</div><p style="margin-top:10px">backup: 3 cópias, 2 mídias, 1 fora</p></div>
   </div>
-  <div class="foot"><span>Apresentação do grupo</span><span>40</span></div>
+  <div class="foot"><span>Apresentação do grupo</span><span>63</span></div>
 </section>
 
     </div>

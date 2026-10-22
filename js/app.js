@@ -1,8 +1,9 @@
-/* Modo apresentação: slides lado a lado, navegação por teclado, notas e cronômetro. */
+/* Modo apresentação: slides lado a lado, efeitos de entrada, notas e cronômetro. */
 (function () {
   'use strict';
 
   var W = 1440, H = 810, TOPBAR = 40;
+  var root = document.documentElement;
   var deck = document.getElementById('deck');
   var view = document.getElementById('view');
   var slides = Array.prototype.slice.call(deck.querySelectorAll('.slide'));
@@ -15,34 +16,87 @@
   var btnNext = document.getElementById('next');
   var blkEl = document.getElementById('blk');
   var timerEl = document.getElementById('timer');
+  var prog = document.getElementById('prog');
   var NOTAS = window.NOTAS || {};
+  var animar = root.classList.contains('anim');
 
-  /* Blocos para o cronômetro (slide inicial, nome). */
-  var BLOCOS = [
-    [1, 'Abertura · Rômulo'], [6, 'Bloco 1 · Guilherme'], [8, 'Bloco 2 · Kaua'],
-    [10, 'Bloco 3 · Vinicius'], [14, 'Bloco 4 · Kaique'], [16, 'Bloco 5 · Gabriel'],
-    [19, 'Bloco 6 · Kawan'], [22, 'Bloco 7 · Marcelo'], [26, 'Bloco 8 · Gabriel e Kaique'],
-    [29, 'Bloco 9 · Eduardo'], [34, 'Fechamento · Rômulo']
-  ];
+  /* Blocos (o rótulo vem de data-bloco em cada slide), na ordem em que aparecem. */
+  var blocos = [];
+  var blocoDoSlide = slides.map(function (s) {
+    var nome = s.getAttribute('data-bloco') || 'Aula';
+    var k = blocos.indexOf(nome);
+    if (k < 0) { blocos.push(nome); k = blocos.length - 1; }
+    return k;
+  });
 
   var atual = 0, scale = 1;
 
-  slides.forEach(function (s, i) {
-    if (NOTAS[i + 1]) s.setAttribute('data-notas', NOTAS[i + 1]);
+  slides.forEach(function (s) {
+    var n = NOTAS[s.getAttribute('data-id')];
+    if (n) s.setAttribute('data-notas', n);
   });
 
   function pad(n) { return (n < 10 ? '0' : '') + n; }
 
-  function blocoDe(i) {
-    var b = 0;
-    for (var k = 0; k < BLOCOS.length; k++) if (i + 1 >= BLOCOS[k][0]) b = k;
-    return b;
+  /* ---------- efeitos: marca os elementos que entram em sequência ---------- */
+  var ALVOS = '.tag,h1,h2,.sub,.card,.step,.layer,.qbox,.note,.chip,.pill,tr,.cell,.kpi,.tl-item,.stat,.ask,.slide > svg,.z > svg';
+  if (animar) {
+    slides.forEach(function (s) {
+      var i = 0;
+      Array.prototype.forEach.call(s.querySelectorAll(ALVOS), function (el) {
+        if (el.closest('.badge') || (el.parentElement && el.parentElement.closest(ALVOS))) return;
+        if (s.classList.contains('cover') && el.tagName.toLowerCase() === 'svg') return;
+        el.classList.add('rv');
+        el.style.setProperty('--i', el.classList.contains('ask') ? 24 : Math.min(i++, 16));
+      });
+    });
+  }
+
+  /* contadores: números inteiros em .stat contam de 0 até o valor */
+  var contadores = [];
+  slides.forEach(function (s, idx) {
+    Array.prototype.forEach.call(s.querySelectorAll('.stat'), function (el) {
+      if (/^\d+$/.test(el.textContent.trim())) {
+        contadores.push({ el: el, slide: idx, alvo: parseInt(el.textContent, 10) });
+      }
+    });
+  });
+
+  function contar(slideIdx) {
+    contadores.forEach(function (c) {
+      if (c.slide !== slideIdx) return;
+      var t0 = null;
+      c.el.textContent = '0';
+      function passo(t) {
+        if (t0 === null) t0 = t;
+        var p = Math.min(1, (t - t0 - 450) / 1100);
+        if (p > 0) c.el.textContent = Math.round(c.alvo * (1 - Math.pow(1 - p, 3)));
+        if (p < 1) requestAnimationFrame(passo);
+      }
+      requestAnimationFrame(passo);
+    });
+  }
+
+  function restaurarContadores(slideIdx) {
+    contadores.forEach(function (c) { if (c.slide === slideIdx) c.el.textContent = String(c.alvo); });
+  }
+
+  var limpeza = null;
+  function ativar(i) {
+    slides[i].classList.add('on');
+    if (animar) contar(i);
+    clearTimeout(limpeza);
+    /* depois da transição, desliga os outros para o efeito repetir ao voltar */
+    limpeza = setTimeout(function () {
+      slides.forEach(function (s, k) {
+        if (k !== atual && s.classList.contains('on')) { s.classList.remove('on'); restaurarContadores(k); }
+      });
+    }, 700);
   }
 
   /* ---------- escala e posição ---------- */
   function layout() {
-    var notasAberto = !notasEl.hidden;
-    var nh = notasAberto ? notasEl.offsetHeight : 0;
+    var nh = notasEl.hidden ? 0 : notasEl.offsetHeight;
     var aw = window.innerWidth, ah = window.innerHeight - TOPBAR - nh;
     scale = Math.min(aw / W, ah / H);
     view.style.width = Math.floor(W * scale) + 'px';
@@ -59,8 +113,10 @@
 
   function ir(i) {
     atual = Math.max(0, Math.min(total - 1, i));
+    ativar(atual);
     posicionar(false);
     counter.textContent = pad(atual + 1) + ' / ' + total;
+    prog.style.width = ((atual + 1) / total * 100) + '%';
     btnPrev.disabled = atual === 0;
     btnNext.disabled = atual === total - 1;
     try { history.replaceState(null, '', '#' + (atual + 1)); } catch (e) { /* file:// restrito */ }
@@ -70,8 +126,17 @@
 
   /* ---------- notas ---------- */
   function atualizarNotas() {
-    notasH.textContent = 'Slide ' + (atual + 1) + ' · ' + BLOCOS[blocoDe(atual)][1];
-    notasT.textContent = slides[atual].getAttribute('data-notas') || '[REVISAR] Sem nota para este slide.';
+    notasH.textContent = 'Slide ' + (atual + 1) + ' · ' + blocos[blocoDoSlide[atual]];
+    var texto = slides[atual].getAttribute('data-notas') || '[REVISAR] Sem nota para este slide.';
+    var ask = slides[atual].querySelector('.ask');
+    if (ask) texto += '\n\nINTERAJA (' + ask.classList.contains('ask-prof') ? 'professor' : 'turma' + '): ' + ask.querySelector('.ask-t').textContent + ' Espere a resposta antes de continuar.';
+    var prox = slides[atual + 1];
+    if (prox && prox.getAttribute('data-bloco') !== slides[atual].getAttribute('data-bloco')) {
+      var f = prox.querySelector('.foot b');
+      texto += '\n\nFIM DO BLOCO: olhe para a turma e para o professor e pergunte se ficou alguma dúvida. Depois passe a palavra' + (f ? ' para ' + f.textContent.split(' ')[0] : '') + '.';
+    }
+    notasT.textContent = texto + '\n\nOlhe para a turma e para o professor enquanto fala. Não leia o slide.';
+    notasEl.scrollTop = 0;
   }
 
   function alternarNotas() {
@@ -80,19 +145,19 @@
   }
 
   /* ---------- cronômetro (tempo acumulado por bloco) ---------- */
-  var decorrido = BLOCOS.map(function () { return 0; });
+  var decorrido = blocos.map(function () { return 0; });
   var rodando = false, ultimo = 0, tick = null;
 
   function atualizarTimer() {
-    var b = blocoDe(atual), s = Math.floor(decorrido[b] / 1000);
-    blkEl.textContent = BLOCOS[b][1];
+    var b = blocoDoSlide[atual], s = Math.floor(decorrido[b] / 1000);
+    blkEl.textContent = blocos[b];
     timerEl.textContent = pad(Math.floor(s / 60)) + ':' + pad(s % 60);
     timerEl.classList.toggle('run', rodando);
   }
 
-  function contar() {
+  function somar() {
     var agora = Date.now();
-    decorrido[blocoDe(atual)] += agora - ultimo;
+    decorrido[blocoDoSlide[atual]] += agora - ultimo;
     ultimo = agora;
     atualizarTimer();
   }
@@ -100,32 +165,32 @@
   function iniciar() {
     if (rodando) return;
     rodando = true; ultimo = Date.now();
-    tick = setInterval(contar, 250);
+    tick = setInterval(somar, 250);
     atualizarTimer();
   }
 
   function pausar() {
     if (!rodando) return;
-    contar(); rodando = false; clearInterval(tick);
+    somar(); rodando = false; clearInterval(tick);
     atualizarTimer();
   }
 
   function zerar() {
-    decorrido = BLOCOS.map(function () { return 0; });
+    decorrido = blocos.map(function () { return 0; });
     ultimo = Date.now();
     atualizarTimer();
   }
 
   /* contabiliza o tempo no bloco antigo antes de trocar de slide */
   function navegar(i) {
-    if (rodando) contar();
+    if (rodando) somar();
     ir(i);
   }
 
   /* ---------- tela cheia ---------- */
   function telaCheia() {
     if (document.fullscreenElement) document.exitFullscreen();
-    else if (document.documentElement.requestFullscreen) document.documentElement.requestFullscreen();
+    else if (root.requestFullscreen) root.requestFullscreen();
   }
 
   /* ---------- eventos ---------- */
@@ -173,4 +238,6 @@
   atual = inicial >= 1 && inicial <= total ? inicial - 1 : 0;
   layout();
   ir(atual);
+  /* mostra só depois de marcar tudo, para não piscar o slide sem efeito */
+  requestAnimationFrame(function () { root.classList.add('ready'); });
 })();
