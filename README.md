@@ -7,7 +7,7 @@ Apresentação em 59 slides (16:9, 1440x810), pensada para 3 horas e 9 apresenta
 - css/styles.css: todo o CSS (variáveis em :root, .slide, .card, .badge, .flow, .layer etc.), o modo apresentação e o @media print.
 - js/app.js: navegação, efeitos de entrada, contadores animados, tela cheia, notas e cronômetro.
 - js/notas.js: notas do apresentador por slide, indexadas pelo data-id ({ cia: "...", ... }). O app.js copia cada nota para o atributo data-notas da sua section ao carregar e acrescenta a pergunta de interação e o aviso de fim de bloco.
-- estudo/: guia do grupo e um arquivo .md por apresentador (o que estudar, roteiro, perguntas do professor com respostas, dicionário em palavras simples). Notas marcadas com [REVISAR] não existem no guia.
+- GUIA_DE_ESTUDO.md: guia único do grupo, com um capítulo por apresentador (o que estudar, roteiro, exemplos, perguntas do professor com respostas) e um dicionário em palavras simples.
 - assets/bg/: artes de fundo das capas e divisórias.
 - notas/: guia antigo (33 slides), mantido só como histórico.
 - fonte-pptx/: script que gera a versão PowerPoint.
