@@ -1,5 +1,5 @@
 /* Notas do apresentador, por id de slide (data-id no index.html).
-   Resumo para consulta rápida na tecla N. O detalhe de cada bloco está em estudo/*.md.
+   Resumo para consulta rápida na tecla N. O detalhe de cada bloco está em GUIA_DE_ESTUDO.md.
    Itens marcados com [REVISAR] não constam no guia original e foram escritos de forma curta. */
 window.NOTAS = {
   capa: "ABERTURA (Rômulo). Cumprimente, apresente o grupo e o tema.\nDiga o plano: nove apresentadores, cinco partes, três perguntas-guia para responder ao final.\nLEMBRE: não leia a lista de alunos; cada um se apresenta no seu bloco.",
