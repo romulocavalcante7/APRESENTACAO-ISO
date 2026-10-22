@@ -1,7 +1,7 @@
 # Rômulo: abertura e fechamento
 
-**Abertura:** slides 1 a 5 (8 min) · **Fechamento:** slides 56 a 61 (12 min) · apêndices 62 e 63 só para consulta.
-**Abertura passa a palavra para:** Guilherme. **Fechamento termina:** perguntas gerais.
+**Abertura:** slides 1 a 5 (8 min) · **Fechamento:** slides 56 a 58 (6 min). O Guilherme faz os slides 59 a 61 (quiz, referências e perguntas). Apêndices 62 e 63 só para consulta.
+**Abertura passa a palavra para:** Guilherme. **Fechamento passa a palavra para:** Guilherme, no slide 59.
 
 Seu papel é dar o tom da aula e costurar tudo no final. Você fala pouco de conteúdo técnico, mas precisa dominar o **panorama**: se o professor perguntar "onde isso aparece?", você sabe indicar o bloco.
 
@@ -40,23 +40,13 @@ Seu papel é dar o tom da aula e costurar tudo no final. Você fala pouco de con
 - Frase de síntese: **processo, não destino**.
 
 **Slide 57 (o que levar).** Três grupos: conceitos, gestão e prática. Repita a regra de ouro: todo controle precisa de responsável, execução e evidência.
-- Interação com o professor: "Algum ponto merece ser aprofundado?". Se houver pedido, direcione ao colega do bloco.
 
 **Slide 58 (respostas às três perguntas).** Uma frase para cada. Peça que o dono de cada pergunta complemente em 20 segundos.
 1. PME: depende do mercado. Se há exigência contratual, sim. Senão, comece pelos controles essenciais e certifique depois.
 2. Controles no papel: dono, evidência, teste, indicador e auditoria.
 3. Métricas: poucas, com meta, responsável e frequência.
 
-**Slide 59 (quiz).** Cinco perguntas rápidas. Leia uma por vez e espere a turma. Respostas:
-1. ISO/IEC 27001.
-2. 93 controles (edição 2022).
-3. O RPO mede quanto dado a organização aceita perder, do último backup até o incidente.
-4. Só documento.
-5. Um organismo certificador acreditado (no Brasil, a acreditação é do Inmetro).
-
-**Slide 60 (referências).** Cite as normas e os órgãos. Não leia a lista. Diga: "As edições e links estão no slide."
-
-**Slide 61 (perguntas).** Agradeça e abra as perguntas. Direcione cada pergunta ao colega do bloco.
+Passe a palavra: "Agora o Guilherme faz um quiz rápido e encerra com as perguntas."
 
 ## Cola: se esquecer
 

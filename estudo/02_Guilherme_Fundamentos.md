@@ -1,6 +1,6 @@
 # Guilherme: fundamentos da segurança
 
-**Slides 6 a 10 (12 min)** · Recebe a palavra de: Rômulo · Passa a palavra para: Kaua.
+**Slides 6 a 10 (12 min) e slides 59 a 61 (6 min, no fechamento)** · No bloco 1: recebe a palavra de Rômulo e passa para Kaua. No fechamento: recebe a palavra de Rômulo (slide 58) e encerra a aula.
 
 São cinco slides e todos usam ideias intuitivas. É um bloco curto e rápido: foque em exemplos do dia a dia.
 
@@ -55,6 +55,23 @@ Probabilidade de 1 a 5 e impacto de 1 a 5. O risco é o produto (1 a 25).
 **Slide 10 (matriz de risco).** Explique a conta no cartão da esquerda e depois aponte o canto superior direito da matriz (25, crítico) e o inferior esquerdo (1, baixo).
 - Interação: "Onde colocariam o risco 'senha fraca'?". Resposta defensável: probabilidade alta, impacto médio a alto, então algo entre 10 e 16 (alto). Peça que justifiquem.
 - Passe a palavra: "Agora o Kaua apresenta a família de normas."
+
+## Fechamento: quiz, referências e perguntas (slides 59 a 61)
+
+Depois do Rômulo apresentar as respostas às três perguntas, você encerra. São três slides leves.
+
+**Slide 59 (quiz relâmpago).** Leia uma pergunta por vez e espere a turma responder em voz alta. Se ninguém arriscar, escolha alguém e peça um palpite. Respostas:
+1. ISO/IEC 27001 (a única certificável).
+2. 93 controles na edição 2022.
+3. O RPO mostra quanto dado a empresa aceita perder, do último backup até o incidente.
+4. Só documento, um controle sem evidência recente.
+5. Um organismo certificador acreditado (no Brasil, a acreditação é do Inmetro).
+Elogie quem acertou e explique rápido os erros.
+
+**Slide 60 (referências).** Não leia a lista. Diga: "As normas, a ABNT, o Inmetro, a ANPD e a LGPD estão aqui para quem quiser estudar."
+
+**Slide 61 (perguntas).** Agradeça e abra para perguntas gerais do professor e da turma. Direcione cada pergunta ao colega do bloco certo: "Esse ponto é do bloco do Kawan, ele explica melhor."
+Se não souber: "Não tenho essa informação com segurança, mas posso verificar e enviar depois."
 
 ## Cola: se esquecer
 

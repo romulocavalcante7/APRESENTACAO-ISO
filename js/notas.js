@@ -67,12 +67,12 @@ window.NOTAS = {
   consolidada: "Tabela: eficaz, falha e melhoria para acessos, criptografia, continuidade e conscientização.\nP: Por que importa? R: Certificação não é o fim. Mesmo controle eficaz precisa de medição para continuar eficaz.",
   licoes: "Quatro lições: escopo claro, dono e evidência, medir, melhorar sempre. Ligue cada uma a uma pergunta-guia.\nTransição: \"Fechamos com o Rômulo.\"",
 
-  processo: "FECHAMENTO (Rômulo). Segurança é processo, não destino. Ciclo: avaliar, implementar, monitorar, auditar, melhorar, repetir.\nFrase de síntese: \"Processo, não destino.\"",
+  processo: "FECHAMENTO (Rômulo e Guilherme). Rômulo faz os slides 56 a 58 e passa para o Guilherme. Segurança é processo, não destino. Ciclo: avaliar, implementar, monitorar, auditar, melhorar, repetir.\nFrase de síntese: \"Processo, não destino.\"",
   levar: "O que levar: conceitos, gestão e prática.\nRegra de ouro: todo controle precisa de um responsável, uma execução e uma evidência.",
-  respostas: "Uma frase para cada pergunta-guia. PME: depende do mercado, comece pelos controles essenciais. Papel: dono, evidência, teste, indicador e auditoria. Métricas: poucas, com meta, responsável e frequência.",
-  quiz: "Leia uma pergunta por vez e deixe a turma responder.\nRespostas: 1) ISO/IEC 27001. 2) 93. 3) Quanto de dado posso perder (ponto de recuperação). 4) Só documento. 5) Organismo certificador acreditado.",
+  respostas: "Transição no fim: \"Agora o Guilherme faz o quiz e encerra.\"\nUma frase para cada pergunta-guia. PME: depende do mercado, comece pelos controles essenciais. Papel: dono, evidência, teste, indicador e auditoria. Métricas: poucas, com meta, responsável e frequência. Liste as seis do slide (acessos no prazo, restauração de backup, tempo de detecção e resposta, incidentes, controles com evidência, não conformidades).",
+  quiz: "(Guilherme) Leia uma pergunta por vez e deixe a turma responder.\nRespostas: 1) ISO/IEC 27001. 2) 93. 3) Quanto de dado posso perder (ponto de recuperação). 4) Só documento. 5) Organismo certificador acreditado.",
   refs: "[REVISAR] Referências: normas ISO/IEC, ABNT, Inmetro, ANPD e LGPD. Confirme as edições antes de apontar uma versão específica.",
-  perguntas: "Abra para perguntas. Se não souber: \"Não tenho essa informação com segurança, mas posso verificar e enviar depois.\" Passe a palavra ao colega do bloco certo.\nSe perguntarem \"como você sabe?\", a resposta é a evidência.",
+  perguntas: "(Guilherme) Abra para perguntas. Se não souber: \"Não tenho essa informação com segurança, mas posso verificar e enviar depois.\" Passe a palavra ao colega do bloco certo.\nSe perguntarem \"como você sabe?\", a resposta é a evidência.",
   glossario: "[REVISAR] Apêndice de consulta (siglas). Não apresentar. Use para responder perguntas.",
   numeros: "[REVISAR] Apêndice de consulta (números). Não apresentar. 95 / 87 é o exemplo ilustrativo de meta x resultado."
 };

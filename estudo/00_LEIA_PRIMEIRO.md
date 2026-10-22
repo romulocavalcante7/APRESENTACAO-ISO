@@ -78,7 +78,7 @@ Os tempos incluem 2 a 3 minutos de perguntas no fim de cada bloco. Não projete 
 | Bloco 7 | Marcelo | 38 a 43 | 17 min |
 | Bloco 8 | Gabriel (44 a 47) e Kaique (48) | 44 a 48 | 13 min |
 | Bloco 9 | Eduardo | 49 a 55 | 18 min |
-| Fechamento | Rômulo | 56 a 61 | 12 min |
+| Fechamento | Rômulo (56 a 58) e Guilherme (59 a 61) | 56 a 61 | 12 min |
 | Reserva | todos | | 14 min (perguntas gerais e pausa) |
 
 Os slides 62 e 63 são apêndices de consulta. Não apresente: use para responder perguntas.
@@ -104,7 +104,7 @@ Se o bloco anterior atrasou, corte exemplos, nunca definições.
 2. **Dados ilustrativos.** Os slides 20, 37, 40 e 47 usam exemplos ilustrativos. Eles estão marcados como tais. Diga isso em voz alta.
 3. **Edições das normas.** Confira nas páginas da ISO e da ABNT a edição vigente antes de citar. Neste material: 27001 e 27002 edição 2022, 27000:2018, 27003:2017, 27004:2016 (como constam no slide de referências). A migração de certificados da edição 2013 para a 2022 é um tema que o professor pode perguntar: confirme o prazo oficial antes da aula.
 4. **Emilly não estará presente.** O bloco de métricas (27004) foi dividido entre Gabriel e Kaique.
-5. **Quantidade de apresentadores.** Rômulo (abertura e fechamento) e Guilherme ficam com as partes mais curtas.
+5. **Quantidade de apresentadores.** Rômulo e Guilherme ficam com as partes mais curtas. O fechamento é dividido: Rômulo faz os slides 56 a 58 e Guilherme faz o quiz, as referências e as perguntas (59 a 61).
 
 ## 7. Perguntas gerais que o professor pode fazer a qualquer um
 
