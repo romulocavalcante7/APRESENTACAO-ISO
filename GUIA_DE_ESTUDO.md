@@ -111,8 +111,8 @@ Se o bloco anterior atrasou, corte exemplos, nunca definições.
 
 ### 6. Avisos importantes (leia todos)
 
-1. **Estudo de caso (Eduardo).** O slide 50 traz "Fonte a confirmar". A busca pública feita durante a preparação não confirmou que o Banco do Brasil possua certificado ISO/IEC 27001, e os números que apareciam no trabalho original não foram verificados. Antes da aula, o grupo precisa: (a) procurar em relatório anual, relatório de sustentabilidade ou site de relações com investidores; (b) se confirmar, anotar o escopo oficial; (c) se não confirmar, trocar por uma empresa com certificado comprovado (o próprio emissor do certificado e o site da empresa costumam listar). Não apresente número que não possa citar. O requisito do trabalho exige "empresa certificada".
-2. **Dados ilustrativos.** Os slides 19, 36, 39 e 46 usam exemplos ilustrativos. Eles estão marcados como tais. Diga isso em voz alta.
+1. **Estudo de caso (Eduardo).** O slide 50 mostra só a etiqueta "Exemplo" (não precisa comentar em voz alta), mas o grupo ainda precisa confirmar os dados antes da aula. A busca pública feita durante a preparação não confirmou que o Banco do Brasil possua certificado ISO/IEC 27001, e os números que apareciam no trabalho original não foram verificados. Antes da aula, o grupo precisa: (a) procurar em relatório anual, relatório de sustentabilidade ou site de relações com investidores; (b) se confirmar, anotar o escopo oficial; (c) se não confirmar, trocar por uma empresa com certificado comprovado (o próprio emissor do certificado e o site da empresa costumam listar). Não apresente número que não possa citar. O requisito do trabalho exige "empresa certificada".
+2. **Exemplos.** Os slides 7, 19, 36, 39, 46 e 50 mostram uma etiqueta **Exemplo**. Ela já avisa a turma: não precisa comentar em voz alta.
 3. **Edições das normas.** Confira nas páginas da ISO e da ABNT a edição vigente antes de citar. Neste material: 27001 e 27002 edição 2022, 27000:2018, 27003:2017, 27004:2016 (como constam no slide de referências). A migração de certificados da edição 2013 para a 2022 é um tema que o professor pode perguntar: confirme o prazo oficial antes da aula.
 4. **Emilly não estará presente.** O bloco de métricas (27004) ficou com o Gabriel.
 5. **Quem fala quando.** Cada apresentador tem uma sequência contínua de slides e não volta depois. Rômulo só abre (1 a 4) e Guilherme só fecha (55 a 59). Os blocos do meio são em dupla (Kaua e Kawan, Kaique e Vinicius) e em trio (Marcelo, Gabriel e Eduardo).
@@ -294,7 +294,7 @@ Confira as datas na ISO e na ABNT antes da aula. A ordem e a ideia (uma evoluç�
 - Prontuário vazado: confidencialidade.
 - Dose alterada: integridade.
 - Sistema fora do ar por ransomware: disponibilidade.
-- Diga que é um exemplo hipotético.
+- A etiqueta Exemplo já está no slide: não precisa comentar.
 
 **Slide 8 (vocabulário).** Não leia os oito cartões. Escolha a analogia da casa e percorra ativo, ameaça, vulnerabilidade, risco, controle. Nos outros três (SGSI, evidência, não conformidade), diga que voltam nos blocos seguintes.
 - Interação (aparece no alto): peça um exemplo de ameaça e de vulnerabilidade do dia a dia.
@@ -388,7 +388,7 @@ R: A ISO e a IEC, por comitê técnico, em revisões periódicas.
 - Confundir **ameaça** com **vulnerabilidade** (o erro mais comum).
 - Dizer que o controle "elimina" o risco.
 - Ler todos os oito cartões do vocabulário.
-- Apresentar o hospital como caso real: é hipotético.
+- Apresentar o hospital como caso real: é só um exemplo.
 
 - Dizer que a 27002 é certificável.
 - Dizer que a 27001 "é uma lista de controles": a lista (Anexo A) é parte dela, mas ela é um sistema de gestão.
@@ -482,7 +482,7 @@ O que sobra é o **risco residual**, que deve ser aceito pelo dono do risco.
 **Slide 18 (Anexo A).** Os números sobem na tela (contadores): aproveite para falar. Mostre os quatro temas e a soma 93.
 - Interação: "Uma pequena empresa precisa aplicar os 93 controles?". Resposta: não; depende do risco e da justificativa na SoA.
 
-**Slide 19 (SoA).** Leia uma linha aplicável (por exemplo, controle de acesso) e a linha excluída (monitoramento físico, porque o provedor de nuvem cuida disso). Diga que é fictício.
+**Slide 19 (SoA).** Leia uma linha aplicável (por exemplo, controle de acesso) e a linha excluída (monitoramento físico, porque o provedor de nuvem cuida disso).
 - Interação com o professor (no slide): "Essa justificativa para excluir o controle seria aceita em uma auditoria?". Resposta sugerida, se pedirem: "Seria aceita se o contrato com o provedor e a certificação dele (relatórios ou certificados) estiverem registrados como evidência."
 
 **Slide 20 (tratamento de riscos).** Um exemplo por cartão. Feche com risco residual.
@@ -779,7 +779,7 @@ Tabela **ilustrativa** com quatro colunas: status, eficácia, falha e melhoria.
 - Gestão de acessos: implementado, eficácia alta. Falha: revisões manuais e atrasadas. Melhoria: automatizar e criar alertas.
 - Backup e continuidade: parcial, eficácia média. Falha: testes de restauração raros e sem registro. Melhoria: testes mensais e guardar evidência.
 - Criptografia: implementada, eficácia alta. Falha: chaves sem rotação definida em sistemas antigos. Melhoria: política de rotação e cobrir tudo com AES-256.
-Diga em voz alta: **são dados de exemplo para mostrar o método.** A análise com caso real é com o Eduardo.
+A etiqueta Exemplo já aparece no slide. A análise com caso real é com o Eduardo.
 
 ### Roteiro slide a slide
 
@@ -797,7 +797,7 @@ Diga em voz alta: **são dados de exemplo para mostrar o método.** A análise c
 - Interação: "As fotos do seu celular seguem a regra 3-2-1?"
 **Slide 35 (RTO e RPO).** Aponte as barras na linha do tempo: amarela é o dado perdido (RPO), vermelha é o tempo parado (RTO).
 - Interação: "Se o sistema de matrícula cair, quanto tempo a faculdade aguenta?" Conecte à resposta: esse tempo é o RTO.
-**Slide 36 (operação).** Leia uma linha por vez e diga o que é falha e o que é melhoria. Lembre: são dados ilustrativos.
+**Slide 36 (operação).** Leia uma linha por vez e diga o que é falha e o que é melhoria. A etiqueta Exemplo já aparece no slide.
 - Interação com o professor (no alto): "Esses status parecem adequados para a análise?"
 Passe a palavra: "Agora o Marcelo mostra como colocar tudo isso em prática sem ficar só no papel."
 
@@ -1055,7 +1055,7 @@ Critérios para escolher: definição clara, fórmula, meta, responsável e freq
 - Interação (no alto): "Qual etapa as empresas mais esquecem?" (agir.)
 **Slide 45 (tipos de indicador).** Um exemplo por tipo.
 - Interação: "'Revisão de acesso no prazo' é de resultado, processo ou conformidade?" (processo.)
-**Slide 46 (painel).** Avise que os números são de exemplo. Leia a cor, não o número.
+**Slide 46 (painel).** Leia a cor, não o número.
 - Interação: "Qual barra pede ação primeiro?" (treinamento, a mais longe da meta.)
 **Slide 47 (pergunta-guia 3).** Leia a pergunta, mostre a tabela, escolha três métricas para explicar e termine com os critérios de escolha.
 Passe a palavra: "Agora o Eduardo aplica tudo em um caso real."
@@ -1126,11 +1126,11 @@ Seu bloco amarra a aula: pega o que todos explicaram e aplica em uma empresa. É
 
 ### Aviso importante: confirme o caso antes da aula
 
-O slide 50 traz o aviso **"Fonte a confirmar"**. A busca pública feita na preparação não confirmou que o Banco do Brasil possua certificado ISO/IEC 27001, e os números que apareciam no trabalho original (100 mil funcionários, 300 milhões de transações por dia, redução de 98% em tentativas de acesso, RTO menor que 4 horas, RPO menor que 1 hora, 99,99% de disponibilidade) **não foram verificados**. Por isso os slides usam só afirmações gerais e nenhum número do banco.
+O slide 50 mostra a etiqueta **Exemplo**. A busca pública feita na preparação não confirmou que o Banco do Brasil possua certificado ISO/IEC 27001, e os números que apareciam no trabalho original (100 mil funcionários, 300 milhões de transações por dia, redução de 98% em tentativas de acesso, RTO menor que 4 horas, RPO menor que 1 hora, 99,99% de disponibilidade) **não foram verificados**. Por isso os slides usam só afirmações gerais e nenhum número do banco.
 
 O que fazer, nesta ordem:
 1. Procure em fontes do próprio banco (relatório anual, relatório de sustentabilidade, site de relações com investidores) a menção a ISO/IEC 27001 e o escopo.
-2. Se confirmar: anote o escopo oficial, a data e a fonte. Troque o aviso do slide 50 pela fonte.
+2. Se confirmar: anote o escopo oficial, a data e a fonte. Se quiser, troque a etiqueta Exemplo do slide 50 pela fonte.
 3. Se **não** confirmar: avise o grupo e troque o caso por uma empresa com certificado comprovado (o site da empresa e o do organismo certificador costumam listar). O requisito do trabalho é "empresa certificada". Os slides 51 a 53 foram escritos como análise de controles típicos e podem ser adaptados.
 4. Regra de ouro: **só afirme o que você consegue mostrar a fonte.** O que for análise típica, diga "é um exemplo típico de controle desse tipo".
 

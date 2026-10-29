@@ -130,6 +130,8 @@ td:first-child{font-weight:700;color:#fff}
 .ask-q{width:34px;height:34px;flex:none;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:19px;font-style:normal;color:#06121f;background:radial-gradient(circle at 30% 25%,#fff,#22d3ee 60%);box-shadow:0 6px 12px rgba(0,0,0,.45)}
 .ask-t{font-size:19px;font-style:italic;color:#d6f8ff}
 
+.ex-tag{display:inline-block;padding:6px 16px;border-radius:999px;border:1px solid var(--amber);color:var(--amber);background:rgba(245,158,11,.1);font-size:15px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+
 /* ===== modo apresentação (tela) ===== */
 html,body{height:100%;overflow:hidden}
 #topbar{position:fixed;top:0;left:0;right:0;height:40px;z-index:20;display:flex;align-items:center;gap:22px;padding:0 18px;background:#050814;border-bottom:1px solid var(--line);font-size:14px;color:var(--muted);white-space:nowrap;overflow:hidden}
