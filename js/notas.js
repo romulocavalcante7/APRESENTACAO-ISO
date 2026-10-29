@@ -4,7 +4,7 @@
 window.NOTAS = {
   capa: "ABERTURA (Rômulo). Cumprimente e diga o tema com palavras simples: \"como as empresas protegem as informações que têm\". Diga o nome da norma só uma vez.\nDiga o plano: da base da segurança até um caso real, terminando com três perguntas práticas.\nLEMBRE: não leia a lista de alunos; cada um se apresenta no seu bloco.",
   roteiro: "Cite os oito tópicos em uma frase cada, sem ler os cartões, sem citar números de normas, horários ou quem apresenta.\nLEMBRE: se o tempo apertar, corte o exemplo, nunca a definição.",
-  requisitos: "Mostre o que a atividade pede: teoria das normas, estudo de caso de empresa certificada, controles em casos reais e a análise (eficazes, falhas e melhorias).\nLeia só as três perguntas-guia (certificar PME, controles só no papel, quais métricas usar) e diga que serão respondidas ao longo da aula e resumidas no final.\nTransição: \"Vamos começar pelos fundamentos, com o Kaua.\"",
+  requisitos: "Leia as três perguntas do trabalho, uma por vez, e diga que serão respondidas ao longo da aula e resumidas no final. Não repita os tópicos do slide anterior.\nTransição: \"Vamos começar pelos fundamentos, com o Kaua.\"",
   contexto: "Contexto das ameaças. Faça a pergunta à turma e deixe uma ou duas respostas.\nOs quatro riscos: vazamento de dados, ransomware, acesso indevido e roubo de propriedade intelectual.\nP: \"Isso é só para empresas grandes?\" R: Não. Pequenas empresas são alvo frequente, porque costumam ter controles mais fracos.",
 
   "div-fund": "Divisória do bloco 1. Transição: \"Agora o Kaua vai mostrar a base de tudo: os três pilares e o vocabulário.\"",

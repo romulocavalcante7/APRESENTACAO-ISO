@@ -155,7 +155,7 @@ R: Porque sem medição a eficácia é opinião. Um indicador compara o resultad
 
 **Slides 1 a 4 (7 min)** · Você só abre a aula. Passa a palavra para o Kaua (slide 5).
 
-Seu papel é fazer a turma e o professor entrarem no assunto. **Não precisa dizer números de normas.** Os números (27001, 27002...) são difíceis de falar e cada colega explica os do seu bloco. Diga "a norma ISO 27000" uma única vez, na capa, e depois fale só "as normas", "o sistema de gestão" e "o guia de controles". Sem decorar nada técnico: são só quatro slides, e cada um tem uma função diferente (apresentar, mostrar por que importa, dizer o que vem, dizer o que o trabalho pede). **Não repita no slide seguinte o que já disse no anterior.**
+Seu papel é fazer a turma e o professor entrarem no assunto. **Não precisa dizer números de normas.** Os números (27001, 27002...) são difíceis de falar e cada colega explica os do seu bloco. Diga "a norma ISO 27000" uma única vez, na capa, e depois fale só "as normas", "o sistema de gestão" e "o guia de controles". Sem decorar nada técnico: são só quatro slides, e cada um tem uma função diferente (apresentar, mostrar por que importa, dizer o que vem, dizer as perguntas). **Não repita no slide seguinte o que já disse no anterior.**
 
 ### Explique como para um amigo (30 segundos)
 
@@ -181,7 +181,7 @@ Faça a pergunta do slide e escute duas respostas. Dica para abrir: "Imagina que
 
 **Slide 3 (tópicos).** Os oito tópicos em uma frase cada, em ritmo de lista, sem ler os cartões: "Vamos do básico da segurança até um caso real, passando pelas normas, pelos controles, pela certificação e pela medição." Não cite horários nem quem apresenta.
 
-**Slide 4 (o que o trabalho pede).** Mostre que a atividade pede teoria, caso real, controles e análise, e leia só as três perguntas-guia. Diga que cada uma será respondida ao longo da aula e resumida no final. Não repita os tópicos do slide anterior. Passe a palavra: "Vamos começar pelos fundamentos, com o Kaua."
+**Slide 4 (três perguntas).** Leia as três perguntas do trabalho, uma por vez, devagar. Diga que cada uma será respondida ao longo da aula e resumida no final. Não repita os tópicos do slide anterior: aqui o foco é só nas perguntas. Passe a palavra: "Vamos começar pelos fundamentos, com o Kaua."
 
 ### Exemplos prontos para a abertura (use no máximo dois)
 
@@ -211,7 +211,7 @@ R: Cada bloco cobre uma parte da atividade, e todos estudaram o vocabulário com
 ### Erros a evitar
 
 - Ler a lista de alunos ou os cartões dos slides.
-- Repetir no slide 4 o que já disse no slide 3.
+- Repetir no slide 4 os tópicos do slide 3.
 - Citar horários ou o tempo de cada colega.
 - Prometer algo que o grupo não confirmou (certificação de empresa específica).
 
