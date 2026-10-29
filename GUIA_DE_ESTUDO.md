@@ -155,22 +155,22 @@ R: Porque sem medição a eficácia é opinião. Um indicador compara o resultad
 
 **Slides 1 a 4 (7 min)** · Você só abre a aula. Passa a palavra para o Kaua (slide 5).
 
-Seu papel é fazer a turma e o professor entrarem no assunto. Sem decorar nada técnico: são só quatro slides, e cada um tem uma função diferente (apresentar, mostrar por que importa, dizer o que vem, dizer o que o trabalho pede). **Não repita no slide seguinte o que já disse no anterior.**
+Seu papel é fazer a turma e o professor entrarem no assunto. **Não precisa dizer números de normas.** Os números (27001, 27002...) são difíceis de falar e cada colega explica os do seu bloco. Diga "a norma ISO 27000" uma única vez, na capa, e depois fale só "as normas", "o sistema de gestão" e "o guia de controles". Sem decorar nada técnico: são só quatro slides, e cada um tem uma função diferente (apresentar, mostrar por que importa, dizer o que vem, dizer o que o trabalho pede). **Não repita no slide seguinte o que já disse no anterior.**
 
 ### Explique como para um amigo (30 segundos)
 
-"Hoje vamos mostrar como as empresas protegem as informações que têm, usando um conjunto de regras internacionais chamado ISO 27000. Vocês vão ver o que são essas regras, como uma empresa é certificada, como os controles funcionam na prática e como saber se estão funcionando. No final, respondemos três perguntas bem práticas."
+"Hoje vamos mostrar como as empresas protegem as informações que têm, usando um conjunto de regras internacionais. Vocês vão ver o que são essas regras, como uma empresa é certificada, como os controles funcionam na prática e como saber se estão funcionando. No final, respondemos três perguntas bem práticas."
 
 ### O que você precisa saber
 
 1. **Segurança da informação** é proteger a informação (não só computadores) em três pilares: confidencialidade, integridade e disponibilidade. O Kaua explica em detalhe no bloco dele.
-2. **ISO/IEC 27000** é uma família de normas. A 27001 é a única que dá certificado.
-3. **O que o trabalho pede:** teoria das normas, estudo de caso de empresa certificada, exemplos de controles da 27002 (acessos, criptografia, continuidade), análise (eficazes, falhas, melhorias) e três perguntas.
+2. **As normas** são uma família de cinco documentos, cada um com um papel. Só um deles dá certificado. Os colegas explicam quais.
+3. **O que o trabalho pede:** teoria das normas, estudo de caso de empresa certificada, exemplos de controles (acessos, criptografia, continuidade), análise (eficazes, falhas, melhorias) e três perguntas.
 
 ### Roteiro slide a slide
 
 **Slide 1 (capa).** Cumprimente e diga o tema em uma frase. Não leia a lista de alunos.
-> "Hoje vamos mostrar como uma organização gerencia a segurança da informação com a família ISO/IEC 27000."
+> "Hoje vamos mostrar como as empresas protegem as informações que têm, seguindo a norma ISO 27000." (É a única vez que você diz o nome da norma.)
 
 **Slide 2 (por que segurança importa agora).** Este é o slide que prende a atenção, então vá devagar. Fale dos quatro riscos com **uma frase e um exemplo** cada:
 - **Vazamento de dados:** "o cadastro de clientes de uma loja aparece à venda na internet".
@@ -179,7 +179,7 @@ Seu papel é fazer a turma e o professor entrarem no assunto. Sem decorar nada t
 - **Roubo de propriedade intelectual:** "o projeto novo da empresa aparece na concorrente".
 Faça a pergunta do slide e escute duas respostas. Dica para abrir: "Imagina que amanhã o sistema de matrícula da faculdade fica fora do ar e as notas vazam. Quem seria afetado?" Aponte que isso não é só de grandes empresas.
 
-**Slide 3 (tópicos).** Os oito tópicos em uma frase cada, em ritmo de lista, sem ler os cartões: "Vamos do básico da segurança até um caso real, passando por cada norma." Não cite horários nem quem apresenta.
+**Slide 3 (tópicos).** Os oito tópicos em uma frase cada, em ritmo de lista, sem ler os cartões: "Vamos do básico da segurança até um caso real, passando pelas normas, pelos controles, pela certificação e pela medição." Não cite horários nem quem apresenta.
 
 **Slide 4 (o que o trabalho pede).** Mostre que a atividade pede teoria, caso real, controles e análise, e leia só as três perguntas-guia. Diga que cada uma será respondida ao longo da aula e resumida no final. Não repita os tópicos do slide anterior. Passe a palavra: "Vamos começar pelos fundamentos, com o Kaua."
 
@@ -191,8 +191,8 @@ Faça a pergunta do slide e escute duas respostas. Dica para abrir: "Imagina que
 ### Cola: se esquecer
 
 - Quatro riscos do slide 2: vazamento, ransomware, acesso indevido, propriedade intelectual.
-- Três perguntas: certificar PME, controles só no papel, métricas da 27004.
-- Só a 27001 é certificável.
+- Três perguntas: certificar PME, controles só no papel, quais métricas usar.
+- Não fale números de normas: diga "as normas" e "o sistema de gestão".
 
 ### Perguntas que o professor pode fazer
 
